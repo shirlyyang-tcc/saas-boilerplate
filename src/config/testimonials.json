@@ -1,0 +1,60 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Chen",
+      "role": "Founder at TechFlow",
+      "avatar": "👩‍💻",
+      "content": "This template saved us months of development time. We launched our SaaS product in just 2 weeks instead of 6 months!",
+      "rating": 5
+    },
+    {
+      "name": "Marcus Rodriguez",
+      "role": "CTO at DataSync",
+      "avatar": "👨‍💼",
+      "content": "The code quality is exceptional. Clean, well-documented, and follows all the best practices. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "name": "Emily Johnson",
+      "role": "Solo Developer",
+      "avatar": "👩‍🎨",
+      "content": "As a solo developer, this template gave me everything I needed to compete with larger teams. The components are beautiful!",
+      "rating": 5
+    },
+    {
+      "name": "David Kim",
+      "role": "Startup Founder",
+      "avatar": "👨‍🚀",
+      "content": "The authentication and payment integration worked flawlessly. We were able to start accepting payments on day one.",
+      "rating": 5
+    },
+    {
+      "name": "Lisa Wang",
+      "role": "Product Manager",
+      "avatar": "👩‍💼",
+      "content": "The design system is incredibly consistent and the dark mode implementation is perfect. Our users love it!",
+      "rating": 5
+    },
+    {
+      "name": "Alex Thompson",
+      "role": "Full-stack Developer",
+      "avatar": "👨‍💻",
+      "content": "Best investment I made this year. The template is constantly updated and the support is fantastic.",
+      "rating": 5
+    }
+  ],
+  "stats": [
+    {
+      "value": "250+",
+      "label": "Happy Customers"
+    },
+    {
+      "value": "4.9/5",
+      "label": "Average Rating"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction Rate"
+    }
+  ]
+} 

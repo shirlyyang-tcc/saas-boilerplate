@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "question": "What is included in the SaaS Starter Template?",
+      "answer": "Our template includes a complete Next.js application with authentication, payment processing, dashboard components, landing pages, email templates, and much more. You get everything you need to launch your SaaS product."
+    },
+    {
+      "question": "Do I need to pay monthly fees?",
+      "answer": "No! This is a one-time purchase with lifetime access. You can build unlimited projects with no recurring fees or restrictions."
+    },
+    {
+      "question": "Can I customize the design and branding?",
+      "answer": "Absolutely! The template is fully customizable. You can easily change colors, fonts, layouts, and add your own branding. We include a comprehensive design system to make customization simple."
+    },
+    {
+      "question": "What payment methods are supported?",
+      "answer": "The template comes with Stripe integration out of the box, supporting credit cards, digital wallets, and international payments. You can also integrate other payment providers if needed."
+    },
+    {
+      "question": "Is the code production-ready?",
+      "answer": "Yes! The code follows industry best practices, includes proper error handling, security measures, and is optimized for production deployment. Many customers have successfully launched with this template."
+    },
+    {
+      "question": "Do you provide support and updates?",
+      "answer": "Yes, we provide regular updates with new features, bug fixes, and security improvements. Support is available via email and our community Discord server."
+    },
+    {
+      "question": "Can I use this for client projects?",
+      "answer": "Yes, you can use this template for both personal and client projects. The license allows commercial use without restrictions."
+    },
+    {
+      "question": "What if I need help with setup?",
+      "answer": "We provide comprehensive documentation, video tutorials, and setup guides. For Enterprise customers, we also offer 1-on-1 setup calls to get you started quickly."
+    }
+  ]
+} 

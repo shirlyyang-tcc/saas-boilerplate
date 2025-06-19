@@ -1,0 +1,34 @@
+{
+  "site": {
+    "name": "SaaS Starter",
+    "description": "The complete SaaS starter template to help you build and launch your next product faster than ever before.",
+    "url": "https://saas-starter.com",
+    "email": "hello@saas-starter.com",
+    "author": "SaaS Starter Team",
+    "logo": "SaaS Starter",
+    "copyright": "SaaS Starter. All rights reserved.",
+    "tagline": "Made with ❤️ for developers worldwide"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "Github"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com",
+      "icon": "Twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com",
+      "icon": "Linkedin"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:hello@saas-starter.com",
+      "icon": "Mail"
+    }
+  ]
+} 
