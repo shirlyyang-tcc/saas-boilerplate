@@ -229,6 +229,9 @@ dictionaries/[locale].json          # e.g., ja.json, fr.json
 
 # Create blocks dictionary file  
 dictionaries/blocks-[locale].json   # e.g., blocks-ja.json, blocks-fr.json
+
+# Create case data file for the new language
+dictionaries/case-[locale].json    # e.g., case-ja.json, case-fr.json
 ```
 
 **File Structure Requirements:**
@@ -236,6 +239,7 @@ dictionaries/blocks-[locale].json   # e.g., blocks-ja.json, blocks-fr.json
 - Translate all text values while keeping the same JSON structure
 - Maintain the same key names (only translate values)
 - Ensure all nested objects and arrays have the same structure
+- CRITICAL: keep and translate all data
 
 #### 2. **Update `src/lib/i18n.ts`**
 ```typescript
@@ -267,48 +271,7 @@ const blocksDictionaries = {
 };
 ```
 
-#### 4. **Add Highlights Configuration in Dictionary Files**
-```json
-// In dictionaries/[locale].json, add highlights section
-{
-  "highlights": {
-    "keywords": [
-      { "key": "SaaS", "value": "SaaS" },
-      { "key": "Developers", "value": "開発者" },  // Japanese translation
-      { "key": "Features", "value": "機能" },
-      { "key": "Pricing", "value": "価格設定" },
-      // ... add all keyword translations
-    ]
-  }
-}
-```
-
-**Important**: The `text-highlight.ts` file now automatically supports new languages through dictionary loading. No manual code changes needed!
-
-#### 5. **Create Case Data Files**
-```bash
-# Create case data file for the new language
-dictionaries/case-[locale].json    # e.g., case-ja.json, case-fr.json
-```
-
-```json
-// Example: dictionaries/case-ja.json
-[
-  {
-    "slug": "youphoto-ai",
-    "title": "YouPhoto AI - ワンクリックAI写真エディター",
-    "description": "AI駆動の写真エディター...",
-    "image": "/images/cases/case1.png",
-    "externalUrl": "https://youphoto.ai",
-    "tags": ["AI", "写真編集", "SaaS"]
-  }
-  // ... more cases in Japanese
-]
-```
-
-**Important**: Case data is now stored in separate JSON files for easier management. The `cases.ts` file automatically loads data from these files!
-
-#### 6. **Update Route Generation (if using App Router)**
+#### 4. **Update Route Generation (if using App Router)**
 ```typescript
 // In src/app/[lang]/layout.tsx - ensure generateStaticParams includes new locale
 export async function generateStaticParams() {
@@ -318,7 +281,7 @@ export async function generateStaticParams() {
 }
 ```
 
-#### 7. **Test the New Language**
+#### 5. **Test the New Language**
 - Visit `http://localhost:3000/[locale]` (e.g., `/ja`)
 - Test language switcher functionality
 - Verify all pages render correctly

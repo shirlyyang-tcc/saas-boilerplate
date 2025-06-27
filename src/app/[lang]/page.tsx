@@ -1,4 +1,3 @@
-import React from "react";
 import { Layout } from "@/components/layout/layout";
 import { SectionLayout } from "@/components/layout/section-layout";
 import { Hero } from "@/components/sections/hero";
@@ -10,7 +9,6 @@ import { FAQ } from "@/components/sections/faq";
 import { CTASection } from "@/components/sections/cta-section";
 import { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionaries";
-import { getHighlightedText } from '@/lib/text-highlight';
 
 export default async function HomePage({
   params,
@@ -48,7 +46,7 @@ export default async function HomePage({
             variant: "secondary",
           },
         ]}
-        trustIndicators={dict.home.bottomCta.trustIndicators.map(text => ({ text }))}
+        trustIndicators={dict.home.bottomCta.trustIndicators?.map(text => ({ text }))}
         maxWidth="4xl"
       />
     </Layout>
