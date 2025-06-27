@@ -848,7 +848,7 @@ const componentMap = {
           variant="default"
           columns={3}
           stats={[
-            { value: "300", suffix: "%", label: "YoY Growth", icon: TrendingUp, color: "success" },
+            { value: "300", suffix: "%", label: "YoY Growth", color: "success" },
             { value: "$50M", suffix: "+", label: "Revenue", color: "primary" },
             { value: "1000", suffix: "+", label: "Enterprise Clients", color: "secondary" }
           ]}
