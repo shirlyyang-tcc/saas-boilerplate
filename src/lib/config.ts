@@ -217,11 +217,6 @@ export const getFAQs = async (locale: Locale = defaultLocale) => {
   return dict.faq.faqs
 }
 
-export const getBlockCategories = async (locale: Locale = defaultLocale) => {
-  const dict = await getDictionary(locale)
-  return dict.blocks.categories
-}
-
 
 
 // Icon mapping utility (since we can't import React components in JSON)
