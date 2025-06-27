@@ -19,10 +19,10 @@ export function Header({ dict }: HeaderProps) {
   const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   
-  // 从路径中提取当前语言
+  // Extract current language from path
   const currentLang = (pathname.split('/')[1] || 'en') as Locale
   
-  // 使用默认值，如果没有提供 dict
+  // Use default values if dict is not provided
   const siteInfo = dict?.site || {
     name: "SaaS Starter"
   }
@@ -31,7 +31,7 @@ export function Header({ dict }: HeaderProps) {
     cta: { text: "Get Started", href: "/pricing" }
   }
 
-  // 为导航链接添加语言前缀
+  // Add language prefix to navigation links
   const getLocalizedHref = (href: string) => {
     if (href === '/') {
       return `/${currentLang}`
@@ -39,14 +39,14 @@ export function Header({ dict }: HeaderProps) {
     return `/${currentLang}${href}`
   }
 
-  // 判断链接是否为当前页面
+  // Check if link is current page
   const isActive = (href: string) => {
     const localizedHref = getLocalizedHref(href)
     if (href === '/') {
-      // 对于首页，需要精确匹配，避免被其他页面误判
+      // For homepage, need exact match to avoid false positives with other pages
       return pathname === localizedHref || pathname === `${localizedHref}/`
     }
-    // 对于其他页面，使用startsWith匹配
+    // For other pages, use startsWith matching
     return pathname.startsWith(localizedHref) && pathname !== `/${currentLang}` && pathname !== `/${currentLang}/`
   }
 

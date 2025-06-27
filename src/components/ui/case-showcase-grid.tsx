@@ -9,8 +9,8 @@ export interface CaseShowcaseItem {
   title: string;
   description: string;
   image?: string;
-  externalUrl: string; // 外部链接
-  tags?: string[]; // 可选标签
+  externalUrl: string; // External link
+  tags?: string[]; // Optional tags
 }
 
 interface CaseShowcaseGridProps {
@@ -92,7 +92,7 @@ export function CaseShowcaseGrid({ cases, lang = "en", dict }: CaseShowcaseGridP
   );
 }
 
-// 添加提交案例的CTA卡片
+// Add submit case CTA card
 export function SubmitCaseCTA({ lang = "en", dict }: { lang?: string; dict?: any }) {
   return (
     <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border-2 border-dashed border-primary/30 p-8 text-center">

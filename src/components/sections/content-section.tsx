@@ -32,7 +32,7 @@ export function ContentSection({
   const TitleTag = titleLevel;
   const isTextLeft = layout === "text-left";
 
-  // 如果没有图片，只显示文本内容
+  // If no image, only display text content
   if (!image) {
     return (
       <div className={`${className}`}>
@@ -48,7 +48,7 @@ export function ContentSection({
 
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${className}`}>
-      {/* 文本内容 */}
+                {/* Text content */}
       <div className={`${isTextLeft ? "lg:order-1" : "lg:order-2"} space-y-6`}>
         <TitleTag className="text-responsive-lg font-bold text-foreground">
           {title}
@@ -58,7 +58,7 @@ export function ContentSection({
         </div>
       </div>
 
-      {/* 图片内容 */}
+                {/* Image content */}
       <div className={`${isTextLeft ? "lg:order-2" : "lg:order-1"} relative`}>
         <div className={`relative rounded-2xl overflow-hidden shadow-xl ${imageClassName}`}>
           <Image
@@ -69,11 +69,11 @@ export function ContentSection({
             className="w-full h-auto object-cover"
             priority={false}
           />
-          {/* 装饰性渐变覆盖 */}
+                      {/* Decorative gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
         </div>
         
-        {/* 装饰性元素 */}
+                    {/* Decorative elements */}
         <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
         <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full blur-2xl" />
       </div>
@@ -81,7 +81,7 @@ export function ContentSection({
   );
 }
 
-// 预设的内容区域变体
+// Preset content section variants
 export function StorySection({ title, children, className = "" }: { title: string; children: ReactNode; className?: string }) {
   return (
     <ContentSection

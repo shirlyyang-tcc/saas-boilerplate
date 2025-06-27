@@ -4,7 +4,7 @@ import { locales, defaultLocale } from './src/lib/i18n';
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // 如果是根路径，让前端页面处理语言检测
+  // If it's root path, let frontend page handle language detection
   if (pathname === '/') {
     return NextResponse.next();
   }
@@ -12,20 +12,22 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 检查路径中是否已经包含支持的语言
+  // Check if path already contains supported language
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // 如果没有语言标识，重定向到默认语言
+  // If no language identifier, redirect to default language
   if (pathnameIsMissingLocale) {
     return NextResponse.redirect(new URL(`/${defaultLocale}${pathname}`, request.url));
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    // 跳过内部路径 (_next)
+    // Skip internal paths (_next)
     '/((?!_next|api|favicon.ico|.*\\..*|.*\\.|$).*)',
     '/'
   ],

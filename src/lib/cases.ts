@@ -1,6 +1,6 @@
 import { CaseShowcaseItem } from '@/components/ui/case-showcase-grid'
 
-// 简化的案例数据，仿照 ShipAny 风格
+// Simplified case data, inspired by ShipAny style
 const casesData: Record<string, CaseShowcaseItem[]> = {
   en: [
     {
@@ -225,7 +225,7 @@ export function getAllCases(lang: string = 'en'): CaseShowcaseItem[] {
   return casesData[lang] || casesData.en
 }
 
-// 保持与现有代码的兼容性，提供简化的接口
+// Maintain compatibility with existing code, provide simplified interface
 export interface CaseStudy {
   slug: string
   title: string

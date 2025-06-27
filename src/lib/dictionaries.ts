@@ -1,6 +1,6 @@
 import { Locale } from './i18n';
 
-// 翻译文件类型定义
+// Translation file type definitions
 export interface Dictionary {
   site: {
     name: string;
@@ -451,7 +451,7 @@ export interface BlocksDictionary {
   };
 }
 
-// 翻译文件路径映射
+// Translation file path mapping
 const dictionaries = {
   en: () => import('../../dictionaries/en.json').then((module) => module.default),
   zh: () => import('../../dictionaries/zh.json').then((module) => module.default),

@@ -1,7 +1,8 @@
 "use client"
 
-import { Star } from 'lucide-react'
+import { Star, User } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
+import Image from 'next/image'
 
 interface Testimonial {
   rating: number
@@ -42,8 +43,18 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
         {/* Author */}
         <div className="flex items-center">
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-lg mr-3">
-            {testimonial.avatar}
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center mr-3">
+            {testimonial.avatar ? (
+              <Image
+                src={testimonial.avatar}
+                alt={testimonial.name || 'User avatar'}
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <User className="w-5 h-5 text-primary/60" />
+            )}
           </div>
           <div>
             <div className="font-medium text-foreground">{testimonial.name}</div>

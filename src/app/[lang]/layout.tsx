@@ -14,7 +14,7 @@ export async function generateMetadata({
   return await generateI18nMetadata(params.lang)
 }
 
-// 为静态导出生成所有语言路径
+// Generate all language paths for static export
 export async function generateStaticParams() {
   return locales.map((locale) => ({
     lang: locale,

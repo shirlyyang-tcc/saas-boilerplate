@@ -33,8 +33,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       default: "bg-primary text-primary-foreground hover:bg-primary/90",
       primary: "bg-primary text-white hover:bg-primary/90",
       destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-      outline: "border border-input text-primary bg-background hover:bg-accent hover:text-accent-foreground",
-      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+      secondary: "bg-white text-secondary-foreground hover:bg-secondary/80 border border-input",
       ghost: "hover:bg-accent hover:text-accent-foreground",
       link: "text-primary underline-offset-4 hover:underline",
       gradient: "btn-gradient text-white hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200",
@@ -91,7 +90,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-// 预设按钮组合
+// Preset button combinations
 export const PrimaryButton = React.forwardRef<HTMLButtonElement, Omit<ButtonProps, 'variant'>>(
   (props, ref) => <Button variant="primary" ref={ref} {...props} />
 )
@@ -101,11 +100,6 @@ export const GradientButton = React.forwardRef<HTMLButtonElement, Omit<ButtonPro
   (props, ref) => <Button variant="gradient" ref={ref} {...props} />
 )
 GradientButton.displayName = "GradientButton"
-
-export const OutlineButton = React.forwardRef<HTMLButtonElement, Omit<ButtonProps, 'variant'>>(
-  (props, ref) => <Button variant="outline" ref={ref} {...props} />
-)
-OutlineButton.displayName = "OutlineButton"
 
 export const LinkButton = React.forwardRef<HTMLButtonElement, Omit<ButtonProps, 'variant'>>(
   (props, ref) => <Button variant="link" ref={ref} {...props} />

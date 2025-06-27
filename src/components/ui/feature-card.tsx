@@ -50,7 +50,7 @@ export function FeatureCard({
   );
 }
 
-// 预设的Feature组件变体
+// Preset Feature component variants
 export function HeroFeatureCard({ feature, className }: { feature: FeatureItem; className?: string }) {
   return <FeatureCard icon={feature.icon} title={feature.title} description={feature.description} className={className} variant="center" />;
 }

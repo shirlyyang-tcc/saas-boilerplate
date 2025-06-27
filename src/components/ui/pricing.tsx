@@ -5,10 +5,22 @@ import { Check, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Dictionary } from '@/lib/dictionaries'
 
 interface PricingProps {
-  dict?: Dictionary
+  dict?: {
+    pricing: {
+      mostPopular: string
+      plans: {
+        name: string
+        description: string
+        price: string
+        period: string
+        popular: boolean
+        features: string[]
+        buttonText: string
+      }[]
+    }
+  }
 }
 
 export function Pricing({ dict }: PricingProps) {
@@ -47,7 +59,7 @@ export function Pricing({ dict }: PricingProps) {
               
               <CardContent className="flex flex-col flex-1">
                 <ul className="space-y-3 mb-6 flex-1">
-                  {plan.features.map((feature, featureIndex) => (
+                  {plan.features?.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <Check className="w-5 h-5 text-primary flex-shrink-0 mr-3 mt-0.5" />
                       <span className="text-sm leading-relaxed">{feature}</span>

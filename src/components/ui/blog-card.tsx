@@ -32,7 +32,7 @@ export function BlogCard({ post, variant = "default", className = "", lang = "en
   if (isWide) {
     return (
       <Card className={`group hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 border-0 bg-gradient-to-br from-background via-background to-muted/20 overflow-hidden ${className}`}>
-        {/* Image Section - 上图 */}
+        {/* Image Section - Top */}
         <div className="relative aspect-[16/9]">
           {post.image ? (
             <Link href={`/${lang}/blog/${post.slug}`}>
@@ -51,7 +51,7 @@ export function BlogCard({ post, variant = "default", className = "", lang = "en
           )}
         </div>
 
-        {/* Content Section - 下文 */}
+        {/* Content Section - Bottom */}
         <div className="p-6">
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -85,7 +85,7 @@ export function BlogCard({ post, variant = "default", className = "", lang = "en
 
   return (
     <Card className={`group hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 border-0 bg-card overflow-hidden ${className}`}>
-      {/* Image Section - 上图 */}
+      {/* Image Section - Top */}
       <div className="relative aspect-[16/9]">
         {post.image ? (
           <Link href={`/${lang}/blog/${post.slug}`}>
@@ -104,7 +104,7 @@ export function BlogCard({ post, variant = "default", className = "", lang = "en
         )}
       </div>
 
-      {/* Content Section - 下文 */}
+      {/* Content Section - Bottom */}
       <CardHeader className="pb-3">
         <div className="flex flex-wrap gap-1.5 mb-3">
           {post.tags.slice(0, 2).map((tag) => (

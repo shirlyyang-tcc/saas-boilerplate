@@ -80,7 +80,7 @@ export default async function CasesPage({
             {
               text: dict.cases.discussYourProject,
               href: "/contact",
-              variant: "outline",
+              variant: "secondary",
               size: "lg"
             }
           ]}

@@ -18,7 +18,7 @@ export default function LanguageSwitcher({ currentLang, dict }: LanguageSwitcher
   const [isOpen, setIsOpen] = React.useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // 移除当前语言前缀，获取路径
+  // Remove current language prefix to get path
   const getPathWithoutLang = () => {
     const segments = pathname.split('/').filter(Boolean);
     if (segments.length > 0 && locales.includes(segments[0] as Locale)) {
@@ -29,7 +29,7 @@ export default function LanguageSwitcher({ currentLang, dict }: LanguageSwitcher
 
   const basePath = getPathWithoutLang();
 
-  // 处理点击外部关闭下拉菜单
+  // Handle clicking outside to close dropdown menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -46,7 +46,7 @@ export default function LanguageSwitcher({ currentLang, dict }: LanguageSwitcher
     };
   }, [isOpen]);
 
-  // 保存语言偏好到 localStorage
+      // Save language preference to localStorage
   const handleLanguageChange = (locale: Locale) => {
     localStorage.setItem('preferred-language', locale);
     setIsOpen(false);

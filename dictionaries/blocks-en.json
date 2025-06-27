@@ -28,7 +28,7 @@
             "preview": {
               "title": "Button Component",
               "description": "A versatile button component with multiple variants and sizes",
-              "code": "import { Button, PrimaryButton, GradientButton, OutlineButton, LinkButton } from \"@/components/ui/button\";\nimport { Users, Globe, Star, TrendingUp } from \"lucide-react\";\n\nexport function ButtonExample() {\n  return (\n    <div className=\"p-8 bg-background min-h-screen\">\n      <div className=\"space-y-6\">\n        {/* Default Button Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Default Button Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <PrimaryButton>Primary Button</PrimaryButton>\n            <GradientButton>Gradient Button</GradientButton>\n            <OutlineButton>Outline Button</OutlineButton>\n            <LinkButton>Link Button</LinkButton>\n          </div>\n        </div>\n\n        {/* Standard Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Standard Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button variant=\"default\">Default</Button>\n            <Button variant=\"primary\">Primary</Button>\n            <Button variant=\"secondary\">Secondary</Button>\n            <Button variant=\"outline\">Outline</Button>\n            <Button variant=\"ghost\">Ghost</Button>\n            <Button variant=\"link\">Link</Button>\n          </div>\n        </div>\n\n        {/* Special Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Special Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button variant=\"gradient\">Gradient</Button>\n            <Button variant=\"success\">Success</Button>\n            <Button variant=\"warning\">Warning</Button>\n            <Button variant=\"destructive\">Destructive</Button>\n          </div>\n        </div>\n\n        {/* Size Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Size Variants</h3>\n          <div className=\"flex flex-wrap items-center gap-4\">\n            <Button size=\"sm\">Small</Button>\n            <Button size=\"default\">Default</Button>\n            <Button size=\"lg\">Large</Button>\n            <Button size=\"xl\">Extra Large</Button>\n          </div>\n        </div>\n\n        {/* Icon Buttons */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Icon Buttons</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button icon={Users} iconPosition=\"left\">With Left Icon</Button>\n            <Button icon={Star} iconPosition=\"right\">With Right Icon</Button>\n            <Button variant=\"outline\" icon={TrendingUp}>Outline with Icon</Button>\n            <Button size=\"icon\" icon={Globe} />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}"
+              "code": "import { Button, PrimaryButton, GradientButton, LinkButton } from \"@/components/ui/button\";\nimport { Users, Globe, Star, TrendingUp } from \"lucide-react\";\n\nexport function ButtonExample() {\n  return (\n    <div className=\"p-8 bg-background min-h-screen\">\n      <div className=\"space-y-6\">\n        {/* Default Button Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Default Button Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <PrimaryButton>Primary Button</PrimaryButton>\n            <GradientButton>Gradient Button</GradientButton>\n   <LinkButton>Link Button</LinkButton>\n          </div>\n        </div>\n\n        {/* Standard Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Standard Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button variant=\"default\">Default</Button>\n            <Button variant=\"primary\">Primary</Button>\n            <Button variant=\"secondary\">Secondary</Button>\n            <Button variant=\"outline\">Outline</Button>\n            <Button variant=\"ghost\">Ghost</Button>\n            <Button variant=\"link\">Link</Button>\n          </div>\n        </div>\n\n        {/* Special Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Special Variants</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button variant=\"gradient\">Gradient</Button>\n            <Button variant=\"success\">Success</Button>\n            <Button variant=\"warning\">Warning</Button>\n            <Button variant=\"destructive\">Destructive</Button>\n          </div>\n        </div>\n\n        {/* Size Variants */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Size Variants</h3>\n          <div className=\"flex flex-wrap items-center gap-4\">\n            <Button size=\"sm\">Small</Button>\n            <Button size=\"default\">Default</Button>\n            <Button size=\"lg\">Large</Button>\n            <Button size=\"xl\">Extra Large</Button>\n          </div>\n        </div>\n\n        {/* Icon Buttons */}\n        <div>\n          <h3 className=\"text-lg font-semibold mb-4 text-foreground\">Icon Buttons</h3>\n          <div className=\"flex flex-wrap gap-4\">\n            <Button icon={Users} iconPosition=\"left\">With Left Icon</Button>\n            <Button icon={Star} iconPosition=\"right\">With Right Icon</Button>\n            <Button variant=\"outline\" icon={TrendingUp}>Outline with Icon</Button>\n            <Button size=\"icon\" icon={Globe} />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}"
             }
           },
           {
@@ -126,6 +126,18 @@
               "description": "Interactive showcase grid for displaying case studies with external links and hover effects",
               "code": "import { CaseShowcaseGrid } from \"@/components/ui/case-showcase-grid\";\n const sampleCases = [{\n   slug: \"youphoto-ai\",\n   title: \"YouPhoto AI - Your One-Click AI Photo Editor\",\n   description: \"AI-powered photo editor for reStyles, emoji, avatar, memes & more! Transform photos with advanced AI technology.\",\n   image: \"/images/cases/case1.png\",\n   externalUrl: \"https://youphoto.ai\",\n   tags: [\"AI\", \"Photo Editor\", \"SaaS\"]\n }]   \n\n\n export default function CaseShowcaseGridExample() {\n   return (\n     <div>\n       <h3 className=\"text-xl font-semibold mb-6 text-foreground\">\n         Case Showcase Grid\n       </h3>\n       <p className=\"text-muted-foreground mb-8\">\n         Interactive showcase grid for displaying case studies with external\n         links. Each card opens the external URL in a new tab when clicked.\n       </p>\n       <CaseShowcaseGrid cases={sampleCases} lang=\"en\" dict={sampleDict} />\n     </div>\n   );\n }"
             }
+          },
+          {
+            "id": "pricing",
+            "name": "Pricing Table",
+            "description": "Pricing plans and comparison",
+            "category": "ui-elements",
+            "previewUrl": "/blocks/preview/pricing",
+            "preview": {
+              "title": "Pricing Section",
+              "description": "Display pricing plans with features comparison",
+              "code": " import { Pricing } from \"@/components/ui/pricing\";\n\n export default function PricingPage() {\n   return (\n     <div className=\"bg-background min-h-screen py-10\">\n       <Pricing dict={{\n         pricing: {\n           mostPopular: \"Most Chosen\",\n           plans: [\n             {\n               name: \"Basic\",\n               description: \"For small teams and individual users\",\n               price: \"$10\",\n               period: \"month\",\n               popular: false,\n               features: [\"1000 API calls\", \"1000 API calls\", \"1000 API calls\", \"1000 API calls\", \"1000 API calls\"],\n               buttonText: \"Get Started\"\n             },\n             {\n               name: \"Pro\",\n               description: \"For large teams and enterprise users\",\n               price: \"$100\",\n               period: \"month\",\n               popular: true,\n               features: [\"1000 API calls\", \"1000 API calls\", \"1000 API calls\", \"1000 API calls\", \"1000 API calls\"],\n               buttonText: \"Get Started\"\n             }\n           ]\n         }\n       }} />\n     </div>\n   );\n }\n"
+            }
           }
         ]
       },
@@ -175,30 +187,7 @@
               "code": "import { Hero } from \"@/components/sections/hero\";\n\nexport function HeroExample() {\n  return (\n    <div className=\"bg-background min-h-screen\">\n      <Hero />\n    </div>\n  );\n}"
             }
           },
-          {
-            "id": "features",
-            "name": "Features Section",
-            "description": "Showcase product features",
-            "category": "sections",
-            "previewUrl": "/blocks/preview/features",
-            "preview": {
-              "title": "Features Section",
-              "description": "Showcase your product features in an attractive grid layout",
-              "code": "import { Features } from \"@/components/sections/features\";\n\nexport function FeaturesExample() {\n  return (\n    <div className=\"bg-background min-h-screen\">\n      <Features />\n    </div>\n  );\n}"
-            }
-          },
-          {
-            "id": "pricing",
-            "name": "Pricing Section",
-            "description": "Pricing plans and comparison",
-            "category": "sections",
-            "previewUrl": "/blocks/preview/pricing",
-            "preview": {
-              "title": "Pricing Section",
-              "description": "Display pricing plans with features comparison",
-              "code": "import { Pricing } from \"@/components/ui/pricing\";\n\nexport function PricingExample() {\n  return (\n    <div className=\"bg-background min-h-screen\">\n      <Pricing />\n    </div>\n  );\n}"
-            }
-          },
+          
           {
             "id": "testimonials",
             "name": "Testimonials Section",
@@ -208,7 +197,7 @@
             "preview": {
               "title": "Testimonials Section",
               "description": "Display customer testimonials and reviews",
-              "code": "import { Testimonials } from \"@/components/sections/testimonials\";\n\nexport function TestimonialsExample() {\n  return (\n    <div className=\"bg-background min-h-screen\">\n      <Testimonials />\n    </div>\n  );\n}"
+              "code": "import { TestimonialsGrid } from \"@/components/ui/testimonials-grid\";\n\nexport default function TestimonialsGridExample() {\n  return (\n    <div className=bg-background min-h-screen>\n      <TestimonialsGrid \n          testimonials={[\n           {\n             rating: 5,\n             content: \"This product has completely transformed our workflow. The team is more productive than ever!\",\n             avatar: \"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format\",\n             name: \"John Doe\",\n             role: \"CEO, TechCorp\"\n           },\n           {\n             rating: 5,\n              content: \"Amazing customer support and intuitive design. Highly recommend to anyone looking for quality.\",\n             avatar: \"https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format\",\n             name: \"Sarah Johnson\",\n             role: \"Product Manager\"\n           },\n           {\n             rating: 4,\n             content: \"Great value for money. The features are exactly what we needed for our growing business.\",\n             avatar: \"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format\",\n             name: \"Mike Chen\",\n             role: \"Startup Founder\"\n           }\n         ]} \n       />\n    </div>\n  );\n}\n"
             }
           },
           {

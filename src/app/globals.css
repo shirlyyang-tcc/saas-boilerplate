@@ -14,7 +14,7 @@
     --foreground-dark: 0 0% 100%; /* Dark theme foreground color #FFFFFF */
     /* Theme color variables */
     --primary: 260 51% 48%; /* Primary color #673AB7 */
-    --primary-dark: 257 59% 42%; /* Dark primary #512DA8 */
+    --primary-dark: 257 59% 60%; /* Dark primary #512DA8 */
     --primary-foreground: 0 0% 100%; /* Text/icon color #FFFFFF */
     --primary-foreground-dark: 0 0% 100%; /* Dark theme text/icon color */
     --secondary: 257 44% 85%; /* Light primary #D1C4E9 */

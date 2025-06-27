@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Dictionary } from '@/lib/dictionaries'
 import { getHighlightedText } from '@/lib/text-highlight'
 
-// 布局类型定义
+// Layout type definitions
 type HeroLayout = 'left' | 'center' | 'right'
 
 interface HeroProps {
@@ -16,7 +16,7 @@ interface HeroProps {
   layout?: HeroLayout
 }
 
-// 根据布局获取对应的样式类
+// Get corresponding style classes based on layout
 const getLayoutClasses = (layout: HeroLayout) => {
   const baseClasses = {
     container: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
@@ -39,7 +39,7 @@ const getLayoutClasses = (layout: HeroLayout) => {
         subtitle: "text-left max-w-2xl",
         buttons: "flex flex-col sm:flex-row gap-4 justify-start",
         socialProof: "flex flex-col sm:flex-row items-start justify-start gap-8 text-sm text-muted-foreground",
-        image: "mt-16 lg:mt-24 text-right" // 图片区域右对齐以平衡左对齐的文字
+        image: "mt-16 lg:mt-24 text-right" // Image area right-aligned to balance left-aligned text
       }
     case 'right':
       return {
@@ -50,7 +50,7 @@ const getLayoutClasses = (layout: HeroLayout) => {
         subtitle: "text-right max-w-2xl ml-auto",
         buttons: "flex flex-col sm:flex-row gap-4 justify-end",
         socialProof: "flex flex-col sm:flex-row items-end justify-end gap-8 text-sm text-muted-foreground",
-        image: "mt-16 lg:mt-24 text-left" // 图片区域左对齐以平衡右对齐的文字
+        image: "mt-16 lg:mt-24 text-left" // Image area left-aligned to balance right-aligned text
       }
     case 'center':
     default:
@@ -71,28 +71,28 @@ export function Hero({ dict, params, layout = 'center' }: HeroProps) {
 
   return (
     <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
-      {/* 网格背景层 */}
+              {/* Grid background layer */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-background/50 to-background/80"></div>
       </div>
 
-      {/* 几何动态背景 */}
+              {/* Geometric dynamic background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* 大圆形 */}
+                  {/* Large circle */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full animate-float opacity-60"></div>
         <div className="absolute top-40 right-20 w-24 h-24 bg-accent/15 rounded-full animate-pulse opacity-50" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-primary/8 rounded-full animate-bounce opacity-40" style={{ animationDelay: '2s' }}></div>
         
-        {/* 几何形状 */}
+                  {/* Geometric shapes */}
         <div className="absolute top-32 right-1/3 w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 transform rotate-45 animate-spin-slow opacity-30"></div>
         <div className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-to-tr from-accent/15 to-primary/15 transform rotate-12 animate-float opacity-40" style={{ animationDelay: '3s' }}></div>
         
-        {/* 三角形 */}
+                  {/* Triangle */}
         <div className="absolute top-60 left-1/3 w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-primary/20 animate-float opacity-50" style={{ animationDelay: '1.5s' }}></div>
         <div className="absolute bottom-40 right-1/4 w-0 h-0 border-l-6 border-r-6 border-b-12 border-l-transparent border-r-transparent border-b-accent/25 animate-pulse opacity-40" style={{ animationDelay: '2.5s' }}></div>
       
-        {/* 移动的粒子效果 */}
+                  {/* Moving particle effects */}
         <div className="absolute top-1/4 left-10 w-1 h-1 bg-primary rounded-full animate-drift opacity-70"></div>
         <div className="absolute top-1/2 right-16 w-1 h-1 bg-accent rounded-full animate-drift-reverse opacity-60" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-primary/80 rounded-full animate-drift opacity-50" style={{ animationDelay: '3s' }}></div>

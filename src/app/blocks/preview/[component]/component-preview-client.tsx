@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, PrimaryButton, GradientButton, OutlineButton, LinkButton } from "@/components/ui/button";
+import { Button, PrimaryButton, GradientButton, LinkButton } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FeatureCard, HeroFeatureCard, DetailedFeatureCard, CompactFeatureCard, MinimalFeatureCard } from "@/components/ui/feature-card";
@@ -11,7 +11,6 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Features } from "@/components/sections/features";
 import { Pricing } from "@/components/ui/pricing";
-import { Testimonials } from "@/components/sections/testimonials";
 import { FAQ } from "@/components/sections/faq";
 
 import { BlogCard } from "@/components/ui/blog-card";
@@ -21,12 +20,13 @@ import { CTASection, PrimaryCTA, GradientCTA, MinimalCTA } from "@/components/se
 import { StatsSection, CompanyStats, BusinessMetrics, ProductStats } from "@/components/ui/stats-section";
 import { ContactForm, CompactContactForm, MinimalContactForm, SupportContactForm, ContactFormData } from "@/components/ui/contact-form";
 import { Users, Globe, Clock, Star, TrendingUp, Shield, Zap, Database, Settings, Rocket, Lock, Code, Headphones, Target, BookOpen, BarChart3 } from "lucide-react";
+import { TestimonialsGrid } from "@/components/ui/testimonials-grid";
 
 interface ComponentPreviewClientProps {
   component: string;
 }
 
-// 组件映射表
+// Component mapping table
 const componentMap = {
   // UI Components
   button: () => (
@@ -38,7 +38,6 @@ const componentMap = {
           <div className="flex flex-wrap gap-4">
             <PrimaryButton>Primary Button</PrimaryButton>
             <GradientButton>Gradient Button</GradientButton>
-            <OutlineButton>Outline Button</OutlineButton>
             <LinkButton>Link Button</LinkButton>
           </div>
         </div>
@@ -50,7 +49,6 @@ const componentMap = {
             <Button variant="default">Default</Button>
             <Button variant="primary">Primary</Button>
             <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Outline</Button>
             <Button variant="ghost">Ghost</Button>
             <Button variant="link">Link</Button>
           </div>
@@ -547,16 +545,64 @@ const componentMap = {
   ),
   
   pricing: () => (
-    <div className="bg-background min-h-screen">
-      <Pricing />
+    <div className="bg-background min-h-screen py-10">
+      <Pricing dict={{
+        pricing: {
+          mostPopular: "Most Chosen",
+          plans: [
+            {
+              name: "Basic",
+              description: "For small teams and individual users",
+              price: "$10",
+              period: "month",
+              popular: false,
+              features: ["1000 API calls", "1000 API calls", "1000 API calls", "1000 API calls", "1000 API calls"],
+              buttonText: "Get Started"
+            },
+            {
+              name: "Pro",
+              description: "For large teams and enterprise users",
+              price: "$100",
+              period: "month",
+              popular: true,
+              features: ["1000 API calls", "1000 API calls", "1000 API calls", "1000 API calls", "1000 API calls"],
+              buttonText: "Get Started"
+            }
+          ]
+        }
+      }} />
     </div>
   ),
   
   testimonials: () => (
     <div className="bg-background min-h-screen">
-      <Testimonials />
-    </div>
-  ),
+      <TestimonialsGrid 
+          testimonials={[
+           {
+             rating: 5,
+             content: "This product has completely transformed our workflow. The team is more productive than ever!",
+             avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format",
+             name: "John Doe",
+             role: "CEO, TechCorp"
+           },
+           {
+             rating: 5,
+             content: "Amazing customer support and intuitive design. Highly recommend to anyone looking for quality.",
+             avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face&auto=format",
+             name: "Sarah Johnson",
+             role: "Product Manager"
+           },
+           {
+             rating: 4,
+             content: "Great value for money. The features are exactly what we needed for our growing business.",
+             avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format",
+             name: "Mike Chen",
+             role: "Startup Founder"
+           }
+         ]} 
+       />
+      </div>
+    ),
   
   faq: () => (
     <div className="bg-background min-h-screen">
@@ -871,7 +917,7 @@ const componentMap = {
   },
 
   "case-showcase-grid": () => {
-    // 示例案例数据
+    // Sample case data
     const sampleCases = [
       {
         slug: "youphoto-ai",
@@ -939,7 +985,7 @@ const componentMap = {
       }
     ];
 
-    // 示例字典数据
+    // Sample dictionary data
     const sampleDict = {
       cases: {
         viewDetails: "View Details",
@@ -972,7 +1018,7 @@ const componentMap = {
 };
 
 export function ComponentPreviewClient({ component }: ComponentPreviewClientProps) {
-  // 检查组件是否存在
+  // Check if component exists
   if (!componentMap[component as keyof typeof componentMap]) {
     return (
       <div className="p-8 bg-background min-h-screen text-center">
@@ -982,11 +1028,11 @@ export function ComponentPreviewClient({ component }: ComponentPreviewClientProp
     );
   }
   
-  // 渲染对应的组件
+  // Render the corresponding component
   const ComponentRenderer = componentMap[component as keyof typeof componentMap];
   
   return <ComponentRenderer />;
 }
 
-// 导出组件列表，供静态生成使用
+// Export component list for static generation
 export const componentList = Object.keys(componentMap); 

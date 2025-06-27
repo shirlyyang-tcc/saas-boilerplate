@@ -15,7 +15,7 @@ export default async function AboutPage({
 }) {
   const dict = await getDictionary(params.lang);
 
-  // 使用dictionary中的values数据
+  // Use values data from dictionary
   const values = [
     {
       icon: Target,
@@ -39,7 +39,7 @@ export default async function AboutPage({
     }
   ]
 
-  // 使用dictionary中的team数据
+  // Use team data from dictionary
   const team = dict.about.team;
 
   return (

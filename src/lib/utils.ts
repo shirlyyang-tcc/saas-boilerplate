@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: Date | string): string {
-  // 确保使用UTC时间避免时区差异
+  // Ensure using UTC time to avoid timezone differences
   const d = typeof date === 'string' ? new Date(date + 'T00:00:00.000Z') : date;
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',

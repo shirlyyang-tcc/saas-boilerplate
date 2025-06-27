@@ -11,17 +11,17 @@ interface FooterProps {
 }
 
 export function Footer({ dict }: FooterProps) {
-  const [currentYear, setCurrentYear] = useState(2024) // 默认年份，避免hydration错误
+  const [currentYear, setCurrentYear] = useState(2024) // Default year to avoid hydration errors
   const pathname = usePathname()
   
   useEffect(() => {
     setCurrentYear(new Date().getFullYear())
   }, [])
   
-  // 从路径中提取当前语言
+  // Extract current language from path
   const currentLang = pathname.split('/')[1] || 'en'
   
-  // 使用默认值，如果没有提供 dict
+  // Use default values if dict is not provided
   const siteInfo = dict?.site || {
     name: "SaaS Starter",
     description: "A modern SaaS starter template",
@@ -31,7 +31,7 @@ export function Footer({ dict }: FooterProps) {
   const socialLinks = dict?.social || []
   const footerConfig = dict?.footer || { sections: [] }
   
-  // 为导航链接添加语言前缀
+  // Add language prefix to navigation links
   const getLocalizedHref = (href: string) => {
     if (href === '/') {
       return `/${currentLang}`

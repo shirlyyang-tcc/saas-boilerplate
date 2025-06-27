@@ -154,7 +154,7 @@ export function StatsSection({
   );
 }
 
-// 预设的统计组件变体 - 现在接收dictionary数据
+// Preset statistics component variants - now receives dictionary data
 export function CompanyStats({ 
   stats,
   className = "" 
@@ -168,7 +168,7 @@ export function CompanyStats({
   }>;
   className?: string;
 }) {
-  // 如果没有传入stats，使用默认值作为后备
+  // Use default values as fallback if no stats provided
   const defaultStats = [
     { value: "250+", label: "Happy Customers", color: "primary" },
     { value: "50+", label: "Countries Served", color: "primary" },
@@ -203,7 +203,7 @@ export function BusinessMetrics({
   }>;
   className?: string;
 }) {
-  // 如果没有传入stats，使用默认值作为后备
+  // Use default values as fallback if no stats provided
   const defaultStats = [
     { value: "500", suffix: "K+", label: "Active Users", color: "primary" },
     { value: "150", suffix: "+", label: "Integrations", color: "secondary" },
@@ -241,7 +241,7 @@ export function ProductStats({
   }>;
   className?: string;
 }) {
-  // 如果没有传入数据，使用默认值作为后备
+  // Use default values as fallback if no data provided
   const defaultTitle = "Trusted by thousands";
   const defaultStats = [
     { value: "1M+", label: "Downloads", color: "primary" },

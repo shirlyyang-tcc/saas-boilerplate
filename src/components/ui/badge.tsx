@@ -89,7 +89,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(({
 })
 Badge.displayName = "Badge"
 
-// 预设徽章组合
+// Preset badge combinations
 export const PrimaryBadge = React.forwardRef<HTMLDivElement, Omit<BadgeProps, 'variant'>>(
   (props, ref) => <Badge variant="primary" {...props} ref={ref} />
 )

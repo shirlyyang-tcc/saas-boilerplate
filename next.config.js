@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // 为了支持静态导出的动态路由，需要确保所有页面都被生成
+  // To support dynamic routes for static export, ensure all pages are generated
   generateBuildId: async () => {
     return 'static-build-id'
   },

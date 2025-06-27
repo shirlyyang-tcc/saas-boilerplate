@@ -7,7 +7,7 @@ interface PreviewPageProps {
   };
 }
 
-// 所有可用的组件列表 - 与 component-preview-client.tsx 中的 componentMap 保持同步
+// All available components list - keep in sync with componentMap in component-preview-client.tsx
 const AVAILABLE_COMPONENTS = [
   'button',
   'card', 
@@ -35,7 +35,7 @@ const AVAILABLE_COMPONENTS = [
 export default function ComponentPreview({ params }: PreviewPageProps) {
   const { component } = params;
   
-  // 检查组件是否存在于可用组件列表中
+  // Check if component exists in available components list
   if (!AVAILABLE_COMPONENTS.includes(component as any)) {
     notFound();
   }
@@ -43,7 +43,7 @@ export default function ComponentPreview({ params }: PreviewPageProps) {
   return <ComponentPreviewClient component={component} />;
 }
 
-// 生成静态参数 - 从可用组件列表自动获取所有组件
+// Generate static parameters - automatically get all components from available components list
 export async function generateStaticParams() {
   return AVAILABLE_COMPONENTS.map((component) => ({
     component,

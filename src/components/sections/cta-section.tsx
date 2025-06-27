@@ -97,9 +97,9 @@ export function CTASection({
   };
 
   const getDefaultButtonVariant = (index: number): CTAButton["variant"] => {
-    // 根据 CTA 变体和按钮位置决定默认变体
+    // Determine default variant based on CTA variant and button position
     if (variant === "minimal") {
-      return index === 0 ? "default" : "outline";
+      return index === 0 ? "default" : "secondary";
     } else if (variant === "gradient" || variant === "primary") {
       // return index === 0 ? "secondary" : "outline";
       return "secondary"
@@ -183,7 +183,7 @@ export function CTASection({
   );
 }
 
-// 预设的 CTA 变体
+// Preset CTA variants
 export function PrimaryCTA({ 
   title, 
   description, 
@@ -201,7 +201,7 @@ export function PrimaryCTA({
   primaryHref?: string;
   secondaryHref?: string;
   className?: string;
-  dict?: any; // 简化类型，避免循环引用
+  dict?: any; // Simplified type to avoid circular references
 }) {
   const defaultPrimaryText = primaryText || dict?.cta?.getStarted || "Get Started";
   const defaultSecondaryText = secondaryText || dict?.cta?.learnMore || "Learn More";
@@ -237,7 +237,7 @@ export function GradientCTA({
   className?: string;
   icon?: LucideIcon;
   trustIndicators?: TrustIndicator[];
-  dict?: any; // 简化类型，避免循环引用
+  dict?: any; // Simplified type to avoid circular references
 }) {
   const defaultPrimaryText = primaryText || dict?.cta?.startFreeTrial || "Start Free Trial";
   const defaultSecondaryText = secondaryText || dict?.cta?.scheduleDemo || "Schedule Demo";
@@ -271,7 +271,7 @@ export function MinimalCTA({
   buttonText?: string;
   href?: string;
   className?: string;
-  dict?: any; // 简化类型，避免循环引用
+  dict?: any; // Simplified type to avoid circular references
 }) {
   const defaultButtonText = buttonText || dict?.cta?.getStarted || "Get Started";
   
