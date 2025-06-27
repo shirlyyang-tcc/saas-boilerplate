@@ -120,7 +120,7 @@ export default async function AboutPage({
         </SectionLayout>
 
         {/* Stats Section */}
-        <CompanyStatsI18n stats={dict.stats.companyStats} />
+        <CompanyStatsI18n stats={dict.shared.companyStats} />
       </div>
     </Layout>
   )

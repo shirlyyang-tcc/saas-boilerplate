@@ -47,33 +47,66 @@ export interface Dictionary {
     }>;
   };
   common: {
-    learnMore: string;
-    getStarted: string;
-    readMore: string;
-    backToHome: string;
-    loading: string;
-    error: string;
-    contactSales: string;
-    startFreeTrial: string;
-    perMonth: string;
-    unlimited: string;
-    popular: string;
-    yes: string;
-    no: string;
-    switchLanguage: string;
-    toggleTheme: string;
+    buttons: {
+      learnMore: string;
+      getStarted: string;
+      readMore: string;
+      contactSales: string;
+      startFreeTrial: string;
+      viewDocumentation: string;
+      scheduleDemo: string;
+      getStartedFree: string;
+      getStartedNow: string;
+      getStartedToday: string;
+      viewDemo: string;
+      sendMessage: string;
+    };
+    navigation: {
+      backToHome: string;
+      backToCases: string;
+    };
+    states: {
+      loading: string;
+      sending: string;
+      error: string;
+    };
+    pricing: {
+      perMonth: string;
+      unlimited: string;
+      popular: string;
+    };
+    common: {
+      yes: string;
+      no: string;
+      switchLanguage: string;
+      toggleTheme: string;
+    };
+  };
+  shared: {
+    heroFeatures: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+    formSubjects: string[];
+    supportSubjects: string[];
+    commonFaqs: Array<{
+      question: string;
+      answer: string;
+    }>;
+    companyStats: Array<{
+      value: string;
+      label: string;
+    }>;
   };
   home: {
     hero: {
       title: string;
       subtitle: string;
-      cta: string;
     };
     bottomCta: {
       title: string;
       description: string;
-      getStartedNow: string;
-      viewDocumentation: string;
       trustIndicators: string[];
     };
   };
@@ -81,8 +114,6 @@ export interface Dictionary {
     badge: string;
     title: string;
     subtitle: string;
-    getStartedFree: string;
-    viewDemo: string;
     socialProof: {
       trustedByDevelopers: string;
       readyComponents: string;
@@ -111,7 +142,6 @@ export interface Dictionary {
     bottomCta: {
       title: string;
       description: string;
-      getStarted: string;
       viewDocs: string;
     };
     info: {
@@ -137,7 +167,6 @@ export interface Dictionary {
       description: string;
       thankYouMessage: string;
       errorMessage: string;
-      subjects: string[];
     };
   };
   
@@ -158,17 +187,8 @@ export interface Dictionary {
     };
     optional: string;
     required: string;
-    sending: string;
-    sendMessage: string;
   };
-  cta: {
-    getStarted: string;
-    learnMore: string;
-    startFreeTrial: string;
-    scheduleDemo: string;
-    viewDocumentation: string;
-    contactSales: string;
-  };
+
   features: {
     title: string;
     description: string;
@@ -190,13 +210,6 @@ export interface Dictionary {
       }>;
       ctaTitle: string;
       ctaDescription: string;
-      ctaPrimaryText: string;
-      ctaSecondaryText: string;
-      heroFeatures: Array<{
-        icon: string;
-        title: string;
-        description: string;
-      }>;
       featureCategories: Array<{
         category: string;
         description: string;
@@ -213,17 +226,7 @@ export interface Dictionary {
         description: string;
       }>;
     };
-    hero: Array<{
-      icon: string;
-      title: string;
-      description: string;
-    }>;
     main: Array<{
-      icon: string;
-      title: string;
-      description: string;
-    }>;
-    support: Array<{
       icon: string;
       title: string;
       description: string;
@@ -384,10 +387,7 @@ export interface Dictionary {
       }>;
     };
   };
-  contactForm: {
-    defaultSubjects: string[];
-    supportSubjects: string[];
-  };
+
   blog: {
     pageTitle: string;
     pageSubtitle: string;

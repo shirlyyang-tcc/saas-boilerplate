@@ -15,7 +15,7 @@ export default async function FeaturesPage({
   const dict = await getDictionary(params.lang);
   
   // Get data from dictionary
-  const heroFeatures = dict.features.page.heroFeatures;
+  const heroFeatures = dict.shared.heroFeatures;
   const featureCategories = dict.features.page.featureCategories;
   const supportFeatures = dict.features.page.supportFeatures;
 
@@ -88,8 +88,8 @@ export default async function FeaturesPage({
       <GradientCTA
         title={dict.features.page.ctaTitle}
         description={dict.features.page.ctaDescription}
-        primaryText={dict.features.page.ctaPrimaryText}
-        secondaryText={dict.features.page.ctaSecondaryText}
+        primaryText={dict.common.buttons.startFreeTrial}
+        secondaryText={dict.common.buttons.scheduleDemo}
         className="bg-primary text-white"
       />
     </Layout>

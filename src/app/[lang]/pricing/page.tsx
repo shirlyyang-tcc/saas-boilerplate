@@ -22,7 +22,7 @@ export default async function PricingPage({
     faq: {
       title: dict.pricing.faqTitle,
       description: dict.pricing.faqDescription,
-      faqs: dict.pricing.faqs,
+      faqs: [...dict.pricing.faqs, ...dict.shared.commonFaqs],
       stillHaveQuestions: "Still have questions? We're here to help!",
       contactSupport: "Contact Support →"
     }
@@ -34,7 +34,7 @@ export default async function PricingPage({
         <div className="max-w-4xl mx-auto">
           <Badge className="mb-4">{dict.pricing.badge}</Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            {dict.pricing.pageTitle.split(' ').map((word, index) => 
+            {dict.pricing.title.split(' ').map((word, index) => 
               word === 'Business' || word === '业务' ? (
                 <span key={index} className="text-primary">{word}</span>
               ) : (

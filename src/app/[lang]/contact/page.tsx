@@ -80,7 +80,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
             <div className="lg:col-span-2">
               <ContactForm 
                 variant="minimal"
-                subjects={dict.contact.form.subjects}
+                subjects={dict.shared.formSubjects}
                 dict={dict}
               />
             </div>
@@ -134,7 +134,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <MinimalCTA
         title={dict.contact.bottomCta.title}
         description={dict.contact.bottomCta.description}
-        buttonText={dict.contact.bottomCta.getStarted}
+        buttonText={dict.common.buttons.getStarted}
         className="mt-24"
         dict={dict}
       />

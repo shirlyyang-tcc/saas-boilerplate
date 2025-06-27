@@ -72,7 +72,7 @@ export default async function CasesPage({
           variant="minimal"
           buttons={[
             {
-              text: dict.cases.getStartedToday,
+              text: dict.common.buttons.getStartedToday,
               href: "#pricing",
               variant: "default",
               size: "lg"

@@ -38,11 +38,11 @@ export default async function HomePage({
         description={dict.home.bottomCta.description}
         buttons={[
           {
-            text: dict.home.bottomCta.getStartedNow,
+            text: dict.common.buttons.getStartedNow,
             variant: "secondary",
           },
           {
-            text: dict.home.bottomCta.viewDocumentation,
+            text: dict.common.buttons.viewDocumentation,
             variant: "secondary",
           },
         ]}

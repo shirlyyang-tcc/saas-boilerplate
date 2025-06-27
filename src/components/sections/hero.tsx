@@ -129,11 +129,11 @@ export function Hero({ dict, params, layout = 'center' }: HeroProps) {
           {/* CTA Buttons */}
           <div className={`${layoutClasses.buttons} mb-12`}>
             <Button size="lg" className="btn-gradient text-white">
-              {dict?.hero?.getStartedFree || "Get Started Free"}
+              {dict?.common?.buttons?.getStartedFree || "Get Started Free"}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg">
-              {dict?.hero?.viewDemo || "View Demo"}
+              {dict?.common?.buttons?.viewDemo || "View Demo"}
             </Button>
           </div>
 

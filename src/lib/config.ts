@@ -179,7 +179,8 @@ export const getPricingComparison = async (locale: Locale = defaultLocale) => {
 
 export const getPricingFAQs = async (locale: Locale = defaultLocale) => {
   const dict = await getDictionary(locale)
-  return dict.pricing.faqs
+  // 返回定价页面特有的FAQ + 共享的常见FAQ
+  return [...dict.pricing.faqs, ...dict.shared.commonFaqs]
 }
 
 export const getMainFeatures = async (locale: Locale = defaultLocale) => {
@@ -189,7 +190,7 @@ export const getMainFeatures = async (locale: Locale = defaultLocale) => {
 
 export const getHeroFeatures = async (locale: Locale = defaultLocale) => {
   const dict = await getDictionary(locale)
-  return dict.features.hero
+  return dict.shared.heroFeatures
 }
 
 export const getFeatureCategories = async (locale: Locale = defaultLocale) => {
