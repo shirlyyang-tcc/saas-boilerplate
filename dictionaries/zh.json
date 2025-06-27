@@ -1,0 +1,919 @@
+{
+  "site": {
+    "name": "SaaS 启动器",
+    "description": "完整的 SaaS 启动模板，帮助您比以往更快地构建和启动下一个产品。",
+    "url": "https://saas-starter.com",
+    "email": "hello@saas-starter.com",
+    "author": "SaaS 启动器团队",
+    "logo": "SaaS 启动器",
+    "copyright": "SaaS 启动器。保留所有权利。",
+    "tagline": "为全球开发者用 ❤️ 制作"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "Github"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com",
+      "icon": "Twitter"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com",
+      "icon": "Linkedin"
+    },
+    {
+      "name": "邮箱",
+      "url": "mailto:hello@saas-starter.com",
+      "icon": "Mail"
+    }
+  ],
+  "nav": {
+    "home": "首页",
+    "features": "功能特性",
+    "pricing": "价格",
+    "blog": "博客",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "cases": "案例",
+    "blocks": "组件"
+  },
+  "header": {
+    "navigation": [
+      { "name": "首页", "href": "/" },
+      { "name": "功能特性", "href": "/features" },
+      { "name": "价格", "href": "/pricing" },
+      { "name": "关于我们", "href": "/about" },
+      { "name": "博客", "href": "/blog" },
+      { "name": "案例", "href": "/cases" },
+      { "name": "联系我们", "href": "/contact" },
+      { "name": "组件", "href": "/blocks" }
+    ],
+    "cta": {
+      "text": "立即开始",
+      "href": "/pricing"
+    }
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "产品",
+        "links": [
+          { "name": "功能特性", "href": "/features" },
+          { "name": "价格", "href": "/pricing" },
+          { "name": "组件", "href": "/blocks" },
+          { "name": "案例研究", "href": "/cases" },
+          { "name": "博客", "href": "/blog" }
+        ]
+      },
+      {
+        "title": "公司",
+        "links": [
+          { "name": "关于我们", "href": "/about" },
+          { "name": "联系我们", "href": "/contact" },
+          { "name": "隐私政策", "href": "/privacy" },
+          { "name": "服务条款", "href": "/terms" }
+        ]
+      }
+    ]
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "getStarted": "立即开始",
+    "readMore": "阅读更多",
+    "backToHome": "返回首页",
+    "loading": "加载中...",
+    "error": "出现了一些错误",
+    "contactSales": "联系销售",
+    "startFreeTrial": "开始免费试用",
+    "perMonth": "每月",
+    "unlimited": "无限制",
+    "popular": "热门",
+    "yes": "是",
+    "no": "否",
+    "switchLanguage": "切换语言",
+    "toggleTheme": "切换主题"
+  },
+  "root": {
+    "detectingLanguage": "检测语言中..."
+  },
+  "contact": {
+    "pageTitle": "联系我们的团队",
+    "pageSubtitle": "对我们的 SaaS 启动模板有疑问？需要技术支持？想讨论定制解决方案？我们随时为您提供帮助！",
+    "getInTouch": "联系我们",
+    "description": "我们随时为您提供帮助，解答您可能遇到的任何问题。期待收到您的来信！",
+    "quickLinks": {
+      "title": "快速链接",
+      "description": "查找常见问题的答案",
+      "viewFeatures": "查看所有功能",
+      "viewPricing": "查看价格方案",
+      "browseComponents": "浏览组件"
+    },
+    "socialProof": {
+      "title": "加入 10,000+ 开发者",
+      "description": "使用我们的 SaaS 启动模板构建令人惊叹的产品"
+    },
+    "bottomCta": {
+      "title": "准备开始了吗？",
+      "description": "不要让技术复杂性拖慢您的进度。让您的 SaaS 在几小时内而不是几个月内启动并运行。",
+      "getStarted": "立即开始",
+      "viewDocs": "查看文档"
+    },
+    "info": {
+      "email": {
+        "title": "发送邮件",
+        "description": "随时给我们发送邮件"
+      },
+      "phone": {
+        "title": "致电我们",
+        "description": "周一至周五上午8点至下午6点"
+      },
+      "address": {
+        "title": "拜访我们",
+        "description": "欢迎到我们的办公室来打招呼"
+      },
+      "hours": {
+        "title": "营业时间",
+        "description": "我们团队的服务时间"
+      }
+    },
+    "form": {
+      "title": "联系我们",
+      "description": "我们很乐意听到您的声音。请给我们留言，我们会尽快回复。",
+      "thankYouMessage": "谢谢您！我们已收到您的消息，将在24小时内回复您。",
+      "errorMessage": "抱歉，发送消息时出现错误。请重试。",
+      "subjects": [
+        "一般咨询",
+        "技术支持",
+        "销售问题",
+        "合作伙伴",
+        "错误报告",
+        "功能请求",
+        "其他"
+      ]
+    }
+  },
+  
+  "form": {
+    "labels": {
+      "fullName": "姓名",
+      "emailAddress": "电子邮箱",
+      "company": "公司",
+      "subject": "主题",
+      "message": "消息"
+    },
+    "placeholders": {
+      "fullName": "请输入您的姓名",
+      "email": "您的邮箱@example.com",
+      "company": "您的公司名称",
+      "selectSubject": "请选择主题",
+      "message": "请告诉我们如何为您提供帮助..."
+    },
+    "optional": "（可选）",
+    "required": "*",
+    "sending": "发送中...",
+    "sendMessage": "发送消息"
+  },
+  "cta": {
+    "getStarted": "立即开始",
+    "learnMore": "了解更多",
+    "startFreeTrial": "开始免费试用",
+    "scheduleDemo": "预约演示",
+    "viewDocumentation": "查看文档",
+    "contactSales": "联系销售"
+  },
+  "hero": {
+    "badge": "🚀 几小时内发布您的 SaaS，而非几个月",
+    "title": "使用我们的启动模板构建您的下一个 SaaS 产品",
+    "subtitle": "完整的 SaaS 启动模板，包含身份验证、支付、仪表板和快速启动所需的所有组件。",
+    "getStartedFree": "免费开始",
+    "viewDemo": "查看演示",
+    "socialProof": {
+      "trustedByDevelopers": "受到 250+ 开发者信赖",
+      "readyComponents": "30+ 现成组件",
+      "shipInMinutes": "5 分钟内发布"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "更快地构建您的 SaaS 产品",
+      "subtitle": "一个现代化、响应式且功能丰富的 SaaS 网站模板，助力您的下一个项目快速启动。",
+      "cta": "立即开始"
+    },
+    "bottomCta": {
+      "title": "准备发布您的 SaaS 产品了吗？",
+      "description": "加入成千上万成功推出 SaaS 产品的开发者行列。立即开始， 不用几个月，几小时就能发布。",
+      "getStartedNow": "立即开始",
+      "viewDocumentation": "查看文档",
+      "trustIndicators": [
+        "即时下载",
+        "30天退款保证",
+        "终身更新"
+      ]
+    }
+  },
+  "features": {
+    "title": "快速发布您所需的一切",
+    "description": "我们的 SaaS 启动模板包含了您构建和发布产品所需的所有功能和组件，助您快速启动。",
+    "andMoreText": "还有更多...",
+    "componentsLinkText": "30+ 现成组件等您使用",
+    "page": {
+      "badge": "功能特性",
+      "title": "成功所需的一切",
+      "subtitle": "强大的功能旨在简化您的工作流程并加速业务增长。",
+      "supportBadge": "支持与成功",
+      "supportTitle": "我们在这里帮助您成功",
+      "supportSubtitle": "全面的支持和资源，确保您的成功",
+      "statsTitle": "深受行业领导者信赖",
+      "statsDescription": "数字说明一切",
+      "stats": [
+        { "value": "99.9", "suffix": "%", "label": "正常运行时间保证" },
+        { "value": "10", "suffix": "M+", "label": "活跃用户" },
+        { "value": "150", "suffix": "+", "label": "服务国家" },
+        { "value": "24/7", "label": "专家支持" }
+      ],
+      "ctaTitle": "准备体验这些功能了吗？",
+      "ctaDescription": "立即开始免费试用，看看我们的功能如何改变您的业务。",
+      "ctaPrimaryText": "开始免费试用",
+      "ctaSecondaryText": "安排演示",
+      "heroFeatures": [
+        {
+          "icon": "Zap",
+          "title": "闪电般快速",
+          "description": "专为速度而构建，具有优化的性能和即时加载时间"
+        },
+        {
+          "icon": "Shield",
+          "title": "企业级安全",
+          "description": "银行级安全性，具有端到端加密和合规性"
+        },
+        {
+          "icon": "Globe",
+          "title": "全球规模",
+          "description": "全球 CDN 和基础设施，实现无缝的全球交付"
+        },
+        {
+          "icon": "BarChart3",
+          "title": "高级分析",
+          "description": "深入洞察和实时数据，推动您的业务向前发展"
+        }
+      ],
+      "featureCategories": [
+        {
+          "category": "核心平台",
+          "description": "为您的业务提供动力的基本功能",
+          "features": [
+            {
+              "icon": "Database",
+              "title": "智能数据管理",
+              "description": "智能数据组织，具有自动备份和跨所有设备的实时同步功能。",
+              "benefits": ["自动备份", "实时同步", "数据加密", "版本控制"]
+            },
+            {
+              "icon": "Users",
+              "title": "团队协作",
+              "description": "无缝协作工具，具有基于角色的权限和实时编辑功能。",
+              "benefits": ["基于角色的访问", "实时编辑", "评论系统", "活动跟踪"]
+            },
+            {
+              "icon": "Settings",
+              "title": "工作流自动化",
+              "description": "自动化重复性任务并创建自定义工作流以提高生产力。",
+              "benefits": ["自定义工作流", "任务自动化", "触发条件", "集成规则"]
+            },
+            {
+              "icon": "BarChart3",
+              "title": "高级分析",
+              "description": "全面的分析仪表板，具有自定义报告和数据可视化功能。",
+              "benefits": ["自定义仪表板", "实时指标", "导出报告", "数据洞察"]
+            }
+          ]
+        },
+        {
+          "category": "用户体验",
+          "description": "专为最佳用户体验而设计的功能",
+          "features": [
+            {
+              "icon": "Smartphone",
+              "title": "移动响应式",
+              "description": "在所有设备上完美体验，支持原生移动应用。",
+              "benefits": ["响应式设计", "移动应用", "离线支持", "触摸优化"]
+            },
+            {
+              "icon": "Palette",
+              "title": "可自定义界面",
+              "description": "使用主题、布局和自定义品牌选项个性化您的工作空间。",
+              "benefits": ["自定义主题", "布局选项", "品牌颜色", "徽标上传"]
+            },
+            {
+              "icon": "Globe",
+              "title": "多语言支持",
+              "description": "支持 50+ 种语言，具有自动翻译和本地化功能。",
+              "benefits": ["50+ 种语言", "自动翻译", "RTL 支持", "货币格式"]
+            },
+            {
+              "icon": "Clock",
+              "title": "实时更新",
+              "description": "即时通知和实时更新使每个人保持同步。",
+              "benefits": ["实时通知", "实时同步", "状态更新", "活动信息流"]
+            }
+          ]
+        },
+        {
+          "category": "安全与合规",
+          "description": "企业级安全和合规功能",
+          "features": [
+            {
+              "icon": "Shield",
+              "title": "高级安全",
+              "description": "多层安全性，具有加密、2FA 和高级威胁防护功能。",
+              "benefits": ["端到端加密", "双因子认证", "威胁检测", "审计日志"]
+            },
+            {
+              "icon": "Lock",
+              "title": "访问控制",
+              "description": "细粒度权限和基于角色的访问控制，确保最大安全性。",
+              "benefits": ["基于角色的访问", "权限级别", "IP 限制", "会话管理"]
+            },
+            {
+              "icon": "Target",
+              "title": "合规就绪",
+              "description": "内置 GDPR、HIPAA、SOC 2 和其他标准的合规功能。",
+              "benefits": ["GDPR 合规", "HIPAA 就绪", "SOC 2 认证", "数据驻留"]
+            }
+          ]
+        },
+        {
+          "category": "集成与开发",
+          "description": "使用强大的集成选项连接和扩展",
+          "features": [
+            {
+              "icon": "Code",
+              "title": "API 和 Webhooks",
+              "description": "强大的 REST API 和 webhooks，与您现有的工具无缝集成。",
+              "benefits": ["REST API", "Webhooks", "SDK 库", "API 文档"]
+            },
+            {
+              "icon": "Layers",
+              "title": "第三方集成",
+              "description": "与您已经使用的流行工具和服务的预构建集成。",
+              "benefits": ["100+ 集成", "Zapier 支持", "自定义连接器", "数据同步"]
+            },
+            {
+              "icon": "Rocket",
+              "title": "开发者工具",
+              "description": "全面的开发者工具，包括沙箱环境和测试套件。",
+              "benefits": ["沙箱环境", "测试工具", "代码示例", "开发者支持"]
+            }
+          ]
+        }
+      ],
+      "supportFeatures": [
+        {
+          "icon": "Headphones",
+          "title": "24/7 支持",
+          "description": "我们专家团队提供全天候支持"
+        },
+        {
+          "icon": "Rocket",
+          "title": "入门指导",
+          "description": "引导式设置和个性化入门体验"
+        },
+        {
+          "icon": "Target",
+          "title": "培训",
+          "description": "全面的培训材料和认证计划"
+        }
+      ]
+    },
+    "hero": [
+      {
+        "icon": "Zap",
+        "title": "闪电般快速",
+        "description": "专为速度而生，具有优化的性能和即时加载时间"
+      },
+      {
+        "icon": "Shield",
+        "title": "企业级安全",
+        "description": "银行级安全，具有端到端加密和合规性"
+      },
+      {
+        "icon": "Globe",
+        "title": "全球规模",
+        "description": "全球 CDN 和基础设施，实现无缝的全球交付"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "高级分析",
+        "description": "深入洞察和实时数据，推动您的业务向前发展"
+      }
+    ],
+    "main": [
+      {
+        "icon": "Zap",
+        "title": "闪电般快速",
+        "description": "采用 Next.js 14 构建，针对最大性能进行了优化。您的用户会喜欢这种速度。"
+      },
+      {
+        "icon": "Shield",
+        "title": "默认安全",
+        "description": "从第一天起就内置了身份验证、授权和安全最佳实践。"
+      },
+      {
+        "icon": "Palette",
+        "title": "完全可定制",
+        "description": "简单的主题系统，支持明暗模式。让它完美匹配您的品牌。"
+      },
+      {
+        "icon": "Code",
+        "title": "开发者友好",
+        "description": "清洁的代码、TypeScript 支持和全面的文档，让您快速上手。"
+      },
+      {
+        "icon": "Database",
+        "title": "数据库就绪",
+        "description": "预配置了 Prisma ORM，支持 PostgreSQL、MySQL 和 SQLite。"
+      },
+      {
+        "icon": "Globe",
+        "title": "SEO 优化",
+        "description": "内置 SEO 优化、元标签和结构化数据，提高搜索排名。"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "移动优先",
+        "description": "响应式设计，在所有设备和屏幕尺寸上都能完美工作。"
+      },
+      {
+        "icon": "BarChart3",
+        "title": "内置分析",
+        "description": "通过集成的分析仪表板跟踪用户行为和业务指标。"
+      },
+      {
+        "icon": "Lock",
+        "title": "GDPR 合规",
+        "description": "隐私优先的方法，具有 GDPR 合规功能和 cookie 管理。"
+      }
+    ],
+    "support": [
+      {
+        "icon": "Headphones",
+        "title": "24/7 支持",
+        "description": "我们专家团队提供全天候支持"
+      },
+      {
+        "icon": "Rocket",
+        "title": "入门指导",
+        "description": "引导设置和个性化入门体验"
+      },
+      {
+        "icon": "Target",
+        "title": "培训",
+        "description": "全面的培训材料和认证程序"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "简单透明的定价",
+    "description": "选择适合您需求的完美计划。所有计划都包括我们完整的 SaaS 启动模板，可终身访问。",
+    "badge": "定价方案",
+    "pageTitle": "为您的业务选择完美方案",
+    "pageSubtitle": "免费开始，随着业务增长而扩展。所有方案都包含我们的核心功能，无隐藏费用。",
+    "mostPopular": "最受欢迎",
+    "faqTitle": "常见问题",
+    "faqDescription": "关于我们定价的所有信息",
+    "ctaTitle": "准备开始了吗？",
+    "ctaDescription": "加入成千上万满意客户的行列，立即开始免费试用。",
+    "startFreeTrial": "开始免费试用",
+    "contactSales": "联系销售",
+    "plans": [
+      {
+        "name": "入门版",
+        "price": "$9",
+        "originalPrice": "$49",
+        "period": "每月",
+        "description": "非常适合刚开始的个人和小团队",
+        "features": [
+          "最多 5 个项目",
+          "10GB 存储",
+          "基础分析",
+          "邮件支持",
+          "标准模板",
+          "基础集成"
+        ],
+        "limitations": [
+          "高级分析",
+          "优先支持",
+          "自定义品牌",
+          "API 访问"
+        ],
+        "popular": false,
+        "buttonText": "开始免费试用",
+        "buttonVariant": "outline"
+      },
+      {
+        "name": "专业版",
+        "price": "$29",
+        "originalPrice": "$99",
+        "period": "每月",
+        "description": "适合成长中的企业和专业团队",
+        "features": [
+          "无限项目",
+          "100GB 存储",
+          "高级分析",
+          "优先支持",
+          "自定义模板",
+          "所有集成",
+          "团队协作",
+          "自定义品牌"
+        ],
+        "limitations": [
+          "白标解决方案",
+          "专属客户经理"
+        ],
+        "popular": true,
+        "buttonText": "立即开始",
+        "buttonVariant": "default"
+      },
+      {
+        "name": "企业版",
+        "price": "$99",
+        "originalPrice": "$199",
+        "period": "每月",
+        "description": "适合有高级需求的大型组织",
+        "features": [
+          "专业版的所有功能",
+          "无限存储",
+          "白标解决方案",
+          "专属客户经理",
+          "自定义集成",
+          "SLA 保证",
+          "高级安全",
+          "API 访问",
+          "自定义培训"
+        ],
+        "limitations": [],
+        "popular": false,
+        "buttonText": "联系销售",
+        "buttonVariant": "outline"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "我可以随时更改我的计划吗？",
+        "answer": "是的，您可以随时升级或降级您的计划。更改将在下一个计费周期中反映。"
+      },
+      {
+        "question": "有免费试用吗？",
+        "answer": "是的，我们为所有计划提供 14 天免费试用。开始时不需要信用卡。"
+      },
+      {
+        "question": "您接受哪些付款方式？",
+        "answer": "我们接受所有主要信用卡、PayPal 和企业版的银行转账。"
+      },
+      {
+        "question": "我可以随时取消订阅吗？",
+        "answer": "当然可以。您可以随时取消订阅，不收取任何取消费用。"
+      },
+      {
+        "question": "年度计费有折扣吗？",
+        "answer": "是的，如果您选择年度付费而不是月度付费，我们提供 20% 的折扣。"
+      },
+      {
+        "question": "我的数据安全吗？",
+        "answer": "是的，我们使用企业级安全措施，包括加密、定期备份和 SOC 2 合规性。"
+      }
+    ],
+    "comparison": {
+      "title": "主要功能对比",
+      "description": "查看套餐间的主要差异",
+      "tableHeaders": {
+        "features": "功能",
+        "starter": "入门版",
+        "professional": "专业版",
+        "enterprise": "企业版"
+      },
+      "planPricing": {
+        "starter": "￥69/月",
+        "professional": "￥199/月",
+        "enterprise": "￥699/月"
+      },
+      "features": [
+        {
+          "category": "核心功能",
+          "items": [
+            {
+              "name": "项目数量",
+              "starter": "最多5个",
+              "professional": "无限制",
+              "enterprise": "无限制"
+            },
+            {
+              "name": "存储空间",
+              "starter": "10GB",
+              "professional": "100GB",
+              "enterprise": "无限制"
+            },
+            {
+              "name": "团队成员",
+              "starter": "1个用户",
+              "professional": "最多10个",
+              "enterprise": "无限制"
+            }
+          ]
+        },
+        {
+          "category": "功能与支持",
+          "items": [
+            {
+              "name": "高级分析",
+              "starter": false,
+              "professional": true,
+              "enterprise": true
+            },
+            {
+              "name": "优先支持",
+              "starter": false,
+              "professional": true,
+              "enterprise": true
+            },
+            {
+              "name": "API访问",
+              "starter": false,
+              "professional": true,
+              "enterprise": true
+            },
+            {
+              "name": "自定义集成",
+              "starter": false,
+              "professional": false,
+              "enterprise": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "about": {
+    "pageTitle": "关于 SaaS 启动器",
+    "pageSubtitle": "我们是一个充满激情的开发者和设计师团队，深知从零开始构建 SaaS 产品的挑战。因此我们创建了这个全面的启动模板，帮助您跳过枯燥的部分，专注于最重要的事情——您独特的产品功能。",
+    "heroTitle": "关于",
+    "heroHighlight": "SaaS 启动器",
+    "storyTitle": "我们的故事",
+    "storyContent": [
+      "一切都始于我们的创始人 Alex 第三次花费数月时间构建相同的身份验证、支付和仪表板组件时的感悟。他意识到每个 SaaS 产品都需要相同的基础功能，但开发者却一直在从头开始重复构建。",
+      "这就是 SaaS 启动器诞生的契机。我们想要创建一个全面的、生产就绪的模板，为开发者节省数月的工作时间，帮助他们更快地推出产品。",
+      "如今，我们自豪地帮助了超过 250+ 名开发者和团队成功推出了他们的 SaaS 产品。我们的模板已经在生产环境中经过实战测试，并持续采用最新的最佳实践进行演进。"
+    ],
+    "valuesTitle": "我们的价值观",
+    "valuesSubtitle": "指导我们做一切事情的原则。",
+    "values": [
+      {
+        "title": "使命驱动",
+        "description": "我们的使命是赋能开发者比以往更快地构建和推出他们的 SaaS 产品。"
+      },
+      {
+        "title": "社区优先",
+        "description": "我们相信构建一个强大的开发者社区，让大家相互支持、共同学习。"
+      },
+      {
+        "title": "创新",
+        "description": "我们不断创新和改进工具，以保持在最新技术和趋势的前沿。"
+      },
+      {
+        "title": "质量",
+        "description": "我们致力于交付您可以信赖的高质量、生产就绪的代码。"
+      }
+    ],
+    "teamTitle": "认识我们的团队",
+    "teamSubtitle": "SaaS 启动器背后的人们。",
+    "team": [
+      {
+        "name": "Alex Johnson",
+        "role": "创始人兼首席执行官",
+        "avatar": "👨‍💻",
+        "bio": "拥有 10+ 年构建 SaaS 产品经验的全栈开发者。"
+      },
+      {
+        "name": "Sarah Chen",
+        "role": "首席设计师",
+        "avatar": "👩‍🎨",
+        "bio": "热衷于创造美观直观用户体验的 UI/UX 专家。"
+      },
+      {
+        "name": "Marcus Rodriguez",
+        "role": "技术负责人",
+        "avatar": "👨‍🔬",
+        "bio": "专注于可扩展性、安全性和性能优化的 DevOps 工程师。"
+      },
+      {
+        "name": "Emily Davis",
+        "role": "社区经理",
+        "avatar": "👩‍💼",
+        "bio": "致力于在全球范围内构建和培育我们的开发者社区。"
+      }
+    ]
+  },
+  "cases": {
+    "pageTitle": "成功案例",
+    "heroTitle": "成功",
+    "heroHighlight": "案例",
+    "pageSubtitle": "了解我们的 SaaS 启动器模板如何帮助公司比以往更快地构建和推出成功的产品。",
+    "shareYourStory": "分享您的成功故事",
+    "shareSubtitle": "有想要展示的项目吗？我们很乐意展示您的成功故事。",
+    "submitYourCase": "提交您的案例",
+    "viewDetails": "查看详情",
+    "keyResult": "关键成果",
+    "ctaTitle": "准备构建您的成功案例吗？",
+    "ctaSubtitle": "加入这些成功的公司，使用我们经过验证的模板推出您的 SaaS 产品。",
+    "getStartedToday": "立即开始",
+    "discussYourProject": "讨论您的项目",
+    "detail": {
+      "backToCases": "返回案例",
+      "theChallenge": "面临挑战",
+      "ourSolution": "解决方案",
+      "keyResults": "关键成果",
+      "technologiesUsed": "使用技术",
+      "cta": {
+        "title": "准备开始您的项目了吗？",
+        "description": "让我们讨论如何帮助您的业务实现类似的成果。",
+        "getInTouch": "联系我们",
+        "viewMoreCases": "查看更多案例"
+      }
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "description": "关于我们 SaaS 启动模板您需要了解的一切。",
+    "stillHaveQuestions": "还有其他问题？我们随时为您提供帮助！",
+    "contactSupport": "联系支持 →",
+    "faqs": [
+      {
+        "question": "SaaS 启动模板包含什么？",
+        "answer": "我们的模板包括一个完整的 Next.js 应用程序，具有身份验证、支付处理、仪表板组件、着陆页、电子邮件模板等等。您可以获得启动 SaaS 产品所需的一切。"
+      },
+      {
+        "question": "我需要支付月费吗？",
+        "answer": "不！这是一次性购买，可终身访问。您可以构建无限项目，没有经常性费用或限制。"
+      },
+      {
+        "question": "我可以自定义设计和品牌吗？",
+        "answer": "当然可以！模板完全可定制。您可以轻松更改颜色、字体、布局并添加自己的品牌。我们包含了一个全面的设计系统，使定制变得简单。"
+      },
+      {
+        "question": "支持哪些付款方式？",
+        "answer": "模板开箱即用地集成了 Stripe，支持信用卡、数字钱包和国际支付。如果需要，您也可以集成其他支付提供商。"
+      },
+      {
+        "question": "代码是否可用于生产？",
+        "answer": "是的！代码遵循行业最佳实践，包括适当的错误处理、安全措施，并针对生产部署进行了优化。许多客户已经成功使用此模板启动。"
+      },
+      {
+        "question": "您提供支持和更新吗？",
+        "answer": "是的，我们提供定期更新，包含新功能、错误修复和安全改进。可通过电子邮件和我们的社区 Discord 服务器获得支持。"
+      },
+      {
+        "question": "我可以将其用于客户项目吗？",
+        "answer": "是的，您可以将此模板用于个人和客户项目。许可证允许无限制的商业使用。"
+      },
+      {
+        "question": "如果我需要设置帮助怎么办？",
+        "answer": "我们提供全面的文档、视频教程和设置指南。对于企业客户，我们还提供一对一的设置电话，帮您快速开始。"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "深受全球开发者喜爱",
+    "description": "加入成千上万使用我们启动模板成功发布 SaaS 产品的开发者行列。",
+    "testimonials": [
+      {
+        "name": "陈莎拉",
+        "role": "TechFlow 创始人",
+        "avatar": "👩‍💻",
+        "content": "这个模板为我们节省了数月的开发时间。我们只用了 2 周就启动了 SaaS 产品，而不是 6 个月！",
+        "rating": 5
+      },
+      {
+        "name": "马库斯·罗德里格斯",
+        "role": "DataSync 首席技术官",
+        "avatar": "👨‍💼",
+        "content": "代码质量非常出色。清洁、文档完善，遵循所有最佳实践。强烈推荐！",
+        "rating": 5
+      },
+      {
+        "name": "艾米丽·约翰逊",
+        "role": "独立开发者",
+        "avatar": "👩‍🎨",
+        "content": "作为一名独立开发者，这个模板给了我与大团队竞争所需的一切。组件非常漂亮！",
+        "rating": 5
+      },
+      {
+        "name": "大卫·金",
+        "role": "创业公司创始人",
+        "avatar": "👨‍🚀",
+        "content": "身份验证和支付集成工作完美。我们能够从第一天就开始接受付款。",
+        "rating": 5
+      },
+      {
+        "name": "丽莎·王",
+        "role": "产品经理",
+        "avatar": "👩‍💼",
+        "content": "设计系统非常一致，暗模式实现完美。我们的用户喜欢它！",
+        "rating": 5
+      },
+      {
+        "name": "亚历克斯·汤普森",
+        "role": "全栈开发者",
+        "avatar": "👨‍💻",
+        "content": "这是我今年做出的最好投资。模板不断更新，支持非常棒。",
+        "rating": 5
+      }
+    ],
+    "stats": [
+      {
+        "value": "250+",
+        "label": "满意客户"
+      },
+      {
+        "value": "4.9/5",
+        "label": "平均评分"
+      },
+      {
+        "value": "100%",
+        "label": "满意率"
+      }
+    ]
+  },
+  "stats": {
+    "companyStats": [
+      { "value": "250+", "label": "满意客户" },
+      { "value": "50+", "label": "服务国家" },
+      { "value": "99%", "label": "满意度" }
+    ],
+    "businessMetrics": [
+      { "value": "500", "suffix": "K+", "label": "活跃用户", "color": "primary" },
+      { "value": "150", "suffix": "+", "label": "集成服务", "color": "secondary" },
+      { "value": "99.9", "suffix": "%", "label": "可用性", "color": "success" },
+      { "value": "24/7", "label": "技术支持", "color": "primary" }
+    ],
+    "productStats": {
+      "title": "深受成千上万用户信赖",
+      "stats": [
+        { "value": "1M+", "label": "下载次数" },
+        { "value": "4.9", "suffix": "/5", "label": "用户评分" },
+        { "value": "150+", "label": "国家地区" },
+        { "value": "24/7", "label": "客户支持" },
+        { "value": "99%", "label": "服务可用性" }
+      ]
+    }
+  },
+  "contactForm": {
+    "defaultSubjects": [
+      "一般咨询",
+      "技术支持", 
+      "销售问题",
+      "合作伙伴",
+      "错误报告",
+      "功能建议"
+    ],
+    "supportSubjects": [
+      "技术问题",
+      "账单问题",
+      "功能建议",
+      "错误报告",
+      "账户问题",
+      "其他"
+    ]
+  },
+  "blog": {
+    "pageTitle": "我们的博客",
+    "pageSubtitle": "来自 SaaS 启动模板团队的见解、教程和更新。学习如何构建更好的 SaaS 产品并发展您的业务。",
+    "noPosts": {
+      "title": "暂无博客文章",
+      "description": "我们正在制作一些精彩内容，敬请期待！",
+      "instructions": {
+        "line1": "要添加博客文章，请在",
+        "directory": "content/blog",
+        "line2": "目录中创建 markdown 文件。",
+        "line3": "每个文件都应该包含标题、日期、摘要、作者和标签的前置数据。"
+      }
+    },
+    "article": {
+      "thanksMessage": "感谢您的阅读！如果这篇文章对您有帮助，请分享给其他人。",
+      "readMoreArticles": "阅读更多文章"
+    }
+  },
+  "metadata": {
+    "siteName": "SaaS 启动模板",
+    "defaultTitle": "SaaS 启动模板 - 构建您的下一个 SaaS 产品",
+    "titleTemplate": "%s | SaaS 启动模板",
+    "description": "一个现代化的 SaaS 启动模板，包含构建下一个产品所需的所有组件。",
+    "keywords": "SaaS, Next.js, React, TypeScript, Tailwind CSS, 启动模板",
+    "author": "SaaS 启动模板",
+    "creator": "SaaS 启动模板",
+    "twitterCreator": "@saas_starter"
+  }
+} 

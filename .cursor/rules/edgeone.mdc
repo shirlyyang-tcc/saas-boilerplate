@@ -139,6 +139,14 @@ EdgeOne Pages is a hybrid platform that combines:
   - English: ocr, image processing, file upload, data processing
   - Chinese: 文字识别, 图像处理, 文件上传, 数据处理
 
+  **Internationalization Features (i18n) / 国际化功能（需要 functions/ 或前端处理）:**
+  - English: language switch, locale detection, translation management, i18n api
+  - Chinese: 语言切换, 语言检测, 翻译管理, 国际化接口
+  - English: localized content, multi-language, translation, locale-specific
+  - Chinese: 本地化内容, 多语言, 翻译, 特定语言
+  - **Server-side i18n (functions/)**: locale-specific APIs, translation APIs, language detection APIs
+  - **Frontend i18n (frontend/)**: language switcher UI, translation display, static translation content
+
   **When user request contains these keywords (Chinese OR English), AUTOMATICALLY use frontend directory:**
 
   **Display Verbs (Static Content) / 静态内容展示动词:**
@@ -193,6 +201,9 @@ EdgeOne Pages is a hybrid platform that combines:
   - If user mentions "payment/支付" → ALWAYS use `functions/payments/` or `functions/stripe/`
   - If user mentions "OCR/文字识别" → ALWAYS use `functions/ocr/`
   - If user mentions "content management/内容管理" → Use frontend + CMS integration
+  - If user mentions "internationalization/国际化" or "i18n/多语言" → Use frontend directory for UI + optional `functions/i18n/` for locale APIs
+  - If user mentions "language switch/语言切换" → Use frontend directory for language switcher component
+  - If user mentions "translation/翻译" → Use frontend directory for translation display + optional `functions/translate/` for dynamic translation APIs
 
   ### STEP 4: Intelligent Routing Based on Real Templates
 
@@ -265,6 +276,11 @@ EdgeOne Pages is a hybrid platform that combines:
   - **UI Components / UI组件**: buttons/按钮, cards/卡片, layouts/布局, modals/模态框 (without API calls/不包含API调用)
   - **Layouts / 布局**: page layouts/页面布局, component layouts/组件布局, responsive designs/响应式设计
   - **CMS Content Display / CMS内容展示**: Sanity/Contentful/WordPress content rendering/内容渲染 (build-time/构建时)
+  - **Internationalization UI / 国际化界面**: language switcher components/语言切换组件, translation text display/翻译文本显示, locale-specific static content/特定语言静态内容
+
+  ### 🔄 INTERNATIONALIZATION HYBRID (Frontend + Functions):
+  - **Frontend Part**: Language switcher UI, translation display, static translated content, locale routing
+  - **Functions Part**: Locale-specific APIs (`functions/i18n/[locale].js`), dynamic translation APIs (`functions/translate/`), language detection services (`functions/locale/detect.js`)
 
 <configuration_requirements>
 
@@ -320,6 +336,11 @@ SUPABASE_ANON_KEY=eyJ...
 # For Stripe Payments
 STRIPE_SECRET_KEY=sk_test_...
 STRIPE_PUBLISHABLE_KEY=pk_test_...
+
+# For Internationalization (i18n)
+NEXT_PUBLIC_DEFAULT_LOCALE=en
+NEXT_PUBLIC_SUPPORTED_LOCALES=en,zh,ja
+I18N_FALLBACK_LOCALE=en
 </code>
 </example>
 
@@ -377,6 +398,7 @@ STRIPE_PUBLISHABLE_KEY=pk_test_...
   - Type system: TypeScript preferred
   - Edge functions: EdgeOne Functions, all API logic must be placed in the functions directory and follow EdgeOne specifications
   - Platform integrations: Multiple options (Shopify, Contentful, Sanity, Supabase, Stripe, etc.)
+  - Internationalization: next-i18next for Next.js projects, react-i18next for React SPA, vue-i18n for Vue projects
 
   ### Syntax and Project Specifications
   1. Framework Configuration
@@ -417,6 +439,66 @@ STRIPE_PUBLISHABLE_KEY=pk_test_...
        - **Database**: Supabase, Firebase, etc.
        - **Payments**: Stripe, PayPal, etc.
        - **Storage**: Cloudinary, AWS S3, etc.
+  8. Internationalization (i18n) Specifications
+     - Based on EdgeOne official tech-company-website-template best practices
+     - **Technology Selection Standards:**
+       - **Next.js Projects**: Use `next-i18next` as the standard i18n solution
+       - **Other Frameworks**: React SPA (`react-i18next`), Gatsby (`gatsby-plugin-react-i18next`), Vue (`vue-i18n`)
+       - Must be fully compatible with EdgeOne Pages SSG
+       - Cannot use SSR-dependent i18n features
+     - **Project Structure Standards:**
+       ```
+       public/
+       ├── locales/
+       │   ├── en/                 # English translations
+       │   │   ├── common.json     # Common translations (navigation, buttons, etc.)
+       │   │   ├── home.json       # Homepage specific translations
+       │   │   ├── about.json      # About page translations
+       │   │   └── [page].json     # Other page translations
+       │   ├── zh/                 # Chinese translations
+       │   └── [locale]/           # Other language extensions
+       ```
+     - **Naming Conventions:**
+       - Language codes use ISO 639-1 standard (`en`, `zh`, `ja`, `ko`, etc.)
+       - Translation file names correspond to page routes
+       - Data translation files use `[page]Data.json` format
+       - Common translations use `common.json`
+     - **Configuration Requirements:**
+       - **next-i18next.config.js**: Must include defaultLocale, locales array, and localePath
+       - **next.config.ts**: Must integrate i18n config with `output: "export"` for EdgeOne Pages
+       - Environment variables for locale detection and fallback handling
+     - **Development Standards:**
+       - All pages must use `serverSideTranslations` in `getStaticProps`
+       - Components use `useTranslation` hook with proper namespace
+       - Dynamic routes must generate paths for all supported locales
+       - Language switcher components must use `router.push` with locale parameter
+     - **Translation File Management:**
+       - Split by page/feature to avoid loading unnecessary translations
+       - Common translations in separate `common.json`
+       - Data translations in `[page]Data.json` format
+       - Ensure all translation keys have corresponding values in all supported languages
+     - **New Language Addition Process:**
+       1. Add language code to `next-i18next.config.js` locales array
+       2. Create `public/locales/[new-locale]/` directory
+       3. Copy existing translation files to new language directory
+       4. Translate all JSON file contents
+       5. Test all pages with new language display
+     - **EdgeOne Integration:**
+       - Edge Functions for locale-specific APIs: `functions/api/content/[locale].js`
+       - SEO optimization with locale-specific meta tags
+       - CDN optimization for translation file caching
+     - **Performance Optimization:**
+       - Split translation files by page to minimize bundle size
+       - Use `getStaticProps` to preload translations at build time
+       - Leverage EdgeOne CDN for translation file caching
+     - **Error Handling:**
+       - Implement fallback to default language for missing translations
+       - Use `fallbackLng` and `fallbackNS` in translation configuration
+       - Browser language detection with supported locale validation
+     - **Quality Assurance:**
+       - Ensure all translation keys exist in all supported languages
+       - Verify text length compatibility with UI layouts
+       - Test special character and encoding correctness
 
   ## EdgeOne Pages compute
 

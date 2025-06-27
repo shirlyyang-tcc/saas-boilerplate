@@ -1,6 +1,6 @@
 # SaaS Starter Template
 
-A modern, production-ready SaaS starter template built with Next.js 14, TypeScript, and Tailwind CSS. Inspired by shipany.ai's clean design and functionality.
+A modern, production-ready SaaS starter template built with Next.js 14, TypeScript, and Tailwind CSS. 
 
 ![SaaS Starter](https://img.shields.io/badge/Next.js-14-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
@@ -9,7 +9,7 @@ A modern, production-ready SaaS starter template built with Next.js 14, TypeScri
 ## ✨ Features
 
 ### 🎨 **Beautiful Design System**
-- Clean, modern UI inspired by shipany.ai
+- Clean, modern UI
 - Fully responsive design
 - Dark/Light mode support
 - Customizable color schemes
@@ -226,7 +226,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Design inspiration from [shipany.ai](https://shipany.ai)
 - Built with [Next.js](https://nextjs.org/)
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
 - Icons from [Lucide React](https://lucide.dev/)

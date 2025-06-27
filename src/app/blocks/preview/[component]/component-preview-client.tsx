@@ -4,21 +4,23 @@ import { Button, PrimaryButton, GradientButton, OutlineButton, LinkButton } from
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FeatureCard, HeroFeatureCard, DetailedFeatureCard, CompactFeatureCard, MinimalFeatureCard } from "@/components/ui/feature-card";
+import { FeatureCardDetailed } from "@/components/ui/feature-card-detailed";
+import { SupportCard } from "@/components/ui/support-card";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { Features } from "@/components/sections/features";
-import { Pricing } from "@/components/sections/pricing";
+import { Pricing } from "@/components/ui/pricing";
 import { Testimonials } from "@/components/sections/testimonials";
 import { FAQ } from "@/components/sections/faq";
-import { CaseStudyCard } from "@/components/ui/case-study-card";
+
 import { BlogCard } from "@/components/ui/blog-card";
-import { ContentSection, AboutSection, FeatureSection } from "@/components/ui/content-section";
-import { CTASection, PrimaryCTA, GradientCTA, MinimalCTA } from "@/components/ui/cta-section";
+import { CaseShowcaseGrid } from "@/components/ui/case-showcase-grid";
+import { ContentSection, AboutSection, FeatureSection } from "@/components/sections/content-section";
+import { CTASection, PrimaryCTA, GradientCTA, MinimalCTA } from "@/components/sections/cta-section";
 import { StatsSection, CompanyStats, BusinessMetrics, ProductStats } from "@/components/ui/stats-section";
-import { ComponentShowcase } from "@/components/ui/component-showcase";
 import { ContactForm, CompactContactForm, MinimalContactForm, SupportContactForm, ContactFormData } from "@/components/ui/contact-form";
-import { Users, Globe, Clock, Star, TrendingUp, Shield, Zap, Database, Settings, Rocket, Lock, Code } from "lucide-react";
+import { Users, Globe, Clock, Star, TrendingUp, Shield, Zap, Database, Settings, Rocket, Lock, Code, Headphones, Target, BookOpen, BarChart3 } from "lucide-react";
 
 interface ComponentPreviewClientProps {
   component: string;
@@ -261,65 +263,238 @@ const componentMap = {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <FeatureCard 
               variant="compact"
-              iconColor="primary"
-              feature={{
-                icon: Shield,
-                title: "Primary",
-                description: "Primary color scheme"
-              }}
+              icon={Shield}
+              title="Primary"
+              description="Primary color scheme"
             />
             <FeatureCard 
               variant="compact"
-              iconColor="success"
-              feature={{
-                icon: TrendingUp,
-                title: "Success",
-                description: "Success color scheme"
-              }}
+              icon={TrendingUp}
+              title="Success"
+              description="Success color scheme"
             />
             <FeatureCard 
               variant="compact"
-              iconColor="warning"
-              feature={{
-                icon: Clock,
-                title: "Warning",
-                description: "Warning color scheme"
-              }}
+              icon={Clock}
+              title="Warning"
+              description="Warning color scheme"
             />
             <FeatureCard 
               variant="compact"
-              iconColor="destructive"
-              feature={{
-                icon: Lock,
-                title: "Destructive",
-                description: "Destructive color scheme"
-              }}
+              icon={Lock}
+              title="Destructive"
+              description="Destructive color scheme"
             />
             <FeatureCard 
               variant="compact"
-              iconColor="secondary"
-              feature={{
-                icon: Settings,
-                title: "Secondary",
-                description: "Secondary color scheme"
-              }}
+              icon={Settings}
+              title="Secondary"
+              description="Secondary color scheme"
             />
           </div>
         </div>
 
         {/* Without Benefits */}
         <div>
-          <h3 className="text-xl font-semibold mb-6 text-foreground">Without Benefits List</h3>
+          <h3 className="text-xl font-semibold mb-6 text-foreground">Simple Feature Card</h3>
           <div className="max-w-md">
             <FeatureCard 
-              showBenefits={false}
-              feature={{
-                icon: Rocket,
-                title: "Simple Feature Card",
-                description: "This feature card doesn't show the benefits list, making it more compact and focused on the main description.",
-                benefits: ["This won't show", "Neither will this"],
-                link: { href: "#", text: "Learn more" }
-              }}
+              icon={Rocket}
+              title="Simple Feature Card"
+              description="This feature card doesn't show the benefits list, making it more compact and focused on the main description."
+              variant="default"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+
+  "feature-card-detailed": () => (
+    <div className="p-8 bg-background min-h-screen">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12 text-center">
+          <h1 className="text-3xl font-bold mb-4">Feature Card Detailed</h1>
+          <p className="text-muted-foreground">
+            Detailed feature cards with icon, title, description and benefits list
+          </p>
+        </div>
+
+        {/* Default Grid */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Core Platform Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <FeatureCardDetailed
+              icon={Database}
+              title="Smart Data Management"
+              description="Intelligent data organization with automated backups and real-time sync across all devices."
+              benefits={[
+                "Automated backups",
+                "Real-time sync", 
+                "Data encryption",
+                "Version control"
+              ]}
+            />
+            <FeatureCardDetailed
+              icon={Users}
+              title="Team Collaboration"
+              description="Seamless collaboration tools with role-based permissions and real-time editing."
+              benefits={[
+                "Role-based access",
+                "Real-time editing",
+                "Comment system",
+                "Activity tracking"
+              ]}
+            />
+            <FeatureCardDetailed
+              icon={Settings}
+              title="Workflow Automation"
+              description="Automate repetitive tasks and create custom workflows to boost productivity."
+              benefits={[
+                "Custom workflows",
+                "Task automation",
+                "Trigger conditions",
+                "Integration rules"
+              ]}
+            />
+            <FeatureCardDetailed
+              icon={BarChart3}
+              title="Advanced Analytics"
+              description="Comprehensive analytics dashboard with custom reports and data visualization."
+              benefits={[
+                "Custom dashboards",
+                "Real-time metrics",
+                "Export reports",
+                "Data insights"
+              ]}
+            />
+          </div>
+        </div>
+
+        {/* Compact Variant */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Compact Variant</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <FeatureCardDetailed
+              icon={Database}
+              title="Data Management"
+              description="Intelligent data organization with automated backups."
+              benefits={[
+                "Automated backups",
+                "Real-time sync",
+                "Data encryption"
+              ]}
+              variant="compact"
+            />
+            <FeatureCardDetailed
+              icon={Users}
+              title="Team Collaboration"
+              description="Seamless collaboration tools with role-based permissions."
+              benefits={[
+                "Role-based access",
+                "Real-time editing",
+                "Comment system"
+              ]}
+              variant="compact"
+            />
+            <FeatureCardDetailed
+              icon={Settings}
+              title="Workflow Automation"
+              description="Automate repetitive tasks and create custom workflows."
+              benefits={[
+                "Custom workflows",
+                "Task automation",
+                "Trigger conditions"
+              ]}
+              variant="compact"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+
+  "support-card": () => (
+    <div className="p-8 bg-background min-h-screen">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12 text-center">
+          <h1 className="text-3xl font-bold mb-4">Support Card</h1>
+          <p className="text-muted-foreground">
+            Center-aligned cards for displaying support services and features
+          </p>
+        </div>
+
+        {/* Default Support Cards */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Support & Success</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <SupportCard
+              icon={Headphones}
+              title="24/7 Support"
+              description="Round-the-clock support from our expert team"
+            />
+            <SupportCard
+              icon={Rocket}
+              title="Onboarding"
+              description="Guided setup and personalized onboarding experience"
+            />
+            <SupportCard
+              icon={Target}
+              title="Training"
+              description="Comprehensive training materials and certification programs"
+            />
+          </div>
+        </div>
+
+        {/* Additional Support Features */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Additional Support Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <SupportCard
+              icon={BookOpen}
+              title="Documentation"
+              description="Comprehensive documentation and guides for all features"
+            />
+            <SupportCard
+              icon={Users}
+              title="Community"
+              description="Active community forum with thousands of developers"
+            />
+            <SupportCard
+              icon={Zap}
+              title="Quick Start"
+              description="Get up and running in minutes with our quick start guide"
+            />
+          </div>
+        </div>
+
+        {/* Compact Variant */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Compact Variant</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <SupportCard
+              icon={Headphones}
+              title="24/7 Support"
+              description="Expert support team"
+              variant="compact"
+            />
+            <SupportCard
+              icon={Rocket}
+              title="Onboarding"
+              description="Guided setup experience"
+              variant="compact"
+            />
+            <SupportCard
+              icon={Target}
+              title="Training"
+              description="Training materials"
+              variant="compact"
+            />
+            <SupportCard
+              icon={BookOpen}
+              title="Documentation"
+              description="Complete guides"
+              variant="compact"
             />
           </div>
         </div>
@@ -330,7 +505,12 @@ const componentMap = {
   // Enhanced Component Showcase
   "component-showcase": () => (
     <div className="p-8 bg-background min-h-screen">
-      <ComponentShowcase />
+      <div className="text-center">
+        <h1 className="text-3xl font-bold mb-4">Component Showcase</h1>
+        <p className="text-muted-foreground">
+          Interactive showcase for demonstrating component variants and features
+        </p>
+      </div>
     </div>
   ),
   
@@ -380,35 +560,24 @@ const componentMap = {
   
   faq: () => (
     <div className="bg-background min-h-screen">
-      <FAQ />
+      <FAQ dict={{
+        faq: {
+          title: "Frequently Asked Questions",
+          description: "Find answers to common questions about our product and services.",
+          stillHaveQuestions: "Still have questions?",
+          contactSupport: "Contact Support",
+          faqs: [
+            {
+              question: "Can I change my plan at any time?",
+              answer: "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle."
+            }
+          ]
+        }
+      }}/>
     </div>
   ),
 
-  "case-study-card": () => (
-    <div className="p-8 bg-background min-h-screen">
-      <div className="max-w-2xl mx-auto">
-        <CaseStudyCard
-          caseStudy={{
-            slug: "example-case",
-            title: "E-commerce Platform Transformation",
-            client: "TechCorp Solutions",
-            industry: "Technology",
-            timeline: "6 months",
-            challenge: "Legacy system causing performance issues and limiting growth potential. The existing infrastructure couldn't handle increasing traffic and was becoming a bottleneck for business growth.",
-            solution: "Implemented modern architecture with microservices and cloud infrastructure. Migrated to a scalable cloud-native solution with automated deployment pipelines and monitoring.",
-            results: [
-              "50% improvement in page load times",
-              "99.9% uptime achieved",
-              "300% increase in user engagement",
-              "Reduced infrastructure costs by 40%",
-              "Improved developer productivity by 60%"
-            ],
-            technologies: ["React", "Node.js", "AWS", "MongoDB", "Docker", "Kubernetes"]
-          }}
-        />
-      </div>
-    </div>
-  ),
+
 
   "blog-card": () => (
     <div className="p-8 bg-background min-h-screen">
@@ -695,6 +864,106 @@ const componentMap = {
                 onSubmit={handleFormSubmit}
               />
             </div>
+          </div>
+        </div>
+      </div>
+    );
+  },
+
+  "case-showcase-grid": () => {
+    // 示例案例数据
+    const sampleCases = [
+      {
+        slug: "youphoto-ai",
+        title: "YouPhoto AI - Your One-Click AI Photo Editor",
+        description: "AI-powered photo editor for reStyles, emoji, avatar, memes & more! Transform photos with advanced AI technology.",
+        image: "/images/cases/case1.png",
+        externalUrl: "https://youphoto.ai",
+        tags: ["AI", "Photo Editor", "SaaS"]
+      },
+      {
+        slug: "ghiblio-generator",
+        title: "Ghiblio - Ghibli Style Image Generator",
+        description: "Ghibli-style image generator powered by ChatGPT 4o model. Transform your ideas into beautiful Studio Ghibli inspired artwork.",
+        image: "/images/cases/case2.png",
+        externalUrl: "https://ghiblio.com",
+        tags: ["AI", "Art", "Ghibli"]
+      },
+      {
+        slug: "ai-music-generator",
+        title: "AI Music Generator",
+        description: "Create unique music compositions using artificial intelligence. Perfect for content creators and musicians.",
+        image: "/images/cases/case3.png",
+        externalUrl: "https://aimusicgenerator.com",
+        tags: ["AI", "Music", "Creative"]
+      },
+      {
+        slug: "image-bg-remover",
+        title: "Image To White Background",
+        description: "Professional AI tool that removes backgrounds and creates perfect white backgrounds for e-commerce in seconds.",
+        image: "/images/cases/case4.png",
+        externalUrl: "https://imagebg.com",
+        tags: ["AI", "E-commerce", "Tool"]
+      },
+      {
+        slug: "draw-ui",
+        title: "DrawUI - Generate UI in Minutes",
+        description: "Draw your idea, generate UI components in minutes. Revolutionary AI-powered UI design tool.",
+        image: "/images/cases/case1.png",
+        externalUrl: "https://drawui.com",
+        tags: ["AI", "UI", "Design"]
+      },
+      {
+        slug: "ai-poster-generator",
+        title: "AI Poster Generator",
+        description: "Zero-design AI poster tool that generates professional posters in 4 styles within 30 seconds.",
+        image: "/images/cases/case2.png",
+        externalUrl: "https://aiposter.com",
+        tags: ["AI", "Design", "Marketing"]
+      },
+      {
+        slug: "resume-go",
+        title: "ResumeGo - AI Powered Resume Builder",
+        description: "Create professional resumes with AI assistance. Stand out with perfectly formatted, ATS-friendly resumes.",
+        image: "/images/cases/case3.png",
+        externalUrl: "https://resumego.ai",
+        tags: ["AI", "Career", "Tool"]
+      },
+      {
+        slug: "copy-web",
+        title: "CopyWeb - Copy Web Design to Code",
+        description: "Transform web designs into clean, responsive code instantly. Perfect for developers and designers.",
+        image: "/images/cases/case4.png",
+        externalUrl: "https://copyweb.design",
+        tags: ["AI", "Code", "Development"]
+      }
+    ];
+
+    // 示例字典数据
+    const sampleDict = {
+      cases: {
+        viewDetails: "View Details",
+        shareYourStory: "Share Your Success Story",
+        shareSubtitle: "Have a project you'd like to showcase? We'd love to feature your success story.",
+        submitYourCase: "Submit Your Case"
+      }
+    };
+
+    return (
+      <div className="p-8 bg-background min-h-screen">
+        <div className="space-y-12">
+          {/* Default Grid */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6 text-foreground">Case Showcase Grid</h3>
+            <p className="text-muted-foreground mb-8">
+              Interactive showcase grid for displaying case studies with external links. 
+              Each card opens the external URL in a new tab when clicked.
+            </p>
+            <CaseShowcaseGrid 
+              cases={sampleCases} 
+              lang="en" 
+              dict={sampleDict} 
+            />
           </div>
         </div>
       </div>

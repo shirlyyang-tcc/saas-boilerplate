@@ -2,18 +2,42 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Github, Twitter, Linkedin, Mail } from 'lucide-react'
-import { getSiteInfo, getSocialLinks, getFooterNavigation } from '@/lib/config'
+import { Dictionary } from '@/lib/dictionaries'
 
-export function Footer() {
+interface FooterProps {
+  dict?: Dictionary
+}
+
+export function Footer({ dict }: FooterProps) {
   const [currentYear, setCurrentYear] = useState(2024) // 默认年份，避免hydration错误
+  const pathname = usePathname()
   
   useEffect(() => {
     setCurrentYear(new Date().getFullYear())
   }, [])
-  const siteInfo = getSiteInfo()
-  const socialLinks = getSocialLinks()
-  const footerConfig = getFooterNavigation()
+  
+  // 从路径中提取当前语言
+  const currentLang = pathname.split('/')[1] || 'en'
+  
+  // 使用默认值，如果没有提供 dict
+  const siteInfo = dict?.site || {
+    name: "SaaS Starter",
+    description: "A modern SaaS starter template",
+    copyright: "SaaS Starter. All rights reserved.",
+    tagline: "Made with ❤️ for developers worldwide"
+  }
+  const socialLinks = dict?.social || []
+  const footerConfig = dict?.footer || { sections: [] }
+  
+  // 为导航链接添加语言前缀
+  const getLocalizedHref = (href: string) => {
+    if (href === '/') {
+      return `/${currentLang}`
+    }
+    return `/${currentLang}${href}`
+  }
   
   // Icon mapping
   const iconMap = {
@@ -29,7 +53,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="text-2xl font-bold text-primary mb-4 block">
+            <Link href={getLocalizedHref('/')} className="text-2xl font-bold text-primary mb-4 block">
               {siteInfo.name}
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">
@@ -61,7 +85,7 @@ export function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href={getLocalizedHref(link.href)} className="text-muted-foreground hover:text-primary transition-colors">
                       {link.name}
                     </Link>
                   </li>

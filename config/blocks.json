@@ -1,0 +1,250 @@
+{
+  "categories": [
+    {
+      "name": "UI Elements",
+      "id": "ui-elements",
+      "components": [
+        {
+          "id": "button",
+          "name": "Button",
+          "description": "Interactive button component with variants",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/button",
+          "preview": {
+            "title": "Button Component",
+            "description": "A versatile button component with multiple variants and sizes",
+            "code": "import { Button } from '@/components/ui/button'\n\nexport function ButtonExample() {\n  return (\n    <div className=\"space-x-2\">\n      <Button variant=\"default\">Default</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Destructive</Button>\n      <Button size=\"sm\">Small</Button>\n      <Button size=\"lg\">Large</Button>\n    </div>\n  )\n}"
+          }
+        },
+        {
+          "id": "card",
+          "name": "Card",
+          "description": "Flexible content container",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/card",
+          "preview": {
+            "title": "Card Component",
+            "description": "A flexible card component for displaying content",
+            "code": "import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'\nimport { Button } from '@/components/ui/button'\n\nexport function CardExample() {\n  return (\n    <Card className=\"w-96\">\n      <CardHeader>\n        <CardTitle>Project Alpha</CardTitle>\n        <CardDescription>A new innovative project</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <p>This is a detailed description of the project content and its main features.</p>\n      </CardContent>\n      <CardFooter>\n        <Button>Learn More</Button>\n      </CardFooter>\n    </Card>\n  )\n}"
+          }
+        },
+        {
+          "id": "badge",
+          "name": "Badge",
+          "description": "Small status indicators and labels",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/badge",
+          "preview": {
+            "title": "Badge Component",
+            "description": "Small status indicators and labels with different variants",
+            "code": "import { Badge } from '@/components/ui/badge'\n\nexport function BadgeExample() {\n  return (\n    <div className=\"space-x-2\">\n      <Badge variant=\"default\">Default</Badge>\n      <Badge variant=\"secondary\">Secondary</Badge>\n      <Badge variant=\"destructive\">Destructive</Badge>\n      <Badge variant=\"outline\">Outline</Badge>\n    </div>\n  )\n}"
+          }
+        },
+        {
+          "id": "contact-form",
+          "name": "Contact Form",
+          "description": "Complete contact form with validation",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/contact-form",
+          "preview": {
+            "title": "Contact Form Component",
+            "description": "A complete contact form with fields for name, email, company, and message",
+            "code": "import { ContactForm } from '@/components/ui/contact-form'\n\nexport function ContactFormExample() {\n  const handleSubmit = (formData) => {\n    console.log('Form submitted:', formData)\n  }\n\n  return (\n    <ContactForm\n      title=\"Contact Us\"\n      description=\"We'd love to hear from you\"\n      onSubmit={handleSubmit}\n      subjects={[\n        'General Inquiry',\n        'Technical Support',\n        'Sales Question'\n      ]}\n    />\n  )\n}"
+          }
+        },
+        {
+          "id": "blog-card",
+          "name": "Blog Card",
+          "description": "Card component for displaying blog posts",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/blog-card",
+          "preview": {
+            "title": "Blog Card Component",
+            "description": "Card component for displaying blog post information with author and metadata",
+            "code": "import { BlogCard } from '@/components/ui/blog-card'\n\nexport function BlogCardExample() {\n  const post = {\n    slug: 'getting-started',\n    title: 'Getting Started with Our Platform',\n    excerpt: 'Learn how to set up and configure your first project...',\n    author: 'John Doe',\n    date: '2024-01-15',\n    readTime: '5 min read',\n    tags: ['Tutorial', 'Getting Started', 'Setup']\n  }\n\n  return (\n    <BlogCard post={post} variant=\"default\" />\n  )\n}"
+          }
+        },
+        {
+          "id": "feature-card",
+          "name": "Feature Card",
+          "description": "Simple card for showcasing product features",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/feature-card",
+          "preview": {
+            "title": "Feature Card Component",
+            "description": "Simple feature card with icon, title and description",
+            "code": "import { FeatureCard } from '@/components/ui/feature-card'\nimport { Zap, Shield, Globe } from 'lucide-react'\n\nexport function FeatureCardExample() {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-3 gap-6\">\n      <FeatureCard\n        icon={Zap}\n        title=\"Lightning Fast\"\n        description=\"Built for speed with optimized performance and instant loading times\"\n        variant=\"center\"\n      />\n      <FeatureCard\n        icon={Shield}\n        title=\"Secure\"\n        description=\"Enterprise-grade security with end-to-end encryption\"\n        variant=\"center\"\n      />\n      <FeatureCard\n        icon={Globe}\n        title=\"Global Scale\"\n        description=\"Worldwide CDN and infrastructure for seamless delivery\"\n        variant=\"center\"\n      />\n    </div>\n  )\n}"
+          }
+        },
+        {
+          "id": "feature-card-detailed",
+          "name": "Feature Card Detailed",
+          "description": "Detailed card with benefits list",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/feature-card-detailed",
+          "preview": {
+            "title": "Feature Card Detailed Component",
+            "description": "Detailed feature card with icon, title, description and benefits list",
+            "code": "import { FeatureCardDetailed } from '@/components/ui/feature-card-detailed'\nimport { Database, Users } from 'lucide-react'\n\nexport function FeatureCardDetailedExample() {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-8\">\n      <FeatureCardDetailed\n        icon={Database}\n        title=\"Smart Data Management\"\n        description=\"Intelligent data organization with automated backups and real-time sync across all devices.\"\n        benefits={[\n          \"Automated backups\",\n          \"Real-time sync\", \n          \"Data encryption\",\n          \"Version control\"\n        ]}\n      />\n      <FeatureCardDetailed\n        icon={Users}\n        title=\"Team Collaboration\"\n        description=\"Seamless collaboration tools with role-based permissions and real-time editing.\"\n        benefits={[\n          \"Role-based access\",\n          \"Real-time editing\",\n          \"Comment system\",\n          \"Activity tracking\"\n        ]}\n      />\n    </div>\n  )\n}"
+          }
+        },
+        {
+          "id": "support-card",
+          "name": "Support Card",
+          "description": "Card for support features",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/support-card",
+          "preview": {
+            "title": "Support Card Component",
+            "description": "Center-aligned card for displaying support services and features",
+            "code": "import { SupportCard } from '@/components/ui/support-card'\nimport { Headphones, Rocket, Target } from 'lucide-react'\n\nexport function SupportCardExample() {\n  return (\n    <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n      <SupportCard\n        icon={Headphones}\n        title=\"24/7 Support\"\n        description=\"Round-the-clock support from our expert team\"\n      />\n      <SupportCard\n        icon={Rocket}\n        title=\"Onboarding\"\n        description=\"Guided setup and personalized onboarding experience\"\n      />\n      <SupportCard\n        icon={Target}\n        title=\"Training\"\n        description=\"Comprehensive training materials and certification programs\"\n      />\n    </div>\n  )\n}"
+          }
+        },
+        {
+          "id": "case-showcase-grid",
+          "name": "Case Showcase Grid",
+          "description": "Interactive grid for displaying case studies",
+          "category": "ui-elements",
+          "previewUrl": "/blocks/preview/case-showcase-grid",
+          "preview": {
+            "title": "Case Showcase Grid Component",
+            "description": "Interactive showcase grid for displaying case studies with external links and hover effects",
+            "code": "import { CaseShowcaseGrid } from '@/components/ui/case-showcase-grid'\n\nexport function CaseShowcaseGridExample() {\n  const cases = [\n    {\n      slug: 'youphoto-ai',\n      title: 'YouPhoto AI - Your One-Click AI Photo Editor',\n      description: 'AI-powered photo editor for reStyles, emoji, avatar, memes & more!',\n      image: '/images/cases/case1.png',\n      externalUrl: 'https://youphoto.ai',\n      tags: ['AI', 'Photo Editor', 'SaaS']\n    },\n    {\n      slug: 'ghiblio-generator',\n      title: 'Ghiblio - Ghibli Style Image Generator',\n      description: 'Ghibli-style image generator powered by ChatGPT 4o model.',\n      image: '/images/cases/case2.png',\n      externalUrl: 'https://ghiblio.com',\n      tags: ['AI', 'Art', 'Ghibli']\n    }\n  ]\n\n  return (\n    <CaseShowcaseGrid\n      cases={cases}\n      lang=\"en\"\n      dict={{\n        cases: {\n          viewDetails: 'View Details'\n        }\n      }}\n    />\n  )\n}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Layout",
+      "id": "layout",
+      "components": [
+        {
+          "id": "header",
+          "name": "Header",
+          "description": "Navigation header with logo and menu",
+          "category": "layout",
+          "previewUrl": "/blocks/preview/header",
+          "preview": {
+            "title": "Header Component",
+            "description": "Navigation header with logo, menu items and action buttons",
+            "code": "import { Button } from '@/components/ui/button'\nimport { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from '@/components/ui/navigation-menu'\n\nexport function HeaderExample() {\n  return (\n    <header className=\"border-b\">\n      <div className=\"container mx-auto px-4 py-4 flex items-center justify-between\">\n        <div className=\"font-bold text-xl\">Brand</div>\n        <NavigationMenu>\n          <NavigationMenuList className=\"space-x-6\">\n            <NavigationMenuItem>\n              <NavigationMenuLink href=\"/\">Home</NavigationMenuLink>\n            </NavigationMenuItem>\n            <NavigationMenuItem>\n              <NavigationMenuLink href=\"/features\">Features</NavigationMenuLink>\n            </NavigationMenuItem>\n            <NavigationMenuItem>\n              <NavigationMenuLink href=\"/pricing\">Pricing</NavigationMenuLink>\n            </NavigationMenuItem>\n          </NavigationMenuList>\n        </NavigationMenu>\n        <Button>Get Started</Button>\n      </div>\n    </header>\n  )\n}"
+          }
+        },
+        {
+          "id": "footer",
+          "name": "Footer",
+          "description": "Site footer with links and info",
+          "category": "layout",
+          "previewUrl": "/blocks/preview/footer",
+          "preview": {
+            "title": "Footer Component",
+            "description": "Site footer with organized links and company information",
+            "code": "export function FooterExample() {\n  return (\n    <footer className=\"bg-muted py-12\">\n      <div className=\"container mx-auto px-4\">\n        <div className=\"grid grid-cols-1 md:grid-cols-4 gap-8\">\n          <div>\n            <h3 className=\"font-bold mb-4\">Company</h3>\n            <ul className=\"space-y-2\">\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">About</a></li>\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">Careers</a></li>\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">Contact</a></li>\n            </ul>\n          </div>\n          <div>\n            <h3 className=\"font-bold mb-4\">Product</h3>\n            <ul className=\"space-y-2\">\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">Features</a></li>\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">Pricing</a></li>\n              <li><a href=\"#\" className=\"text-muted-foreground hover:text-foreground\">Documentation</a></li>\n            </ul>\n          </div>\n        </div>\n        <div className=\"border-t mt-8 pt-8 text-center text-muted-foreground\">\n          © 2024 Company Name. All rights reserved.\n        </div>\n      </div>\n    </footer>\n  )\n}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sections",
+      "id": "sections",
+      "components": [
+        {
+          "id": "hero",
+          "name": "Hero Section",
+          "description": "Landing page hero with CTA",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/hero",
+          "preview": {
+            "title": "Hero Section",
+            "description": "A compelling hero section for landing pages with call-to-action",
+            "code": "import { Button } from '@/components/ui/button'\n\nexport function HeroSection() {\n  return (\n    <section className=\"py-20 text-center bg-gradient-to-b from-background to-muted\">\n      <div className=\"container mx-auto px-4\">\n        <h1 className=\"text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent\">\n          Build Something Amazing\n        </h1>\n        <p className=\"text-xl text-muted-foreground mb-8 max-w-2xl mx-auto\">\n          Get started with our powerful platform and create incredible products that your users will love.\n        </p>\n        <div className=\"space-x-4\">\n          <Button size=\"lg\">Get Started</Button>\n          <Button size=\"lg\" variant=\"outline\">Learn More</Button>\n        </div>\n      </div>\n    </section>\n  )\n}"
+          }
+        },
+        {
+          "id": "features",
+          "name": "Features Section",
+          "description": "Showcase product features",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/features",
+          "preview": {
+            "title": "Features Section",
+            "description": "Showcase your product features in an attractive grid layout",
+            "code": "import { Zap, Shield, Globe } from 'lucide-react'\nimport { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'\n\nexport function FeaturesSection() {\n  const features = [\n    { icon: Zap, title: 'Lightning Fast', description: 'Optimized for speed and performance' },\n    { icon: Shield, title: 'Secure', description: 'Enterprise-grade security built-in' },\n    { icon: Globe, title: 'Global Scale', description: 'Worldwide CDN and infrastructure' }\n  ]\n\n  return (\n    <section className=\"py-20\">\n      <div className=\"container mx-auto px-4\">\n        <h2 className=\"text-4xl font-bold text-center mb-16\">Amazing Features</h2>\n        <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n          {features.map((feature, index) => (\n            <Card key={index}>\n              <CardHeader>\n                <feature.icon className=\"w-12 h-12 text-primary mb-4\" />\n                <CardTitle>{feature.title}</CardTitle>\n              </CardHeader>\n              <CardContent>\n                <p className=\"text-muted-foreground\">{feature.description}</p>\n              </CardContent>\n            </Card>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}"
+          }
+        },
+        {
+          "id": "pricing",
+          "name": "Pricing Section",
+          "description": "Pricing plans and comparison",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/pricing",
+          "preview": {
+            "title": "Pricing Section",
+            "description": "Display pricing plans with features comparison",
+            "code": "import { Button } from '@/components/ui/button'\nimport { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'\nimport { Check } from 'lucide-react'\n\nexport function PricingSection() {\n  const plans = [\n    { name: 'Starter', price: '$9', features: ['5 Projects', '10GB Storage', 'Email Support'] },\n    { name: 'Pro', price: '$29', features: ['Unlimited Projects', '100GB Storage', 'Priority Support', 'Advanced Analytics'] },\n    { name: 'Enterprise', price: '$99', features: ['Everything in Pro', 'Custom Integrations', 'Dedicated Manager'] }\n  ]\n\n  return (\n    <section className=\"py-20\">\n      <div className=\"container mx-auto px-4\">\n        <h2 className=\"text-4xl font-bold text-center mb-16\">Choose Your Plan</h2>\n        <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n          {plans.map((plan, index) => (\n            <Card key={index} className={index === 1 ? 'border-primary' : ''}>\n              <CardHeader>\n                <CardTitle>{plan.name}</CardTitle>\n                <CardDescription>\n                  <span className=\"text-3xl font-bold\">{plan.price}</span>\n                  <span className=\"text-muted-foreground\">/month</span>\n                </CardDescription>\n              </CardHeader>\n              <CardContent>\n                <ul className=\"space-y-3 mb-6\">\n                  {plan.features.map((feature, i) => (\n                    <li key={i} className=\"flex items-center\">\n                      <Check className=\"w-4 h-4 text-green-500 mr-2\" />\n                      {feature}\n                    </li>\n                  ))}\n                </ul>\n                <Button className=\"w-full\" variant={index === 1 ? 'default' : 'outline'}>\n                  Get Started\n                </Button>\n              </CardContent>\n            </Card>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}"
+          }
+        },
+        {
+          "id": "testimonials",
+          "name": "Testimonials Section",
+          "description": "Customer testimonials and reviews",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/testimonials",
+          "preview": {
+            "title": "Testimonials Section",
+            "description": "Display customer testimonials and reviews",
+            "code": "import { Card, CardContent } from '@/components/ui/card'\nimport { Star } from 'lucide-react'\n\nexport function TestimonialsSection() {\n  const testimonials = [\n    { name: 'Sarah Chen', role: 'CEO at TechCorp', content: 'Amazing platform that helped us scale rapidly!', rating: 5 },\n    { name: 'John Doe', role: 'Developer', content: 'The best development experience I\\'ve ever had.', rating: 5 },\n    { name: 'Jane Smith', role: 'Product Manager', content: 'Incredible features and outstanding support.', rating: 5 }\n  ]\n\n  return (\n    <section className=\"py-20 bg-muted\">\n      <div className=\"container mx-auto px-4\">\n        <h2 className=\"text-4xl font-bold text-center mb-16\">What Our Customers Say</h2>\n        <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">\n          {testimonials.map((testimonial, index) => (\n            <Card key={index}>\n              <CardContent className=\"p-6\">\n                <div className=\"flex mb-4\">\n                  {[...Array(testimonial.rating)].map((_, i) => (\n                    <Star key={i} className=\"w-4 h-4 fill-yellow-400 text-yellow-400\" />\n                  ))}\n                </div>\n                <p className=\"text-muted-foreground mb-4\">\"{testimonial.content}\"</p>\n                <div>\n                  <div className=\"font-semibold\">{testimonial.name}</div>\n                  <div className=\"text-sm text-muted-foreground\">{testimonial.role}</div>\n                </div>\n              </CardContent>\n            </Card>\n          ))}\n        </div>\n      </div>\n    </section>\n  )\n}"
+          }
+        },
+        {
+          "id": "cta-section",
+          "name": "CTA Section",
+          "description": "Call-to-action section with buttons",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/cta-section",
+          "preview": {
+            "title": "CTA Section Component",
+            "description": "Call-to-action section with customizable buttons and trust indicators",
+            "code": "import { CTASection } from '@/components/ui/cta-section'\nimport { Rocket } from 'lucide-react'\n\nexport function CTASectionExample() {\n  const buttons = [\n    { text: 'Get Started Free', variant: 'secondary' },\n    { text: 'Learn More', variant: 'outline' }\n  ]\n\n  const trustIndicators = [\n    { text: 'No credit card required' },\n    { text: '14-day free trial' },\n    { text: 'Cancel anytime' }\n  ]\n\n  return (\n    <CTASection\n      title=\"Ready to Get Started?\"\n      description=\"Join thousands of teams already using our platform\"\n      buttons={buttons}\n      variant=\"gradient\"\n      icon={Rocket}\n      trustIndicators={trustIndicators}\n    />\n  )\n}"
+          }
+        },
+        {
+          "id": "stats-section",
+          "name": "Stats Section",
+          "description": "Statistics display section",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/stats-section",
+          "preview": {
+            "title": "Stats Section Component",
+            "description": "Display statistics and metrics in an attractive grid layout",
+            "code": "import { StatsSection } from '@/components/ui/stats-section'\nimport { Users, Globe, Zap } from 'lucide-react'\n\nexport function StatsSectionExample() {\n  const stats = [\n    {\n      value: '10K+',\n      label: 'Active Users',\n      description: 'Growing every day',\n      icon: Users,\n      color: 'primary'\n    },\n    {\n      value: '50+',\n      label: 'Countries',\n      description: 'Worldwide reach',\n      icon: Globe,\n      color: 'secondary'\n    },\n    {\n      value: '99.9%',\n      label: 'Uptime',\n      description: 'Reliable service',\n      icon: Zap,\n      color: 'success'\n    }\n  ]\n\n  return (\n    <StatsSection\n      stats={stats}\n      title=\"Our Impact\"\n      description=\"Numbers that matter\"\n      variant=\"cards\"\n      columns={3}\n    />\n  )\n}"
+          }
+        },
+        {
+          "id": "content-section",
+          "name": "Content Section",
+          "description": "Text and image content section",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/content-section",
+          "preview": {
+            "title": "Content Section Component",
+            "description": "Flexible content section with text and optional image layout",
+            "code": "import { ContentSection } from '@/components/ui/content-section'\n\nexport function ContentSectionExample() {\n  const image = {\n    src: '/api/placeholder/600/400',\n    alt: 'Feature illustration',\n    width: 600,\n    height: 400\n  }\n\n  return (\n    <ContentSection\n      title=\"Powerful Features for Modern Teams\"\n      image={image}\n      layout=\"text-left\"\n    >\n      <p>\n        Our platform provides everything you need to manage your team effectively.\n        From project management to real-time collaboration, we've got you covered.\n      </p>\n      <p>\n        Built with modern technologies and designed for scalability,\n        our solution grows with your business needs.\n      </p>\n    </ContentSection>\n  )\n}"
+          }
+        },
+        {
+          "id": "faq",
+          "name": "FAQ Section",
+          "description": "Interactive frequently asked questions",
+          "category": "sections",
+          "previewUrl": "/blocks/preview/faq",
+          "preview": {
+            "title": "FAQ Section Component",
+            "description": "Interactive FAQ section with expandable questions and answers",
+            "code": "<div className=\"bg-background min-h-screen\">\n  <FAQ dict={{\n    faq: {\n      title: \"Frequently Asked Questions\",\n      description: \"Find answers to common questions about our product and services.\",\n      stillHaveQuestions: \"Still have questions?\",\n      contactSupport: \"Contact Support\",\n      faqs: [\n        {\n          question: \"Can I change my plan at any time?\",\n          answer: \"Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.\"\n        }\n      ]\n    }\n  }}/>\n</div>"
+          }
+        }
+      ]
+    }
+  ]
+} 

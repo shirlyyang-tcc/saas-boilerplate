@@ -4,7 +4,9 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-const postsDirectory = path.join(process.cwd(), 'content/blog')
+function getPostsDirectory(lang: string = 'en') {
+  return path.join(process.cwd(), 'content', lang, 'blog')
+}
 
 export interface BlogPost {
   slug: string
@@ -15,9 +17,13 @@ export interface BlogPost {
   tags: string[]
   readTime: string
   content?: string
+  image?: string
+  imageAlt?: string
 }
 
-export function getAllPosts(): BlogPost[] {
+export function getAllPosts(lang: string = 'en'): BlogPost[] {
+  const postsDirectory = getPostsDirectory(lang)
+  
   // Create directory if it doesn't exist
   if (!fs.existsSync(postsDirectory)) {
     fs.mkdirSync(postsDirectory, { recursive: true })
@@ -41,14 +47,17 @@ export function getAllPosts(): BlogPost[] {
         author: matterResult.data.author || '',
         tags: matterResult.data.tags || [],
         readTime: matterResult.data.readTime || '5 min read',
+        image: matterResult.data.image || '',
+        imageAlt: matterResult.data.imageAlt || '',
       }
     })
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getPostBySlug(slug: string, lang: string = 'en'): Promise<BlogPost | null> {
   try {
+    const postsDirectory = getPostsDirectory(lang)
     const fullPath = path.join(postsDirectory, `${slug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
@@ -73,13 +82,13 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   }
 }
 
-export function getPostsByTag(tag: string): BlogPost[] {
-  const allPosts = getAllPosts()
+export function getPostsByTag(tag: string, lang: string = 'en'): BlogPost[] {
+  const allPosts = getAllPosts(lang)
   return allPosts.filter((post) => post.tags.includes(tag))
 }
 
-export function getAllTags(): string[] {
-  const allPosts = getAllPosts()
+export function getAllTags(lang: string = 'en'): string[] {
+  const allPosts = getAllPosts(lang)
   const tags = allPosts.flatMap((post) => post.tags)
   return Array.from(new Set(tags))
 } 

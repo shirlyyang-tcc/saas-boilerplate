@@ -6,22 +6,48 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
-import { getSiteInfo, getHeaderNavigation } from '@/lib/config'
+import { Dictionary } from '@/lib/dictionaries'
+import { Locale } from '@/lib/i18n'
+import LanguageSwitcher from '@/components/language-switcher'
 
-export function Header() {
+interface HeaderProps {
+  dict?: Dictionary
+}
+
+export function Header({ dict }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const pathname = usePathname()
   
-  const siteInfo = getSiteInfo()
-  const headerConfig = getHeaderNavigation()
+  // 从路径中提取当前语言
+  const currentLang = (pathname.split('/')[1] || 'en') as Locale
+  
+  // 使用默认值，如果没有提供 dict
+  const siteInfo = dict?.site || {
+    name: "SaaS Starter"
+  }
+  const headerConfig = dict?.header || {
+    navigation: [],
+    cta: { text: "Get Started", href: "/pricing" }
+  }
+
+  // 为导航链接添加语言前缀
+  const getLocalizedHref = (href: string) => {
+    if (href === '/') {
+      return `/${currentLang}`
+    }
+    return `/${currentLang}${href}`
+  }
 
   // 判断链接是否为当前页面
   const isActive = (href: string) => {
+    const localizedHref = getLocalizedHref(href)
     if (href === '/') {
-      return pathname === '/'
+      // 对于首页，需要精确匹配，避免被其他页面误判
+      return pathname === localizedHref || pathname === `${localizedHref}/`
     }
-    return pathname.startsWith(href)
+    // 对于其他页面，使用startsWith匹配
+    return pathname.startsWith(localizedHref) && pathname !== `/${currentLang}` && pathname !== `/${currentLang}/`
   }
 
   return (
@@ -30,7 +56,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold text-primary">
+            <Link href={getLocalizedHref('/')} className="text-2xl font-bold text-primary">
               {siteInfo.name}
             </Link>
           </div>
@@ -40,7 +66,7 @@ export function Header() {
             {headerConfig.navigation.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={getLocalizedHref(item.href)}
                 className={`transition-colors duration-200 ${
                   isActive(item.href)
                     ? 'text-primary font-semibold border-b-2 border-primary'
@@ -54,12 +80,15 @@ export function Header() {
 
           {/* Right side */}
           <div className="flex items-center space-x-4">
+            {/* Language Switcher */}
+            <LanguageSwitcher currentLang={currentLang} dict={dict} />
+            
             {/* Theme toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              aria-label="Toggle theme"
+              aria-label={dict?.common?.toggleTheme || "Toggle theme"}
             >
               {theme === 'dark' ? (
                 <Sun className="h-5 w-5" />
@@ -70,7 +99,7 @@ export function Header() {
 
             {/* CTA Button */}
             <Link
-              href={headerConfig.cta.href}
+              href={getLocalizedHref(headerConfig.cta.href)}
               className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               {headerConfig.cta.text}
@@ -100,7 +129,7 @@ export function Header() {
               {headerConfig.navigation.map((item) => (
                 <Link
                   key={item.name}
-                  href={item.href}
+                  href={getLocalizedHref(item.href)}
                   className={`transition-colors duration-200 ${
                     isActive(item.href)
                       ? 'text-primary font-semibold bg-primary/10 px-3 py-2 rounded-md'
@@ -111,8 +140,14 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="px-3 py-2">
+                <LanguageSwitcher currentLang={currentLang} dict={dict} />
+              </div>
+              
               <Link
-                href={headerConfig.cta.href}
+                href={getLocalizedHref(headerConfig.cta.href)}
                 className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors text-center mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >

@@ -4,8 +4,71 @@ import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, Zap, Shield, Rocket } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Dictionary } from '@/lib/dictionaries'
+import { getHighlightedText } from '@/lib/text-highlight'
 
-export function Hero() {
+// 布局类型定义
+type HeroLayout = 'left' | 'center' | 'right'
+
+interface HeroProps {
+  dict?: Dictionary
+  params?: { lang: string }
+  layout?: HeroLayout
+}
+
+// 根据布局获取对应的样式类
+const getLayoutClasses = (layout: HeroLayout) => {
+  const baseClasses = {
+    container: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    content: "",
+    badge: "",
+    heading: "",
+    subtitle: "",
+    buttons: "",
+    socialProof: "",
+    image: "mt-16 lg:mt-24"
+  }
+
+  switch (layout) {
+    case 'left':
+      return {
+        ...baseClasses,
+        content: "text-left",
+        badge: "justify-start",
+        heading: "text-left",
+        subtitle: "text-left max-w-2xl",
+        buttons: "flex flex-col sm:flex-row gap-4 justify-start",
+        socialProof: "flex flex-col sm:flex-row items-start justify-start gap-8 text-sm text-muted-foreground",
+        image: "mt-16 lg:mt-24 text-right" // 图片区域右对齐以平衡左对齐的文字
+      }
+    case 'right':
+      return {
+        ...baseClasses,
+        content: "text-right",
+        badge: "justify-end",
+        heading: "text-right",
+        subtitle: "text-right max-w-2xl ml-auto",
+        buttons: "flex flex-col sm:flex-row gap-4 justify-end",
+        socialProof: "flex flex-col sm:flex-row items-end justify-end gap-8 text-sm text-muted-foreground",
+        image: "mt-16 lg:mt-24 text-left" // 图片区域左对齐以平衡右对齐的文字
+      }
+    case 'center':
+    default:
+      return {
+        ...baseClasses,
+        content: "text-center",
+        badge: "justify-center",
+        heading: "text-center",
+        subtitle: "text-center max-w-2xl mx-auto",
+        buttons: "flex flex-col sm:flex-row gap-4 justify-center",
+        socialProof: "flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground"
+      }
+  }
+}
+
+export function Hero({ dict, params, layout = 'center' }: HeroProps) {
+  const layoutClasses = getLayoutClasses(layout)
+
   return (
     <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
       {/* 网格背景层 */}
@@ -35,40 +98,47 @@ export function Hero() {
         <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-primary/80 rounded-full animate-drift opacity-50" style={{ animationDelay: '3s' }}></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+      <div className={layoutClasses.container}>
+        <div className={layoutClasses.content}>
           {/* Badge */}
-          <div className="inline-flex items-center rounded-full px-4 py-2 text-sm bg-primary/10 text-primary border border-primary/20 mb-8">
+          <div className={`inline-flex items-center rounded-full px-4 py-2 text-sm bg-primary/10 text-primary border border-primary/20 mb-8 ${layoutClasses.badge}`}>
             <Zap className="w-4 h-4 mr-2" />
-            🚀 Ship Your SaaS in Hours, Not Months
+            {dict?.hero?.badge || "🚀 Ship Your SaaS in Hours, Not Months"}
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-responsive-xl font-bold text-foreground mb-6 max-w-4xl mx-auto">
-            Build Your Next{' '}
-            <span className="text-primary">SaaS Product</span>{' '}
-            with Our Starter Template
+          <h1 className={`text-responsive-xl font-bold text-foreground mb-6 max-w-4xl ${layoutClasses.heading} ${layout === 'center' ? 'mx-auto' : layout === 'right' ? 'ml-auto' : ''}`}>
+            {dict?.hero?.title ? (
+              <span dangerouslySetInnerHTML={{
+                __html: getHighlightedText(dict.hero.title, params?.lang || 'en')
+              }} />
+            ) : (
+              <>
+                Build Your Next{' '}
+                <span className="text-primary">SaaS Product</span>{' '}
+                with Our Starter Template
+              </>
+            )}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            A complete SaaS starter template with authentication, payments, 
-            dashboard, and all the components you need to launch fast.
-          </p>
+          {dict?.hero?.subtitle && <p className={`text-xl text-muted-foreground mb-8 leading-relaxed ${layoutClasses.subtitle}`}>
+            {dict?.hero?.subtitle}
+          </p>}
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className={`${layoutClasses.buttons} mb-12`}>
             <Button size="lg" className="btn-gradient text-white">
-              Get Started Free
+              {dict?.hero?.getStartedFree || "Get Started Free"}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg">
-              View Demo
+              {dict?.hero?.viewDemo || "View Demo"}
             </Button>
           </div>
 
           {/* Social Proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className={layoutClasses.socialProof}>
             <div className="flex items-center">
               <div className="flex -space-x-2 mr-3">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -80,21 +150,21 @@ export function Hero() {
                   </div>
                 ))}
               </div>
-              <span>Trusted by 250+ developers</span>
+              <span>{dict?.hero?.socialProof?.trustedByDevelopers || "Trusted by 250+ developers"}</span>
             </div>
             <div className="flex items-center">
               <Shield className="w-4 h-4 mr-2 text-primary" />
-              <span>30+ Ready Components</span>
+              <span>{dict?.hero?.socialProof?.readyComponents || "30+ Ready Components"}</span>
             </div>
             <div className="flex items-center">
               <Rocket className="w-4 h-4 mr-2 text-primary" />
-              <span>Ship in 5 Minutes</span>
+              <span>{dict?.hero?.socialProof?.shipInMinutes || "Ship in 5 Minutes"}</span>
             </div>
           </div>
         </div>
 
         {/* Hero Image/Video Placeholder */}
-        <div className="mt-16 lg:mt-24">
+        <div className={layoutClasses.image}>
           <div className="relative max-w-5xl mx-auto">
             <div className="bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl p-8 lg:p-12 border border-primary/20">
               <div className="bg-card rounded-xl shadow-2xl border p-6">

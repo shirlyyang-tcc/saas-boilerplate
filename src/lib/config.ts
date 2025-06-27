@@ -1,10 +1,5 @@
-import siteConfig from '@/config/site.json'
-import navigationConfig from '@/config/navigation.json'
-import pricingConfig from '@/config/pricing.json'
-import featuresConfig from '@/config/features.json'
-import testimonialsConfig from '@/config/testimonials.json'
-import faqConfig from '@/config/faq.json'
-import blocksConfig from '@/config/blocks.json'
+import { getDictionary } from './dictionaries'
+import { Locale, defaultLocale } from './i18n'
 
 // Type definitions for better TypeScript support
 export interface SiteConfig {
@@ -128,6 +123,11 @@ export interface BlockComponent {
   description: string
   category: string
   previewUrl?: string
+  preview: {
+    title: string
+    description: string
+    code: string
+  }
 }
 
 export interface BlockCategory {
@@ -144,35 +144,85 @@ export interface BlockPreview {
 
 export interface BlocksConfig {
   categories: BlockCategory[]
-  previews: Record<string, BlockPreview>
 }
 
-// Export typed configurations
-export const site: SiteConfig = siteConfig
-export const navigation: NavigationConfig = navigationConfig
-export const pricing: PricingConfig = pricingConfig
-export const features: FeaturesConfig = featuresConfig
-export const testimonials: TestimonialsConfig = testimonialsConfig
-export const faq: FAQConfig = faqConfig
-export const blocks: BlocksConfig = blocksConfig
+// Helper functions for common operations that now use dictionaries
+export const getSiteInfo = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.site
+}
 
-// Helper functions for common operations
-export const getSiteInfo = () => site.site
-export const getSocialLinks = () => site.social
-export const getHeaderNavigation = () => navigation.header
-export const getFooterNavigation = () => navigation.footer
-export const getPricingPlans = () => pricing.plans
-export const getPricingComparison = () => pricing.comparison
-export const getPricingFAQs = () => pricing.faqs
-export const getMainFeatures = () => features.main
-export const getHeroFeatures = () => features.hero
-export const getFeatureCategories = () => features.categories
-export const getSupportFeatures = () => features.support
-export const getTestimonials = () => testimonials.testimonials
-export const getTestimonialStats = () => testimonials.stats
-export const getFAQs = () => faq.faqs
-export const getBlockCategories = () => blocks.categories
-export const getBlockPreviews = () => blocks.previews
+export const getSocialLinks = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.social
+}
+
+export const getHeaderNavigation = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.header
+}
+
+export const getFooterNavigation = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.footer
+}
+
+export const getPricingPlans = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.pricing.plans
+}
+
+export const getPricingComparison = async (locale: Locale = defaultLocale) => {
+  // Note: comparison data might need to be added to dictionaries if needed
+  return []
+}
+
+export const getPricingFAQs = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.pricing.faqs
+}
+
+export const getMainFeatures = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.features.main
+}
+
+export const getHeroFeatures = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.features.hero
+}
+
+export const getFeatureCategories = async (locale: Locale = defaultLocale) => {
+  // Note: categories data might need to be added to dictionaries if needed
+  return []
+}
+
+export const getSupportFeatures = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.features.support
+}
+
+export const getTestimonials = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.testimonials.testimonials
+}
+
+export const getTestimonialStats = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.testimonials.stats
+}
+
+export const getFAQs = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.faq.faqs
+}
+
+export const getBlockCategories = async (locale: Locale = defaultLocale) => {
+  const dict = await getDictionary(locale)
+  return dict.blocks.categories
+}
+
+
 
 // Icon mapping utility (since we can't import React components in JSON)
 export const getIconComponent = (iconName: string) => {

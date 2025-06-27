@@ -154,21 +154,35 @@ export function StatsSection({
   );
 }
 
-// 预设的统计组件变体
+// 预设的统计组件变体 - 现在接收dictionary数据
 export function CompanyStats({ 
+  stats,
   className = "" 
 }: { 
+  stats?: Array<{
+    value: string;
+    label: string;
+    suffix?: string;
+    prefix?: string;
+    color?: string;
+  }>;
   className?: string;
 }) {
-  const stats = [
-    { value: "250+", label: "Happy Customers" },
-    { value: "50+", label: "Countries Served" },
-    { value: "99%", label: "Satisfaction Rate" }
+  // 如果没有传入stats，使用默认值作为后备
+  const defaultStats = [
+    { value: "250+", label: "Happy Customers", color: "primary" },
+    { value: "50+", label: "Countries Served", color: "primary" },
+    { value: "99%", label: "Satisfaction Rate", color: "primary" }
   ];
+
+  const statsData = stats || defaultStats;
 
   return (
     <StatsSection
-      stats={stats}
+      stats={statsData.map(stat => ({
+        ...stat,
+        color: (stat.color as StatItem['color']) || 'primary'
+      }))}
       variant="default"
       columns={3}
       className={className}
@@ -177,20 +191,34 @@ export function CompanyStats({
 }
 
 export function BusinessMetrics({ 
+  stats,
   className = "" 
 }: { 
+  stats?: Array<{
+    value: string;
+    label: string;
+    suffix?: string;
+    prefix?: string;
+    color?: string;
+  }>;
   className?: string;
 }) {
-  const stats = [
-    { value: "500", suffix: "K+", label: "Active Users", color: "primary" as const },
-    { value: "150", suffix: "+", label: "Integrations", color: "secondary" as const },
-    { value: "99.9", suffix: "%", label: "Uptime", color: "success" as const },
-    { value: "24/7", label: "Support", color: "primary" as const }
+  // 如果没有传入stats，使用默认值作为后备
+  const defaultStats = [
+    { value: "500", suffix: "K+", label: "Active Users", color: "primary" },
+    { value: "150", suffix: "+", label: "Integrations", color: "secondary" },
+    { value: "99.9", suffix: "%", label: "Uptime", color: "success" },
+    { value: "24/7", label: "Support", color: "primary" }
   ];
+
+  const statsData = stats || defaultStats;
 
   return (
     <StatsSection
-      stats={stats}
+      stats={statsData.map(stat => ({
+        ...stat,
+        color: (stat.color as StatItem['color']) || 'primary'
+      }))}
       variant="cards"
       columns={4}
       className={className}
@@ -199,24 +227,40 @@ export function BusinessMetrics({
 }
 
 export function ProductStats({ 
-  title = "Trusted by thousands",
+  title,
+  stats,
   className = "" 
 }: { 
   title?: string;
+  stats?: Array<{
+    value: string;
+    label: string;
+    suffix?: string;
+    prefix?: string;
+    color?: string;
+  }>;
   className?: string;
 }) {
-  const stats = [
-    { value: "1M+", label: "Downloads" },
-    { value: "4.9", suffix: "/5", label: "User Rating" },
-    { value: "150+", label: "Countries" },
-    { value: "24/7", label: "Support" },
-    { value: "99%", label: "Uptime" }
+  // 如果没有传入数据，使用默认值作为后备
+  const defaultTitle = "Trusted by thousands";
+  const defaultStats = [
+    { value: "1M+", label: "Downloads", color: "primary" },
+    { value: "4.9", suffix: "/5", label: "User Rating", color: "primary" },
+    { value: "150+", label: "Countries", color: "primary" },
+    { value: "24/7", label: "Support", color: "primary" },
+    { value: "99%", label: "Uptime", color: "primary" }
   ];
+
+  const titleData = title || defaultTitle;
+  const statsData = stats || defaultStats;
 
   return (
     <StatsSection
-      title={title}
-      stats={stats}
+      title={titleData}
+      stats={statsData.map(stat => ({
+        ...stat,
+        color: (stat.color as StatItem['color']) || 'primary'
+      }))}
       variant="highlight"
       columns={5}
       className={className}
