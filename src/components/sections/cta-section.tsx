@@ -76,7 +76,7 @@ export function CTASection({
   const getTitleVariantClasses = () => {
     switch (variant) {
       case "minimal":
-        return "text-black";
+        return "text-primary";
       default:
         return "text-white";
     }
@@ -101,11 +101,9 @@ export function CTASection({
     if (variant === "minimal") {
       return index === 0 ? "default" : "secondary";
     } else if (variant === "gradient" || variant === "primary") {
-      // return index === 0 ? "secondary" : "outline";
       return "secondary"
     } else {
       return "outline";
-      // return index === 0 ? "default" : "outline";
     }
   };
 

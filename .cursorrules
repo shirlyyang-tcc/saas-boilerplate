@@ -267,36 +267,23 @@ const blocksDictionaries = {
 };
 ```
 
-#### 4. **Update `src/lib/text-highlight.ts`**
-```typescript
-// Add new language support in HighlightConfig interface (if needed)
-interface HighlightConfig {
-  en: string | string[];
-  zh: string | string[];
-  ja: string | string[];  // Add new language
-  // ... other languages
-}
-
-// Update highlightText function to handle new locale
-export function highlightText({ text, locale = 'en', highlights }: HighlightTextOptions): string {
-  // Add locale handling for new language
-  if (locale.startsWith('ja')) {
-    keywords = Array.isArray(ja) ? ja : [ja];
-  } else if (locale.startsWith('zh')) {
-    keywords = Array.isArray(zh) ? zh : [zh];
-  } else {
-    keywords = Array.isArray(en) ? en : [en];
+#### 4. **Add Highlights Configuration in Dictionary Files**
+```json
+// In dictionaries/[locale].json, add highlights section
+{
+  "highlights": {
+    "keywords": [
+      { "key": "SaaS", "value": "SaaS" },
+      { "key": "Developers", "value": "開発者" },  // Japanese translation
+      { "key": "Features", "value": "機能" },
+      { "key": "Pricing", "value": "価格設定" },
+      // ... add all keyword translations
+    ]
   }
-  // ... rest of function
 }
-
-// Update commonHighlights array with new language keywords
-export const commonHighlights: HighlightConfig[] = [
-  { en: 'SaaS', zh: 'SaaS', ja: 'SaaS' },
-  { en: 'Developers', zh: '开发者', ja: '開発者' },
-  // ... add translations for all common highlights
-];
 ```
+
+**Important**: The `text-highlight.ts` file now automatically supports new languages through dictionary loading. No manual code changes needed!
 
 #### 5. **Update `src/lib/cases.ts`**
 ```typescript
@@ -349,7 +336,7 @@ Before completing a new language addition:
 - [ ] Updated `localeNames` in `src/lib/i18n.ts`
 - [ ] Added dictionary import in `src/lib/dictionaries.ts`
 - [ ] Added blocks dictionary import in `src/lib/dictionaries.ts`
-- [ ] Updated `text-highlight.ts` with new language support
+- [ ] Added highlights configuration in dictionary files (no text-highlight.ts changes needed)
 - [ ] Added case studies data in `src/lib/cases.ts`
 - [ ] Tested all pages in the new language
 - [ ] Verified language switcher works correctly

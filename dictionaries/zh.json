@@ -915,5 +915,28 @@
     "author": "SaaS 启动模板",
     "creator": "SaaS 启动模板",
     "twitterCreator": "@saas_starter"
+  },
+  "highlights": {
+    "keywords": [
+      { "key": "SaaS", "value": "SaaS" },
+      { "key": "Developers", "value": "开发者" },
+      { "key": "Questions", "value": "问题" },
+      { "key": "Pricing", "value": "定价" },
+      { "key": "Ship Fast", "value": "快速发布" },
+      { "key": "Next.js", "value": "Next.js" },
+      { "key": "Features", "value": "功能" },
+      { "key": "Analytics", "value": "分析" },
+      { "key": "Dashboard", "value": "仪表板" },
+      { "key": "Product", "value": "产品" },
+      { "key": "Solution", "value": "解决方案" },
+      { "key": "Technology", "value": "技术" },
+      { "key": "Innovation", "value": "创新" },
+      { "key": "Performance", "value": "性能" },
+      { "key": "Security", "value": "安全" },
+      { "key": "Scalability", "value": "可扩展性" },
+      { "key": "Efficiency", "value": "效率" },
+      { "key": "Succeed", "value": "成功" },
+      { "key": "Blog", "value": "博客" }
+    ]
   }
 } 

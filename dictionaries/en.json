@@ -914,5 +914,28 @@
     "author": "SaaS Starter",
     "creator": "SaaS Starter",
     "twitterCreator": "@saas_starter"
+  },
+  "highlights": {
+    "keywords": [
+      { "key": "SaaS", "value": "SaaS" },
+      { "key": "Developers", "value": "Developers" },
+      { "key": "Questions", "value": "Questions" },
+      { "key": "Pricing", "value": "Pricing" },
+      { "key": "Ship Fast", "value": "Ship Fast" },
+      { "key": "Next.js", "value": "Next.js" },
+      { "key": "Features", "value": "Features" },
+      { "key": "Analytics", "value": "Analytics" },
+      { "key": "Dashboard", "value": "Dashboard" },
+      { "key": "Product", "value": "Product" },
+      { "key": "Solution", "value": "Solution" },
+      { "key": "Technology", "value": "Technology" },
+      { "key": "Innovation", "value": "Innovation" },
+      { "key": "Performance", "value": "Performance" },
+      { "key": "Security", "value": "Security" },
+      { "key": "Scalability", "value": "Scalability" },
+      { "key": "Efficiency", "value": "Efficiency" },
+      { "key": "Succeed", "value": "Succeed" },
+      { "key": "Blog", "value": "Blog" }
+    ]
   }
 } 

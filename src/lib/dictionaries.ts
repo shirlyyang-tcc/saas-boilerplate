@@ -416,6 +416,12 @@ export interface Dictionary {
     creator: string;
     twitterCreator: string;
   };
+  highlights: {
+    keywords: Array<{
+      key: string;
+      value: string;
+    }>;
+  };
 }
 
 export interface BlocksDictionary {
