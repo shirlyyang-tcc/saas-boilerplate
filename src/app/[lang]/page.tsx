@@ -42,7 +42,6 @@ export default async function HomePage({
           {
             text: dict.home.bottomCta.getStartedNow,
             variant: "secondary",
-            className: "bg-white text-primary hover:bg-white/90 font-medium",
           },
           {
             text: dict.home.bottomCta.viewDocumentation,
