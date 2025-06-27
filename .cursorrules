@@ -285,29 +285,28 @@ const blocksDictionaries = {
 
 **Important**: The `text-highlight.ts` file now automatically supports new languages through dictionary loading. No manual code changes needed!
 
-#### 5. **Update `src/lib/cases.ts`**
-```typescript
-// Add new language data in casesData object
-const casesData: Record<string, CaseShowcaseItem[]> = {
-  en: [
-    // ... English cases
-  ],
-  zh: [
-    // ... Chinese cases  
-  ],
-  ja: [  // Add new language cases
-    {
-      slug: "youphoto-ai",
-      title: "YouPhoto AI - ワンクリックAI写真エディター", // Japanese translation
-      description: "AI駆動の写真エディター...",  // Japanese translation
-      image: "/images/cases/case1.png",
-      externalUrl: "https://youphoto.ai",
-      tags: ["AI", "写真編集", "SaaS"],  // Translated tags
-    },
-    // ... more cases in Japanese
-  ],
-};
+#### 5. **Create Case Data Files**
+```bash
+# Create case data file for the new language
+dictionaries/case-[locale].json    # e.g., case-ja.json, case-fr.json
 ```
+
+```json
+// Example: dictionaries/case-ja.json
+[
+  {
+    "slug": "youphoto-ai",
+    "title": "YouPhoto AI - ワンクリックAI写真エディター",
+    "description": "AI駆動の写真エディター...",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://youphoto.ai",
+    "tags": ["AI", "写真編集", "SaaS"]
+  }
+  // ... more cases in Japanese
+]
+```
+
+**Important**: Case data is now stored in separate JSON files for easier management. The `cases.ts` file automatically loads data from these files!
 
 #### 6. **Update Route Generation (if using App Router)**
 ```typescript
@@ -337,7 +336,7 @@ Before completing a new language addition:
 - [ ] Added dictionary import in `src/lib/dictionaries.ts`
 - [ ] Added blocks dictionary import in `src/lib/dictionaries.ts`
 - [ ] Added highlights configuration in dictionary files (no text-highlight.ts changes needed)
-- [ ] Added case studies data in `src/lib/cases.ts`
+- [ ] Created `dictionaries/case-[locale].json` with translated case studies data
 - [ ] Tested all pages in the new language
 - [ ] Verified language switcher works correctly
 - [ ] Confirmed fallback behavior works

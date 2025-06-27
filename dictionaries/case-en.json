@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "youphoto-ai",
+    "title": "YouPhoto AI - Your One-Click AI Photo Editor",
+    "description": "AI-powered photo editor for reStyles, emoji, avatar, memes & more! Transform photos with advanced AI technology.",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://youphoto.ai",
+    "tags": ["AI", "Photo Editor", "SaaS"]
+  },
+  {
+    "slug": "ghiblio-generator",
+    "title": "Ghiblio - Ghibli Style Image Generator",
+    "description": "Ghibli-style image generator powered by ChatGPT 4o model. Transform your ideas into beautiful Studio Ghibli inspired artwork.",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://ghiblio.com",
+    "tags": ["AI", "Art", "Ghibli"]
+  },
+  {
+    "slug": "ai-music-generator",
+    "title": "AI Music Generator",
+    "description": "Create unique music compositions using artificial intelligence. Perfect for content creators and musicians.",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://aimusicgenerator.com",
+    "tags": ["AI", "Music", "Creative"]
+  },
+  {
+    "slug": "image-bg-remover",
+    "title": "Image To White Background",
+    "description": "Professional AI tool that removes backgrounds and creates perfect white backgrounds for e-commerce in seconds.",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://imagebg.com",
+    "tags": ["AI", "E-commerce", "Tool"]
+  },
+  {
+    "slug": "draw-ui",
+    "title": "DrawUI - Generate UI in Minutes",
+    "description": "Draw your idea, generate UI components in minutes. Revolutionary AI-powered UI design tool.",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://drawui.com",
+    "tags": ["AI", "UI", "Design"]
+  },
+  {
+    "slug": "ai-poster-generator",
+    "title": "AI Poster Generator",
+    "description": "Zero-design AI poster tool that generates professional posters in 4 styles within 30 seconds.",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://aiposter.com",
+    "tags": ["AI", "Design", "Marketing"]
+  },
+  {
+    "slug": "resume-go",
+    "title": "ResumeGo - AI Powered Resume Builder",
+    "description": "Create professional resumes with AI assistance. Stand out with perfectly formatted, ATS-friendly resumes.",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://resumego.ai",
+    "tags": ["AI", "Career", "Tool"]
+  },
+  {
+    "slug": "copy-web",
+    "title": "CopyWeb - Copy Web Design to Code",
+    "description": "Transform web designs into clean, responsive code instantly. Perfect for developers and designers.",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://copyweb.design",
+    "tags": ["AI", "Code", "Development"]
+  },
+  {
+    "slug": "mcp-so",
+    "title": "MCP.so - Find Awesome MCP Servers",
+    "description": "Discover and explore MCP (Model Context Protocol) servers and clients. Central hub for MCP resources.",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://mcp.so",
+    "tags": ["AI", "Directory", "MCP"]
+  },
+  {
+    "slug": "raphael-ai",
+    "title": "Raphael AI - Stunning AI Images",
+    "description": "Create stunning AI-generated images in seconds. High-quality, fast, and reliable image generation.",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://raphael-ai.com",
+    "tags": ["AI", "Images", "Creative"]
+  },
+  {
+    "slug": "think-any",
+    "title": "ThinkAny - AI Search Engine",
+    "description": "Next-generation AI-powered search engine. Get intelligent answers and insights for any query.",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://thinkany.ai",
+    "tags": ["AI", "Search", "Engine"]
+  },
+  {
+    "slug": "hey-beauty",
+    "title": "HeyBeauty - AI Virtual Try On",
+    "description": "Try on makeup, hairstyles, and beauty products virtually using advanced AI technology.",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://heybeauty.ai",
+    "tags": ["AI", "Beauty", "AR"]
+  }
+] 

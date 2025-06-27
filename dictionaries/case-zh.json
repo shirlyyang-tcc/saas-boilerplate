@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "youphoto-ai",
+    "title": "YouPhoto AI - 一键式AI照片编辑器",
+    "description": "AI驱动的照片编辑器，用于重新设计、表情符号、头像、meme等！使用先进的AI技术转换照片。",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://youphoto.ai",
+    "tags": ["AI", "照片编辑", "SaaS"]
+  },
+  {
+    "slug": "ghiblio-generator",
+    "title": "Ghiblio - 宫崎骏风格图像生成器",
+    "description": "由ChatGPT 4o模型驱动的宫崎骏风格图像生成器。将您的想法转化为美丽的吉卜力工作室风格艺术作品。",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://ghiblio.com",
+    "tags": ["AI", "艺术", "宫崎骏"]
+  },
+  {
+    "slug": "ai-music-generator",
+    "title": "AI音乐生成器",
+    "description": "使用人工智能创作独特的音乐作品。非常适合内容创作者和音乐家。",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://aimusicgenerator.com",
+    "tags": ["AI", "音乐", "创意"]
+  },
+  {
+    "slug": "image-bg-remover",
+    "title": "图片转白底工具",
+    "description": "专业的AI工具，可在几秒钟内去除背景并为电商创建完美的白色背景。",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://imagebg.com",
+    "tags": ["AI", "电商", "工具"]
+  },
+  {
+    "slug": "draw-ui",
+    "title": "DrawUI - 分钟级UI生成",
+    "description": "画出您的想法，几分钟内生成UI组件。革命性的AI驱动UI设计工具。",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://drawui.com",
+    "tags": ["AI", "界面", "设计"]
+  },
+  {
+    "slug": "ai-poster-generator",
+    "title": "AI海报生成器",
+    "description": "零设计AI海报工具，30秒内生成4种风格的专业海报。",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://aiposter.com",
+    "tags": ["AI", "设计", "营销"]
+  },
+  {
+    "slug": "resume-go",
+    "title": "ResumeGo - AI简历制作器",
+    "description": "使用AI助手创建专业简历。制作格式完美、ATS友好的简历脱颖而出。",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://resumego.ai",
+    "tags": ["AI", "职业", "工具"]
+  },
+  {
+    "slug": "copy-web",
+    "title": "CopyWeb - 网页设计转代码",
+    "description": "瞬间将网页设计转换为简洁、响应式代码。非常适合开发者和设计师。",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://copyweb.design",
+    "tags": ["AI", "代码", "开发"]
+  },
+  {
+    "slug": "mcp-so",
+    "title": "MCP.so - 发现优秀的MCP服务器",
+    "description": "发现和探索MCP（模型上下文协议）服务器和客户端。MCP资源的中心枢纽。",
+    "image": "/images/cases/case1.png",
+    "externalUrl": "https://mcp.so",
+    "tags": ["AI", "目录", "MCP"]
+  },
+  {
+    "slug": "raphael-ai",
+    "title": "Raphael AI - 精美AI图像",
+    "description": "几秒钟内创建精美的AI生成图像。高质量、快速、可靠的图像生成。",
+    "image": "/images/cases/case2.png",
+    "externalUrl": "https://raphael-ai.com",
+    "tags": ["AI", "图像", "创意"]
+  },
+  {
+    "slug": "think-any",
+    "title": "ThinkAny - AI搜索引擎",
+    "description": "下一代AI驱动的搜索引擎。为任何查询获得智能答案和洞察。",
+    "image": "/images/cases/case3.png",
+    "externalUrl": "https://thinkany.ai",
+    "tags": ["AI", "搜索", "引擎"]
+  },
+  {
+    "slug": "hey-beauty",
+    "title": "HeyBeauty - AI虚拟试妆",
+    "description": "使用先进的AI技术虚拟试用化妆品、发型和美容产品。",
+    "image": "/images/cases/case4.png",
+    "externalUrl": "https://heybeauty.ai",
+    "tags": ["AI", "美容", "AR"]
+  }
+] 
