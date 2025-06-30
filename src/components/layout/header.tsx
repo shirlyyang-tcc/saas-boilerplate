@@ -24,7 +24,7 @@ export function Header({ dict }: HeaderProps) {
   
   // Use default values if dict is not provided
   const siteInfo = dict?.site || {
-    name: "SaaS Starter"
+    name: "EdgeOne Saas Starter"
   }
   const headerConfig = dict?.header || {
     navigation: [],
@@ -88,7 +88,7 @@ export function Header({ dict }: HeaderProps) {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              aria-label={dict?.common?.toggleTheme || "Toggle theme"}
+              aria-label={dict?.common?.common?.toggleTheme || "Toggle theme"}
             >
               {theme === 'dark' ? (
                 <Sun className="h-5 w-5" />

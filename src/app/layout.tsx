@@ -7,24 +7,24 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'SaaS Starter - Build Your Next SaaS Product',
-    template: '%s | SaaS Starter'
+    default: 'EdgeOne Saas Starter - Build Your Next SaaS Product',
+    template: '%s | EdgeOne Saas Starter'
   },
   description: 'A modern SaaS starter template with all the components you need to build your next product.',
   keywords: ['SaaS', 'Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-  authors: [{ name: 'SaaS Starter' }],
-  creator: 'SaaS Starter',
+  authors: [{ name: 'EdgeOne Saas Starter' }],
+  creator: 'EdgeOne Saas Starter',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://saas-starter.com',
-    title: 'SaaS Starter - Build Your Next SaaS Product',
+    url: 'https://edgeone-saas-starter.com',
+    title: 'EdgeOne Saas Starter - Build Your Next SaaS Product',
     description: 'A modern SaaS starter template with all the components you need to build your next product.',
-    siteName: 'SaaS Starter',
+    siteName: 'EdgeOne Saas Starter',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SaaS Starter - Build Your Next SaaS Product',
+    title: 'EdgeOne Saas Starter - Build Your Next SaaS Product',
     description: 'A modern SaaS starter template with all the components you need to build your next product.',
     creator: '@saas_starter',
   },

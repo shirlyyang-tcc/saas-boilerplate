@@ -20,8 +20,8 @@ export default async function PricingPage({
   const faqDict = {
     ...dict,
     faq: {
-      title: dict.pricing.faqTitle,
-      description: dict.pricing.faqDescription,
+      title: dict.faq.title,
+      description: dict.faq.description,
       faqs: [...dict.pricing.faqs, ...dict.shared.commonFaqs],
       stillHaveQuestions: "Still have questions? We're here to help!",
       contactSupport: "Contact Support →"

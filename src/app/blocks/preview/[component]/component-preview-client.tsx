@@ -548,7 +548,6 @@ const componentMap = {
     <div className="bg-background min-h-screen py-10">
       <Pricing dict={{
         pricing: {
-          mostPopular: "Most Chosen",
           plans: [
             {
               name: "Basic",

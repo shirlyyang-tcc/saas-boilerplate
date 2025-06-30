@@ -61,7 +61,7 @@ export default function LanguageSwitcher({ currentLang, dict }: LanguageSwitcher
         className="flex items-center gap-2 hover:bg-muted/50 hover:text-primary"
         aria-expanded={isOpen}
         aria-haspopup="true"
-        aria-label={dict?.common?.switchLanguage || "Switch language"}
+        aria-label={dict?.common?.common?.switchLanguage || "Switch language"}
       >
         <span className="hidden sm:inline">{localeNames[currentLang]}</span>
         <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />

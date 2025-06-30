@@ -170,7 +170,7 @@ export interface Dictionary {
       errorMessage: string;
     };
   };
-  
+
   form: {
     labels: {
       fullName: string;
@@ -234,18 +234,16 @@ export interface Dictionary {
     }>;
   };
   pricing: {
-    title: string;
-    description: string;
     badge: string;
-    pageTitle: string;
+    title: string;
     pageSubtitle: string;
     mostPopular: string;
-    faqTitle: string;
-    faqDescription: string;
     ctaTitle: string;
     ctaDescription: string;
-    startFreeTrial: string;
-    contactSales: string;
+    description: string;
+    monthlyBilling: string;
+    annualBilling: string;
+    discount: string;
     plans: Array<{
       name: string;
       price: string;
@@ -321,10 +319,8 @@ export interface Dictionary {
     keyResult: string;
     ctaTitle: string;
     ctaSubtitle: string;
-    getStartedToday: string;
     discussYourProject: string;
     detail: {
-      backToCases: string;
       theChallenge: string;
       ourSolution: string;
       keyResults: string;
@@ -349,13 +345,6 @@ export interface Dictionary {
   };
   testimonials: TestimonialsData;
   stats: {
-    companyStats: Array<{
-      value: string;
-      label: string;
-      suffix?: string;
-      prefix?: string;
-      color?: string;
-    }>;
     businessMetrics: Array<{
       value: string;
       label: string;

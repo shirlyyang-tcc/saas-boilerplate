@@ -31,8 +31,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
       icon: Mail,
       title: dict.contact.info.email.title,
       description: dict.contact.info.email.description,
-      value: 'hello@saas-starter.com',
-      action: 'mailto:hello@saas-starter.com'
+      value: 'hello@edgeone-saas-starter.com',
+      action: 'mailto:hello@edgeone-saas-starter.com'
     },
     {
       icon: Phone,

@@ -38,7 +38,7 @@ export function ContactForm({
   dict
 }: ContactFormProps) {
   // Use dictionary subjects or provided subjects as fallback
-  const defaultSubjects = dict?.contactForm?.defaultSubjects || [
+  const defaultSubjects = dict?.shared?.formSubjects || [
     "General Inquiry",
     "Technical Support", 
     "Sales Question",
@@ -218,12 +218,12 @@ export function ContactForm({
         {isSubmitting ? (
           <div className="flex items-center">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-background mr-2"></div>
-            {dict?.form?.sending || "Sending..."}
+            {dict?.common?.states?.sending || "Sending..."}
           </div>
         ) : (
           <div className="flex items-center">
             <Send className="w-4 h-4 mr-2" />
-            {dict?.form?.sendMessage || "Send Message"}
+            {dict?.common?.buttons?.sendMessage || "Send Message"}
           </div>
         )}
       </Button>
@@ -309,7 +309,7 @@ export function SupportContactForm({
   className?: string; 
   dict?: Dictionary;
 }) {
-  const supportSubjects = dict?.contactForm?.supportSubjects || [
+  const supportSubjects = dict?.shared?.supportSubjects || [
     "Technical Issue",
     "Billing Question",
     "Feature Request",

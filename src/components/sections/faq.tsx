@@ -31,7 +31,7 @@ export function FAQ({ dict }: FAQProps) {
             {dict?.faq?.stillHaveQuestions}
           </p>
           <a
-            href="mailto:support@saas-starter.com"
+            href="mailto:support@edgeone-saas-starter.com"
             className="text-primary hover:text-primary/80 font-medium"
           >
             {dict?.faq?.contactSupport}

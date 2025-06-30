@@ -22,7 +22,7 @@ export function CompanyStatsI18n({
         color: (stat.color as any) || 'primary'
       }))}
       variant="default"
-      columns={stats.length}
+      columns={stats.length as 2 | 3 | 4 | 5}
       className={className}
     />
   );

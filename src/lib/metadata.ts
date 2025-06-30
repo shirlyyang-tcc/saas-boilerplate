@@ -17,7 +17,7 @@ export async function generateMetadata(locale: Locale): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: locale === 'zh' ? 'zh_CN' : 'en_US',
-      url: 'https://saas-starter.com',
+      url: 'https://edgeone-saas-starter.com',
       title: dict.metadata.defaultTitle,
       description: dict.metadata.description,
       siteName: dict.metadata.siteName,
