@@ -102,6 +102,7 @@ export async function onRequestPost(context) {
     }
     return new Response(JSON.stringify({ received: true }));
   } catch (error) {
+    console.log(error);
     return new Response(JSON.stringify({ received: false, error: error.message }), { status: 500 });
   }
 }
