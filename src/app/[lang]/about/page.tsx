@@ -7,6 +7,7 @@ import { AboutSection } from '@/components/sections/content-section'
 import { CompanyStatsI18n } from '@/components/ui/company-stats'
 import { Locale } from '@/lib/i18n'
 import { getDictionary } from '@/lib/dictionaries'
+import Image from 'next/image'
 
 export default async function AboutPage({
   params,
@@ -105,8 +106,14 @@ export default async function AboutPage({
             {team.map((member, index) => (
               <Card key={index} className="text-center border-0 shadow-sm">
                 <CardHeader>
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                    {member.avatar}
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl overflow-hidden">
+                    <Image
+                      src={member.avatar}
+                      alt={member.name}
+                      width={80}
+                      height={80}
+                      className="object-cover w-full h-full rounded-full"
+                    />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
                   <p className="text-primary font-medium">{member.role}</p>

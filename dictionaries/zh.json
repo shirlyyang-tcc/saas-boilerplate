@@ -666,25 +666,25 @@
       {
         "name": "Alex Johnson",
         "role": "创始人兼首席执行官",
-        "avatar": "👨‍💻",
+        "avatar": "/images/people/people1.png",
         "bio": "拥有 10+ 年构建 SaaS 产品经验的全栈开发者。"
       },
       {
         "name": "Sarah Chen",
         "role": "首席设计师",
-        "avatar": "👩‍🎨",
+        "avatar": "/images/people/people2.png",
         "bio": "热衷于创造美观直观用户体验的 UI/UX 专家。"
       },
       {
         "name": "Marcus Rodriguez",
         "role": "技术负责人",
-        "avatar": "👨‍🔬",
+        "avatar": "/images/people/people3.png",
         "bio": "专注于可扩展性、安全性和性能优化的 DevOps 工程师。"
       },
       {
         "name": "Emily Davis",
         "role": "社区经理",
-        "avatar": "👩‍💼",
+        "avatar": "/images/people/people4.png",
         "bio": "致力于在全球范围内构建和培育我们的开发者社区。"
       }
     ]
@@ -762,42 +762,42 @@
       {
         "name": "Sarah Chen",
         "role": "TechFlow 创始人",
-        "avatar": "👩‍💻",
+        "avatar": "/images/people/people1.png",
         "content": "这个模板为我们节省了数月的开发时间。我们在短短 2 周内就推出了 SaaS 产品，而不是 6 个月！",
         "rating": 5
       },
       {
         "name": "Marcus Rodriguez",
         "role": "DataSync CTO",
-        "avatar": "👨‍💼",
+        "avatar": "/images/people/people2.png",
         "content": "代码质量非常出色。清洁、有良好文档，并遵循所有最佳实践。强烈推荐！",
         "rating": 5
       },
       {
         "name": "Emily Johnson",
         "role": "独立开发者",
-        "avatar": "👩‍🎨",
+        "avatar": "/images/people/people3.png",
         "content": "作为独立开发者，这个模板给了我与大团队竞争所需的一切。组件非常漂亮！",
         "rating": 5
       },
       {
         "name": "David Kim",
         "role": "创业公司创始人",
-        "avatar": "👨‍🚀",
+        "avatar": "/images/people/people4.png",
         "content": "身份验证和支付集成无缝运行。我们能够在第一天就开始接受付款。",
         "rating": 5
       },
       {
         "name": "Lisa Wang",
         "role": "产品经理",
-        "avatar": "👩‍💼",
+        "avatar": "/images/people/people1.png",
         "content": "设计系统非常一致，暗模式实现完美。我们的用户非常喜欢！",
         "rating": 5
       },
       {
         "name": "Alex Thompson",
         "role": "全栈开发者",
-        "avatar": "👨‍💻",
+        "avatar": "/images/people/people2.png",
         "content": "今年最好的投资。模板不断更新，支持也很棒。",
         "rating": 5
       }
