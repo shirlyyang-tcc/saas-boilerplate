@@ -23,8 +23,8 @@ export default async function PricingPage({
       title: dict.faq.title,
       description: dict.faq.description,
       faqs: [...dict.pricing.faqs, ...dict.shared.commonFaqs],
-      stillHaveQuestions: "Still have questions? We're here to help!",
-      contactSupport: "Contact Support →"
+      stillHaveQuestions: dict.faq.stillHaveQuestions,
+      contactSupport: dict.faq.contactSupport
     }
   };
   return (
@@ -65,7 +65,7 @@ export default async function PricingPage({
       <MinimalCTA
         title={dict.pricing.ctaTitle}
         description={dict.pricing.ctaDescription}
-        
+        buttonText={dict.common.buttons.getStartedNow}
       />
     </Layout>
   );

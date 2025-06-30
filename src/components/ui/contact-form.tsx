@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { User, Mail, Building, Send } from "lucide-react";
 import { Dictionary } from "@/lib/dictionaries";
+import * as Select from '@radix-ui/react-select';
+import { Check, ChevronDown } from 'lucide-react';
 
 export interface ContactFormProps {
   title?: string;
@@ -26,6 +28,50 @@ export interface ContactFormData {
 }
 
 // Default subjects - will be overridden by dictionary data
+
+// Dropdown 组件
+interface DropdownProps {
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+  placeholder?: string;
+}
+
+function Dropdown({ value, onChange, options, placeholder }: DropdownProps) {
+  return (
+    <Select.Root value={value} onValueChange={onChange}>
+      <Select.Trigger className="w-full cursor-pointer rounded-lg border border-border bg-background py-3 pl-4 pr-4 text-left text-base text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition flex items-center justify-between">
+        <span className={value ? "" : "text-muted-foreground"}>
+          {value || placeholder || "Select an option"}
+        </span>
+        <Select.Icon className="ml-1">
+          <ChevronDown className="h-5 w-5 text-muted-foreground" />
+        </Select.Icon>
+      </Select.Trigger>
+      <Select.Content
+        className="z-50 min-w-[var(--radix-select-trigger-width)] rounded-lg border border-border bg-background py-1 shadow-lg ring-1 ring-black/5 focus:outline-none animate-in fade-in-0 zoom-in-95"
+        position="popper"
+      >
+        <Select.Viewport>
+          {options.map((option) => (
+            <Select.Item
+              key={option}
+              value={option}
+              className="relative cursor-pointer select-none py-3 pl-4 pr-4 text-base text-foreground outline-none transition data-[state=checked]:bg-primary/10 data-[state=checked]:text-primary data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground"
+            >
+              <span className="block truncate">
+                {option}
+              </span>
+              <Select.ItemIndicator className="absolute inset-y-0 left-0 flex items-center pl-1 text-primary">
+                <Check className="h-5 w-5" />
+              </Select.ItemIndicator>
+            </Select.Item>
+          ))}
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Root>
+  );
+}
 
 export function ContactForm({
   title,
@@ -59,13 +105,10 @@ export function ContactForm({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement> | { target: { name: string; value: string } }) {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,7 +154,7 @@ export function ContactForm({
       <div className={`grid grid-cols-1 ${variant === "compact" ? "gap-4" : "md:grid-cols-2 gap-6"}`}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-            {dict?.form?.labels?.fullName || "Full Name"} {dict?.form?.required || "*"}
+            {dict?.form?.labels?.fullName || "Full Name"} <span className="text-red-500">{dict?.form?.required || "*"}</span>
           </label>
           <div className="relative">
             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -129,7 +172,7 @@ export function ContactForm({
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-            {dict?.form?.labels?.emailAddress || "Email Address"} {dict?.form?.required || "*"}
+            {dict?.form?.labels?.emailAddress || "Email Address"} <span className="text-red-500">{dict?.form?.required || "*"}</span>
           </label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -171,23 +214,15 @@ export function ContactForm({
           {contactSubjects.length > 0 && (
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                {dict?.form?.labels?.subject || "Subject"} {dict?.form?.required || "*"}
+                {dict?.form?.labels?.subject || "Subject"} <span className="text-red-500">{dict?.form?.required || "*"}</span>
               </label>
-              <select
-                id="subject"
-                name="subject"
+              <Dropdown
                 value={formData.subject}
-                onChange={handleInputChange}
-                required
-                className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
-              >
-                <option value="">{dict?.form?.placeholders?.selectSubject || "Select a subject"}</option>
-                {contactSubjects.map((subject) => (
-                  <option key={subject} value={subject}>
-                    {subject}
-                  </option>
-                ))}
-              </select>
+                onChange={val => handleInputChange({ target: { name: 'subject', value: val } })}
+                options={contactSubjects}
+                
+                placeholder={dict?.form?.placeholders?.selectSubject}
+              />
             </div>
           )}
         </div>
@@ -195,7 +230,7 @@ export function ContactForm({
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-          {dict?.form?.labels?.message || "Message"} {dict?.form?.required || "*"}
+          {dict?.form?.labels?.message || "Message"} <span className="text-red-500">{dict?.form?.required || "*"}</span>
         </label>
         <textarea
           id="message"

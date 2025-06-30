@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 interface PricingProps {
   dict?: {
     pricing: {
+      mostPopular: string,
       plans: {
         name: string
         description: string
@@ -41,7 +42,7 @@ export function Pricing({ dict }: PricingProps) {
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge variant="primary" size="default" icon={Star} iconPosition="left">
-                    Most Popular
+                    {dict?.pricing?.mostPopular || "Most Popular"}  
                   </Badge>
                 </div>
               )}

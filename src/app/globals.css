@@ -38,6 +38,8 @@
     --ring: 260 51% 48%; /* Focus ring color */
     --ring-dark: 257 59% 42%; /* Dark theme ring color */
     --radius: 0.5rem; /* Default border radius */
+    --popover-background: 0 0% 100%; /* Popover background color */
+    --popover-background-dark: 240 3.7% 15.9%; /* Dark theme popover background color */
   }
 
   .dark {
@@ -206,3 +208,11 @@ code {
 .text-responsive-md {
   @apply text-xl sm:text-2xl lg:text-3xl;
 } 
+
+select {
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
