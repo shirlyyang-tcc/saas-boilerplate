@@ -118,6 +118,14 @@ saas-starter-template/
 - `layout/` - 布局组件 (头部、尾部)
 - `sections/` - 页面部分 (英雄、特征、定价等)
 
+### AI 辅助
+你可以在 Cursor 中通过对话修改代码。
+
+以下是一些示例 Prompt：
+- 修改主题色：把项目的主色调改成粉色
+- 增加语种：给项目增加法语支持
+- 修改页面：修改主页，去掉 xx 模块
+
 ### 内容管理
 
 #### 博客文章
@@ -139,41 +147,7 @@ readTime: "5 分钟读取"
 ```
 
 #### 案例研究
-在 `src/lib/cases.ts` 中添加案例研究，或者创建一个类似博客的基于 Markdown 的系统。
-
-## 🔧 配置
-
-### 环境变量
-
-为你的环境变量创建一个 `.env.local` 文件：
-
-```bash
-# 数据库 (如果使用)
-DATABASE_URL="你的数据库 URL"
-
-# 身份验证 (如果使用 NextAuth.js)
-NEXTAUTH_SECRET="你的密钥"
-NEXTAUTH_URL="http://localhost:3000"
-
-# 支付 (如果使用 Stripe)
-STRIPE_SECRET_KEY="sk_test_..."
-STRIPE_PUBLISHABLE_KEY="pk_test_..."
-
-# 邮件 (如果使用)
-EMAIL_SERVER="smtp://..."
-EMAIL_FROM="noreply@yourapp.com"
-```
-
-### Next.js 配置
-
-模板默认配置为静态导出 (`next.config.js`):
-
-```javascript
-const nextConfig = {
-  output: 'export',  // 静态托管
-  // ... 其他配置
-}
-```
+在 `dictionaries/case-en.json` 和 `dictionaries/case-zh.json` 中添加案例研究。
 
 ## 📱 包含的页面
 
@@ -193,24 +167,7 @@ const nextConfig = {
 - 移动优先的响应式设计
 
 ## 🚀 部署
-
-### Vercel (推荐)
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Netlify
-```bash
-npm run build
-# 将 'out' 文件夹上传到 Netlify
-```
-
-### 其他静态主机
-```bash
-npm run build
-# 将 'out' 文件夹上传到你的主机提供商
-```
+[![使用 EdgeOne Pages 部署](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?template=saas-starter)
 
 ## 🤝 贡献
 

@@ -118,6 +118,14 @@ All components are built with TypeScript and Tailwind CSS. They're located in `s
 - `layout/` - Layout components (Header, Footer)
 - `sections/` - Page sections (Hero, Features, Pricing, etc.)
 
+### AI Assistance
+You can modify the code through dialogue in Cursor.
+
+Here are some example Prompts:
+- Change the theme color: Change the project's primary color to pink
+- Add language support: Add French support to the project
+- Modify the page: Modify the homepage, removing the xx module
+
 ### Content Management
 
 #### Blog Posts
@@ -139,41 +147,7 @@ Write your content here in Markdown...
 ```
 
 #### Case Studies
-Add case studies in `src/lib/cases.ts` or create a markdown-based system similar to the blog.
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env.local` file for your environment variables:
-
-```bash
-# Database (if using)
-DATABASE_URL="your_database_url"
-
-# Authentication (if using NextAuth.js)
-NEXTAUTH_SECRET="your_secret"
-NEXTAUTH_URL="http://localhost:3000"
-
-# Payments (if using Stripe)
-STRIPE_SECRET_KEY="sk_test_..."
-STRIPE_PUBLISHABLE_KEY="pk_test_..."
-
-# Email (if using)
-EMAIL_SERVER="smtp://..."
-EMAIL_FROM="noreply@yourapp.com"
-```
-
-### Next.js Configuration
-
-The template is configured for static export by default (`next.config.js`):
-
-```javascript
-const nextConfig = {
-  output: 'export',  // For static hosting
-  // ... other config
-}
-```
+Add case studies in `dictionaries/case-en.json` and `dictionaries/case-zh.json`.
 
 ## 📱 Pages Included
 
@@ -193,24 +167,7 @@ const nextConfig = {
 - Mobile-first responsive design
 
 ## 🚀 Deployment
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Netlify
-```bash
-npm run build
-# Upload the 'out' folder to Netlify
-```
-
-### Other Static Hosts
-```bash
-npm run build
-# Upload the 'out' folder to your hosting provider
-```
+[![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=saas-starter)
 
 ## 🤝 Contributing
 
