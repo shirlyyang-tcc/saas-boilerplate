@@ -113,6 +113,8 @@ export default async function AboutPage({
                       width={80}
                       height={80}
                       className="object-cover w-full h-full rounded-full"
+                      priority={index < 2}
+                      loading={index < 2 ? undefined : 'lazy'}
                     />
                   </div>
                   <CardTitle className="text-xl">{member.name}</CardTitle>
