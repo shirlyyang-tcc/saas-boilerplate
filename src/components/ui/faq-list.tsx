@@ -3,10 +3,7 @@
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 
-interface FAQ {
-  question: string
-  answer: string
-}
+import type { FAQ } from '@/types/faq'
 
 interface FAQListProps {
   faqs: FAQ[]

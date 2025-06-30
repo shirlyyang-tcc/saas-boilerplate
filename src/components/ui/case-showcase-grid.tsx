@@ -4,14 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink, ArrowRight } from "lucide-react";
 
-export interface CaseShowcaseItem {
-  slug: string;
-  title: string;
-  description: string;
-  image?: string;
-  externalUrl: string; // External link
-  tags?: string[]; // Optional tags
-}
+import type { CaseShowcaseItem } from '@/types/cases'
+export type { CaseShowcaseItem }
 
 interface CaseShowcaseGridProps {
   cases: CaseShowcaseItem[];

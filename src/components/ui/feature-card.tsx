@@ -6,16 +6,10 @@ import { LucideIcon } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-export interface FeatureItem {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  benefits?: string[];
-  link?: {
-    href: string;
-    text: string;
-  };
-}
+import type { FeatureWithLucideIcon } from '@/types/features'
+
+// Re-export for backward compatibility
+export type FeatureItem = FeatureWithLucideIcon
 
 interface FeatureCardProps {
   icon: LucideIcon;

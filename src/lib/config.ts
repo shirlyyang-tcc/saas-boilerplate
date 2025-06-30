@@ -42,80 +42,25 @@ export interface NavigationConfig {
   }
 }
 
-export interface PricingPlan {
-  name: string
-  price: string
-  originalPrice?: string
-  period: string
-  description: string
-  features: string[]
-  limitations: string[]
-  popular: boolean
-  buttonText: string
-  buttonVariant: string
-}
+// Pricing types are now in @/types/pricing
+export type { 
+  PricingPlan, 
+  ComparisonFeature, 
+  PricingConfig 
+} from '@/types/pricing'
 
-export interface ComparisonFeature {
-  name: string
-  starter: string | boolean
-  professional: string | boolean
-  enterprise: string | boolean
-}
+// Feature types are now in @/types/features
+export type { 
+  Feature, 
+  FeatureCategory, 
+  FeaturesConfig 
+} from '@/types/features'
 
-export interface PricingConfig {
-  plans: PricingPlan[]
-  comparison: Array<{
-    category: string
-    features: ComparisonFeature[]
-  }>
-  faqs: Array<{
-    question: string
-    answer: string
-  }>
-}
+// Testimonial types are now in @/types/testimonials
+export type { Testimonial, TestimonialsConfig } from '@/types/testimonials'
 
-export interface Feature {
-  icon: string
-  title: string
-  description: string
-  benefits?: string[]
-}
-
-export interface FeatureCategory {
-  category: string
-  description: string
-  features: Feature[]
-}
-
-export interface FeaturesConfig {
-  hero: Feature[]
-  main: Feature[]
-  categories: FeatureCategory[]
-  support: Feature[]
-}
-
-export interface Testimonial {
-  name: string
-  role: string
-  avatar: string
-  content: string
-  rating: number
-}
-
-export interface TestimonialsConfig {
-  testimonials: Testimonial[]
-  stats: Array<{
-    value: string
-    label: string
-  }>
-}
-
-export interface FAQConfig {
-  faqs: Array<{
-    question: string
-    answer: string
-  }>
-}
+// FAQ types are now in @/types/faq
+export type { FAQConfig } from '@/types/faq'
 
 export interface BlockComponent {
   id: string
@@ -200,7 +145,7 @@ export const getFeatureCategories = async (locale: Locale = defaultLocale) => {
 
 export const getSupportFeatures = async (locale: Locale = defaultLocale) => {
   const dict = await getDictionary(locale)
-  return dict.features.support
+  return dict.features.page.supportFeatures
 }
 
 export const getTestimonials = async (locale: Locale = defaultLocale) => {

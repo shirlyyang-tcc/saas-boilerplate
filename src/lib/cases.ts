@@ -4,15 +4,10 @@
  */
 
 import { type Locale, locales } from './i18n';
+import type { CaseShowcaseItem } from '@/types/cases';
 
-export interface CaseShowcaseItem {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-  externalUrl: string;
-  tags: string[];
-}
+// CaseShowcaseItem type is now in @/types/cases
+export type { CaseShowcaseItem }
 
 // Cache for loaded case data
 const casesCache = new Map<Locale, CaseShowcaseItem[]>();

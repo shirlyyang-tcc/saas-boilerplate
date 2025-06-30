@@ -3,15 +3,8 @@
 import { ReactNode } from "react";
 import { LucideIcon } from "lucide-react";
 
-export interface StatItem {
-  value: string | number;
-  label: string;
-  description?: string;
-  icon?: LucideIcon;
-  suffix?: string;
-  prefix?: string;
-  color?: "primary" | "secondary" | "success" | "warning" | "destructive";
-}
+import type { StatItem } from '@/types/stats'
+export type { StatItem }
 
 export interface StatsSectionProps {
   stats: StatItem[];

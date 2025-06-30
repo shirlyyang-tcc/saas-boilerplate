@@ -1,34 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Check, X } from "lucide-react";
 
-interface ComparisonFeatureItem {
-  name: string;
-  starter: boolean | string;
-  professional: boolean | string;
-  enterprise: boolean | string;
-}
-
-interface ComparisonFeatureCategory {
-  category: string;
-  items: ComparisonFeatureItem[];
-}
-
-interface ComparisonData {
-  title: string;
-  description: string;
-  tableHeaders?: {
-    features: string;
-    starter: string;
-    professional: string;
-    enterprise: string;
-  };
-  planPricing?: {
-    starter: string;
-    professional: string;
-    enterprise: string;
-  };
-  features: ComparisonFeatureCategory[];
-}
+import type { 
+  ComparisonFeatureItem, 
+  ComparisonFeatureCategory, 
+  ComparisonData 
+} from '@/types/pricing'
 
 interface PricingComparisonProps {
   comparison: ComparisonData;

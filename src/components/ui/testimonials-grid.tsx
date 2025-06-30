@@ -3,29 +3,15 @@
 import { Star, User } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
+import type { 
+  Testimonial, 
+  TestimonialStat, 
+  TestimonialsGridProps, 
+  TestimonialCardProps,
+  StatsRowProps 
+} from '@/types/testimonials'
 
-interface Testimonial {
-  rating: number
-  content: string
-  avatar?: string
-  name?: string
-  role?: string
-}
-
-interface Stat {
-  value: string
-  label: string
-}
-
-interface TestimonialsGridProps {
-  testimonials: Testimonial[]
-  stats?: Stat[]
-  columns?: 1 | 2 | 3
-  className?: string
-  showStats?: boolean
-}
-
-export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <Card className="border-0 shadow-sm">
       <CardContent className="p-6">
@@ -66,7 +52,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   )
 }
 
-export function StatsRow({ stats }: { stats: Stat[] }) {
+export function StatsRow({ stats }: StatsRowProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
       {stats.map((stat, index) => (

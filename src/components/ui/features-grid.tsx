@@ -32,11 +32,7 @@ const iconMap = {
   Lock,
 } as const
 
-interface Feature {
-  icon: string
-  title: string
-  description: string
-}
+import type { Feature } from '@/types/features'
 
 interface FeaturesGridProps {
   features: Feature[]

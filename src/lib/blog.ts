@@ -8,18 +8,9 @@ function getPostsDirectory(lang: string = 'en') {
   return path.join(process.cwd(), 'content', lang, 'blog')
 }
 
-export interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-  author: string
-  tags: string[]
-  readTime: string
-  content?: string
-  image?: string
-  imageAlt?: string
-}
+// BlogPost type is now in @/types/blog
+import type { BlogPost } from '@/types/blog'
+export type { BlogPost }
 
 export function getAllPosts(lang: string = 'en'): BlogPost[] {
   const postsDirectory = getPostsDirectory(lang)

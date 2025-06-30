@@ -42,24 +42,11 @@ const iconMap = {
   Code
 } as const;
 
-interface Feature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-interface DetailedFeature {
-  icon: string;
-  title: string;
-  description: string;
-  benefits: string[];
-}
-
-interface FeatureCategory {
-  category: string;
-  description: string;
-  features: DetailedFeature[];
-}
+import type { 
+  Feature, 
+  DetailedFeature, 
+  FeatureCategory 
+} from '@/types/features'
 
 {/* Hero Features */}
 export function HeroFeatures({ heroFeatures }: { heroFeatures: Feature[] }) {

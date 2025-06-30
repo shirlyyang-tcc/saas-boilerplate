@@ -1,4 +1,5 @@
 import { Locale } from './i18n';
+import type { TestimonialsData } from '@/types/testimonials';
 
 // Translation file type definitions
 export interface Dictionary {
@@ -346,21 +347,7 @@ export interface Dictionary {
       answer: string;
     }>;
   };
-  testimonials: {
-    title: string;
-    description: string;
-    testimonials: Array<{
-      name: string;
-      role: string;
-      avatar: string;
-      content: string;
-      rating: number;
-    }>;
-    stats: Array<{
-      value: string;
-      label: string;
-    }>;
-  };
+  testimonials: TestimonialsData;
   stats: {
     companyStats: Array<{
       value: string;

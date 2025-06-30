@@ -6,18 +6,8 @@ import { ImageIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-  category?: string;
-  image?: string;
-  imageAlt?: string;
-}
+import type { BlogPost } from '@/types/blog'
+export type { BlogPost }
 
 interface BlogCardProps {
   post: BlogPost;
