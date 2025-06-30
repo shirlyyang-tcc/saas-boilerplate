@@ -251,7 +251,7 @@
   "hero": {
     "badge": "🚀 Ship Your SaaS in Hours, Not Months",
     "title": "Build Your Next SaaS Product with Our Starter Template",
-    "subtitle": "A complete SaaS starter template with authentication, payments, dashboard, and all the components you need to launch fast.",
+    "subtitle": "A complete SaaS starter template all the components you need to launch fast.",
     "socialProof": {
       "trustedByDevelopers": "Trusted by 250+ developers",
       "readyComponents": "30+ Ready Components",
@@ -453,11 +453,6 @@
         "icon": "Smartphone",
         "title": "Mobile First",
         "description": "Responsive design that works beautifully on all devices and screen sizes."
-      },
-      {
-        "icon": "BarChart3",
-        "title": "Analytics Ready",
-        "description": "Integration with popular analytics tools to track user behavior and growth metrics."
       }
     ]
   },

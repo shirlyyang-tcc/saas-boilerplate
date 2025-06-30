@@ -1,13 +1,13 @@
 {
   "site": {
     "name": "SaaS 启动器",
-    "description": "完整的 SaaS 启动模板，帮助您比以往更快地构建和启动下一个产品。",
+    "description": "全方位 SaaS 启动模板，助您更快构建和发布新产品。",
     "url": "https://saas-starter.com",
     "email": "hello@saas-starter.com",
     "author": "SaaS 启动器团队",
     "logo": "SaaS 启动器",
     "copyright": "SaaS 启动器。保留所有权利。",
-    "tagline": "为全球开发者用 ❤️ 制作"
+    "tagline": "为全球开发者倾心打造 ❤️"
   },
   "social": [
     {
@@ -186,9 +186,9 @@
   },
   "contact": {
     "pageTitle": "联系我们的团队",
-    "pageSubtitle": "对我们的 SaaS 启动模板有疑问？需要技术支持？想讨论定制解决方案？我们随时为您提供帮助！",
-    "getInTouch": "联系我们",
-    "description": "我们随时为您提供帮助，解答您可能遇到的任何问题。期待收到您的来信！",
+    "pageSubtitle": "对我们的 SaaS 启动模板有疑问？需要技术支持？想讨论定制方案？我们随时为您服务！",
+    "getInTouch": "在线咨询",
+    "description": "如有疑问，欢迎随时联系我们，我们乐意为您解答。",
     "quickLinks": {
       "title": "快速链接",
       "description": "查找常见问题的答案",
@@ -202,31 +202,31 @@
     },
     "bottomCta": {
       "title": "准备开始了吗？",
-      "description": "不要让技术复杂性拖慢您的进度。让您的 SaaS 在几小时内而不是几个月内启动并运行。",
-      "viewDocs": "查看文档"
+      "description": "不要让技术复杂性拖慢您的进度。让您的 SaaS 在几小时内而不是几个月内上线。",
+      "viewDocs": "浏览文档"
     },
     "info": {
       "email": {
         "title": "发送邮件",
-        "description": "随时给我们发送邮件"
+        "description": "欢迎随时来信"
       },
       "phone": {
         "title": "致电我们",
-        "description": "周一至周五上午8点至下午6点"
+        "description": "周一至周五 8:00-18:00"
       },
       "address": {
         "title": "拜访我们",
-        "description": "欢迎到我们的办公室来打招呼"
+        "description": "欢迎到我们的办公室来交流"
       },
       "hours": {
         "title": "营业时间",
-        "description": "我们团队的服务时间"
+        "description": "我们的服务时间"
       }
     },
     "form": {
       "title": "联系我们",
-      "description": "我们很乐意听到您的声音。请给我们留言，我们会尽快回复。",
-      "thankYouMessage": "谢谢您！我们已收到您的消息，将在24小时内回复您。",
+      "description": "欢迎留言，我们会第一时间回复您。",
+      "thankYouMessage": "感谢您的留言！我们会尽快与您联系。",
       "errorMessage": "抱歉，发送消息时出现错误。请重试。"
     }
   },
@@ -249,9 +249,9 @@
     "required": "*"
   },
   "hero": {
-    "badge": "🚀 几小时内发布您的 SaaS，而非几个月",
-    "title": "使用我们的启动模板构建您的下一个 SaaS 产品",
-    "subtitle": "完整的 SaaS 启动模板，包含身份验证、支付、仪表板和快速启动所需的所有组件。",
+    "badge": "🚀 几小时内发布您的 SaaS",
+    "title": "用我们的模板，轻松打造下一个 SaaS 产品",
+    "subtitle": "丰富组件与最佳实践，助您高效开发、快速上线。",
     "socialProof": {
       "trustedByDevelopers": "受到 250+ 开发者信赖",
       "readyComponents": "30+ 现成组件",
@@ -459,11 +459,11 @@
   "pricing": {
     "badge": "定价方案",
     "title": "简单透明的价格",
-    "description": "选择适合您需求的完美计划。无隐藏费用，无意外收费。",
+    "description": "选择最适合您的方案，价格透明，无任何隐形费用。",
     "mostPopular": "最受欢迎",
     "ctaTitle": "准备开始了吗？",
-    "ctaDescription": "加入成千上万满意客户行列，立即开始免费试用。",
-    "pageSubtitle": "开始免费，随着您的成长而扩展。所有计划都包含我们的核心功能，没有隐藏费用。",
+    "ctaDescription": "已有数千客户选择我们，立即开启免费试用！",
+    "pageSubtitle": "免费起步，随业务成长灵活扩展。所有套餐均含核心功能，无隐藏费用。",
     "monthlyBilling": "按月计费",
     "annualBilling": "按年计费",
     "discount": "省20%",
@@ -621,7 +621,7 @@
   },
   "about": {
     "pageTitle": "关于 SaaS 启动器",
-    "pageSubtitle": "我们是一个充满激情的开发者和设计师团队，深知从零开始构建 SaaS 产品的挑战。因此我们创建了这个全面的启动模板，帮助您跳过枯燥的部分，专注于最重要的事情——您独特的产品功能。",
+    "pageSubtitle": "我们是一支热爱技术的开发与设计团队，深知从零开发 SaaS 的难点。为此，我们打造了这套高效模板，让您专注创新，无需重复造轮子。",
     "heroTitle": "关于",
     "heroHighlight": "SaaS 启动器",
     "storyTitle": "我们的故事",
@@ -633,22 +633,10 @@
     "valuesTitle": "我们的价值观",
     "valuesSubtitle": "指导我们做一切事情的原则。",
     "values": [
-      {
-        "title": "使命驱动",
-        "description": "我们的使命是赋能开发者比以往更快地构建和推出他们的 SaaS 产品。"
-      },
-      {
-        "title": "社区优先",
-        "description": "我们相信构建一个强大的开发者社区，让大家相互支持、共同学习。"
-      },
-      {
-        "title": "创新",
-        "description": "我们不断创新和改进工具，以保持在最新技术和趋势的前沿。"
-      },
-      {
-        "title": "质量",
-        "description": "我们致力于交付您可以信赖的高质量、生产就绪的代码。"
-      }
+      { "title": "使命驱动", "description": "我们的使命是让开发者更快、更高效地构建和发布 SaaS 产品。" },
+      { "title": "社区优先", "description": "我们重视社区，鼓励开发者互助成长、共同进步。" },
+      { "title": "创新", "description": "我们持续创新，紧跟前沿技术，不断优化工具。" },
+      { "title": "质量", "description": "我们承诺交付高质量、可直接投入生产的代码，让您用得安心。" }
     ],
     "teamTitle": "认识我们的团队",
     "teamSubtitle": "SaaS 启动器背后的人们。",
