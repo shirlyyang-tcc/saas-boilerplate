@@ -445,11 +445,6 @@
         "description": "Clean code, TypeScript support, and comprehensive documentation to get you started quickly."
       },
       {
-        "icon": "Database",
-        "title": "Database Ready",
-        "description": "Pre-configured with Prisma ORM and support for PostgreSQL, MySQL, and SQLite."
-      },
-      {
         "icon": "Globe",
         "title": "SEO Optimized",
         "description": "Built-in SEO optimization, meta tags, and structured data for better search rankings."

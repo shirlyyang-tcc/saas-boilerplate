@@ -445,11 +445,6 @@
         "description": "清洁的代码、TypeScript 支持和全面的文档，让您快速上手。"
       },
       {
-        "icon": "Database",
-        "title": "数据库就绪",
-        "description": "预配置了 Prisma ORM，支持 PostgreSQL、MySQL 和 SQLite。"
-      },
-      {
         "icon": "Globe",
         "title": "SEO 优化",
         "description": "内置 SEO 优化、元标签和结构化数据，提高搜索排名。"
@@ -458,11 +453,6 @@
         "icon": "Smartphone",
         "title": "移动优先",
         "description": "响应式设计，在所有设备和屏幕尺寸上都能完美工作。"
-      },
-      {
-        "icon": "BarChart3",
-        "title": "分析就绪",
-        "description": "与流行的分析工具集成，跟踪用户行为和增长指标。"
       }
     ]
   },
