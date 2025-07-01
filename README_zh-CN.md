@@ -147,7 +147,7 @@ readTime: "5 分钟读取"
 ```
 
 #### 案例研究
-在 `dictionaries/case-en.json` 和 `dictionaries/case-zh.json` 中添加案例研究。
+在 `content/cases/` 中创建新案例
 
 ## 📱 包含的页面
 

@@ -147,7 +147,7 @@ Write your content here in Markdown...
 ```
 
 #### Case Studies
-Add case studies in `dictionaries/case-en.json` and `dictionaries/case-zh.json`.
+Create new case studies in `content/cases/`
 
 ## 📱 Pages Included
 

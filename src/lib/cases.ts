@@ -5,6 +5,9 @@
 
 import { type Locale, locales } from './i18n';
 import type { CaseShowcaseItem } from '@/types/cases';
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
 // CaseShowcaseItem type is now in @/types/cases
 export type { CaseShowcaseItem }
@@ -34,16 +37,7 @@ async function loadCaseData(locale: Locale): Promise<CaseShowcaseItem[]> {
   } catch (error) {
     console.warn(`Failed to load case data for locale: ${locale}`, error);
     
-    // Fallback to English if available
-    if (locale !== 'en') {
-      try {
-        const fallbackData = await import(`../../dictionaries/case-en.json`);
-        const fallbackCases = fallbackData.default || fallbackData;
-        return fallbackCases;
-      } catch (fallbackError) {
-        console.error('Failed to load fallback English case data', fallbackError);
-      }
-    }
+    
     
     return [];
   }
@@ -125,7 +119,41 @@ export async function initializeCasesData(): Promise<void> {
  * @deprecated Use getCases() async function instead
  */
 export function getAllCases(lang: string = 'en'): CaseShowcaseItem[] {
-  return casesData[lang] || casesData.en || [];
+  const casesDirectory = getCasesDirectory(lang)
+  if (!fs.existsSync(casesDirectory)) {
+    fs.mkdirSync(casesDirectory, { recursive: true })
+    return []
+  }
+  const fileNames = fs.readdirSync(casesDirectory)
+  const allCasesData = fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '')
+      const fullPath = path.join(casesDirectory, fileName)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+      const matterResult = matter(fileContents)
+      return {
+        slug,
+        title: matterResult.data.title || '',
+        description: matterResult.data.description || '',
+        image: matterResult.data.image || '',
+        externalUrl: matterResult.data.externalUrl || '',
+        tags: matterResult.data.tags || [],
+      }
+    })
+  return allCasesData
+}
+
+function getCasesDirectory(lang: string = 'en') {
+  return path.join(process.cwd(), 'content', lang, 'cases')
+}
+
+export function getAllCasesByLocale(): Record<string, CaseShowcaseItem[]> {
+  const result: Record<string, CaseShowcaseItem[]> = {}
+  locales.forEach((locale) => {
+    result[locale] = getAllCases(locale)
+  })
+  return result
 }
 
 
