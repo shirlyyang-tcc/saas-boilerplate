@@ -67,7 +67,7 @@ export function Header({ dict }: HeaderProps) {
               <Link
                 key={item.name}
                 href={getLocalizedHref(item.href)}
-                className={`transition-colors duration-200 ${
+                 className={`transition-colors duration-200 whitespace-nowrap ${
                   isActive(item.href)
                     ? 'text-primary font-semibold border-b-2 border-primary'
                     : 'text-foreground hover:text-primary'
@@ -100,7 +100,7 @@ export function Header({ dict }: HeaderProps) {
             {/* CTA Button */}
             <Link
               href={getLocalizedHref(headerConfig.cta.href)}
-              className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
             >
               {headerConfig.cta.text}
             </Link>
@@ -148,7 +148,7 @@ export function Header({ dict }: HeaderProps) {
               
               <Link
                 href={getLocalizedHref(headerConfig.cta.href)}
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors text-center mt-4"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors text-center mt-4 whitespace-nowrap"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {headerConfig.cta.text}
