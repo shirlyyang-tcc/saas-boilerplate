@@ -3,7 +3,7 @@ import { Layout } from '@/components/layout/layout'
 import { CaseShowcaseGrid } from '@/components/ui/case-showcase-grid'
 import { CTASection } from '@/components/sections/cta-section'
 
-import { getCases } from '@/lib/cases'
+import { getAllCases } from '@/lib/cases'
 import { Locale } from '@/lib/i18n'
 import { getDictionary } from '@/lib/dictionaries'
 import { ExternalLink, Plus } from 'lucide-react'
@@ -13,7 +13,7 @@ export default async function CasesPage({
 }: {
   params: { lang: Locale };
 }) {
-  const cases = await getCases(params.lang)
+  const cases = getAllCases(params.lang)
   const dict = await getDictionary(params.lang);
 
   return (

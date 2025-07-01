@@ -12,7 +12,7 @@ import { getApiBase } from '@/lib/utils';
 interface PricingProps {
   dict?: {
     pricing: {
-      mostPopular: string,
+      mostPopular?: string,
       plans: {
         name: string
         description: string

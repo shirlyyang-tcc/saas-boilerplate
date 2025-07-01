@@ -84,7 +84,7 @@ export function Header({ dict }: HeaderProps) {
               <Link
                 key={item.name}
                 href={getLocalizedHref(item.href)}
-                className={`transition-colors duration-200 ${
+                 className={`transition-colors duration-200 whitespace-nowrap ${
                   isActive(item.href)
                     ? 'text-primary font-semibold border-b-2 border-primary'
                     : 'text-foreground hover:text-primary'
@@ -138,7 +138,7 @@ export function Header({ dict }: HeaderProps) {
               </>
             ) : (
               <Button
-                className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+                className="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
                 onClick={showLogin}
               >
                 {headerConfig.cta.text}
@@ -189,7 +189,7 @@ export function Header({ dict }: HeaderProps) {
                 <div className="flex items-center gap-4 mt-4">
                   <Link
                     href={getLocalizedHref('/account')}
-                    className="bg-primary text-primary-foreground rounded-full p-2 hover:bg-primary/90 transition-colors"
+                    className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors text-center mt-4 whitespace-nowrap"
                     aria-label={'Account'}
                     title={'Account'}
                     onClick={() => setIsMenuOpen(false)}

@@ -147,7 +147,7 @@ Write your content here in Markdown...
 ```
 
 #### Case Studies
-Add case studies in `dictionaries/case-en.json` and `dictionaries/case-zh.json`.
+Create new case studies in `content/cases/`
 
 ## 📱 Pages Included
 
@@ -166,7 +166,7 @@ Add case studies in `dictionaries/case-en.json` and `dictionaries/case-zh.json`.
 - Fast loading times
 - Mobile-first responsive design
 
-## 🚀 Deployment
+## 🚀 Deploy
 [![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=saas-starter)
 
 ## 🤝 Contributing
