@@ -195,6 +195,11 @@ public/images/contentful/  # 下载的图像
 详细的设置和配置，请见 `cms/contentful/README.md`. 
 
 
+
+### 国际化
+
+我们的项目支持多语言，你可以在 `dictionaries/` 目录中找到所有的翻译文件。详细的国际化设置和配置，请见 `dictionaries/README.md`。
+
 ## 📱 包含的页面
 
 - **首页** (`/`) - 完整的登陆页面，包含所有部分

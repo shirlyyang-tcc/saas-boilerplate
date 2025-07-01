@@ -195,6 +195,10 @@ public/images/contentful/  # Downloaded images
 
 For detailed setup and configuration, see `cms/contentful/README.md`. 
 
+
+### Internationalization
+Our project supports multiple languages, you can find all the translation files in the `dictionaries/` directory. For detailed internationalization setup and configuration, please see `dictionaries/README.md`.
+
 ## 📱 Pages Included
 
 - **Homepage** (`/`) - Complete landing page with all sections
