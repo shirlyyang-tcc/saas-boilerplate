@@ -166,7 +166,7 @@ Add case studies in `dictionaries/case-en.json` and `dictionaries/case-zh.json`.
 - Fast loading times
 - Mobile-first responsive design
 
-## 🚀 Deployment
+## 🚀 Deploy
 [![Deploy with EdgeOne Pages](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=saas-starter)
 
 ## 🤝 Contributing
