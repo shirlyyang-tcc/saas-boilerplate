@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 interface PricingProps {
   dict?: {
     pricing: {
-      mostPopular: string,
+      mostPopular?: string,
       plans: {
         name: string
         description: string
