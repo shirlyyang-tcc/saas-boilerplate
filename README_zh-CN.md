@@ -149,6 +149,52 @@ readTime: "5 分钟读取"
 #### 案例研究
 在 `content/cases/` 中创建新案例
 
+### Contentful集成
+
+#### 快速设置
+1. **将数据结构导入到你的Contentful空间**：
+   ```bash
+   # 安装Contentful CLI
+   npm install -g contentful-cli
+   
+   # 登录到Contentful
+   contentful login
+   
+   # 导入提供的数据模型
+   contentful space import --config cms/contentful/contentful-models-config.json
+   ```
+
+2. **配置环境变量**：
+   ```bash
+   # 在你的.env文件中
+   CONTENTFUL_SPACE_ID=your_space_id
+   CONTENTFUL_ACCESS_TOKEN=your_access_token
+   CONTENTFUL_ENVIRONMENT=master
+   ```
+
+3. **将内容导出到本地Markdown**：
+   ```bash
+   npm run contentful:export
+   ```
+
+**包含什么**：
+- **数据模型**: 预配置的博客和案例内容类型
+- **多语言支持**: 支持英语（`en-US`）和中文（`zh-CN`）
+- **富文本内容**: RichText转换为Markdown
+- **资产管理**: 自动图像下载和本地化
+- **语言映射**: `en` → `en-US`, `zh` → `zh-CN`
+
+**输出结构**：
+```
+content/
+├── en/blog/*.md        # 英语博客文章
+└── zh/blog/*.md        # 中文博客文章
+public/images/contentful/  # 下载的图像
+```
+
+详细的设置和配置，请见 `cms/contentful/README.md`. 
+
+
 ## 📱 包含的页面
 
 - **首页** (`/`) - 完整的登陆页面，包含所有部分

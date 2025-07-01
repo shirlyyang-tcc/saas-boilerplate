@@ -4,7 +4,6 @@ date: "2024-01-10"
 excerpt: "Discover the best practices for building scalable and performant SaaS applications with Next.js."
 author: "Sarah Chen"
 tags: ["Next.js", "React", "Performance", "Best Practices"]
-readTime: "6 min read"
 image: '/images/blogs/blog2.png'
 ---
 

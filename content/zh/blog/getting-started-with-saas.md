@@ -4,7 +4,6 @@ date: '2023-12-01'
 excerpt: '了解如何从零开始构建现代化的 SaaS 应用程序，包括架构设计、技术选型和最佳实践。'
 author: 'SaaS Starter 团队'
 tags: ['SaaS', '创业', 'Next.js', '教程']
-readTime: '8 分钟阅读'
 image: '/images/blogs/blog1.png'
 ---
 

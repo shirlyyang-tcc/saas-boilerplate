@@ -281,7 +281,22 @@ export async function generateStaticParams() {
 }
 ```
 
-#### 5. **Test the New Language**
+#### 5. **Update contentful2md.js**
+In `cms/contentful/contentful2md.js`, you can modify:
+
+```javascript
+// Language mapping: local language -> Contentful language code
+const LANG_MAPPING = {
+  'en': 'en-US',    // Local English → Contentful English
+  'zh': 'zh-CN'     // Local Chinese → Contentful Chinese
+  // Add new language mappings
+};
+
+const LANGS = Object.keys(LANG_MAPPING); // Supported local languages
+const CONTENT_TYPE = 'blog'; // Contentful content model ID
+```
+
+#### 6. **Test the New Language**
 - Visit `http://localhost:3000/[locale]` (e.g., `/ja`)
 - Test language switcher functionality
 - Verify all pages render correctly

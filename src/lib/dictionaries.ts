@@ -380,6 +380,7 @@ export interface Dictionary {
     article: {
       thanksMessage: string;
       readMoreArticles: string;
+      readTime: string;
     };
   };
   metadata: {

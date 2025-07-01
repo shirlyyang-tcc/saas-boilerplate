@@ -126,7 +126,7 @@ Here are some example Prompts:
 - Add language support: Add French support to the project
 - Modify the page: Modify the homepage, removing the xx module
 
-### Content Management
+### Local Content Management
 
 #### Blog Posts
 Create new blog posts in `content/blog/` with frontmatter:
@@ -148,6 +148,52 @@ Write your content here in Markdown...
 
 #### Case Studies
 Create new case studies in `content/cases/`
+
+
+### Contentful Integration
+
+#### Quick Setup
+1. **Import data structure to your Contentful space**:
+   ```bash
+   # Install Contentful CLI
+   npm install -g contentful-cli
+   
+   # Login to Contentful
+   contentful login
+   
+   # Import provided data models
+   contentful space import --config cms/contentful/contentful-models-config.json
+   ```
+
+2. **Configure environment variables**:
+   ```bash
+   # In your .env file
+   CONTENTFUL_SPACE_ID=your_space_id
+   CONTENTFUL_ACCESS_TOKEN=your_access_token
+   CONTENTFUL_ENVIRONMENT=master
+   ```
+
+3. **Export content to local markdown**:
+   ```bash
+   npm run contentful:export
+   ```
+
+**What's included**:
+- **Data Models**: Pre-configured Blog and Case content types
+- **Multi-language**: Support for English (`en-US`) and Chinese (`zh-CN`)
+- **Rich Content**: RichText conversion to Markdown
+- **Asset Management**: Automatic image download and localization
+- **Language Mapping**: `en` → `en-US`, `zh` → `zh-CN`
+
+**Output structure**:
+```
+content/
+├── en/blog/*.md        # English blog posts
+└── zh/blog/*.md        # Chinese blog posts
+public/images/contentful/  # Downloaded images
+```
+
+For detailed setup and configuration, see `cms/contentful/README.md`. 
 
 ## 📱 Pages Included
 

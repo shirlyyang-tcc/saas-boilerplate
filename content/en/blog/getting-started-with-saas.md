@@ -4,7 +4,6 @@ date: "2024-01-15"
 excerpt: "Learn the essential steps to build and launch your first SaaS product successfully."
 author: "Alex Johnson"
 tags: ["SaaS", "Development", "Startup"]
-readTime: "8 min read"
 image: '/images/blogs/blog1.png'
 ---
 

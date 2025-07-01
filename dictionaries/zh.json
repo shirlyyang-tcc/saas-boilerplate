@@ -82,11 +82,11 @@
   },
   "common": {
     "buttons": {
-      "learnMore": "了解更多",
-      "getStarted": "立即开始",
-      "readMore": "阅读更多",
-      "contactSales": "联系销售",
-      "startFreeTrial": "开始免费试用",
+    "learnMore": "了解更多",
+    "getStarted": "立即开始",
+    "readMore": "阅读更多",
+    "contactSales": "联系销售",
+    "startFreeTrial": "开始免费试用",
       "viewDocumentation": "查看文档",
       "scheduleDemo": "预约演示",
       "getStartedFree": "免费开始",
@@ -105,15 +105,15 @@
       "error": "出现了一些错误"
     },
     "pricing": {
-      "perMonth": "每月",
-      "unlimited": "无限制",
+    "perMonth": "每月",
+    "unlimited": "无限制",
       "popular": "热门"
     },
     "common": {
-      "yes": "是",
-      "no": "否",
-      "switchLanguage": "切换语言",
-      "toggleTheme": "切换主题"
+    "yes": "是",
+    "no": "否",
+    "switchLanguage": "切换语言",
+    "toggleTheme": "切换主题"
     }
   },
   "shared": {
@@ -827,7 +827,8 @@
     },
     "article": {
       "thanksMessage": "感谢阅读！如果您觉得这篇文章有帮助，请分享它。",
-      "readMoreArticles": "阅读更多文章"
+      "readMoreArticles": "阅读更多文章",
+      "readTime": "阅读约 {minutes} 分钟"
     }
   },
   "metadata": {

@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-2" />
-                <span>{post.readTime}</span>
+                <span>{dict.blog.article.readTime.replace('{minutes}', post.readTime)}</span>
               </div>
             </div>
           </header>

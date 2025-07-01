@@ -82,11 +82,11 @@
   },
   "common": {
     "buttons": {
-      "learnMore": "Learn More",
-      "getStarted": "Get Started",
-      "readMore": "Read More",
-      "contactSales": "Contact Sales",
-      "startFreeTrial": "Start Free Trial",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "readMore": "Read More",
+    "contactSales": "Contact Sales",
+    "startFreeTrial": "Start Free Trial",
       "viewDocumentation": "View Documentation",
       "scheduleDemo": "Schedule Demo",
       "getStartedFree": "Get Started Free",
@@ -105,15 +105,15 @@
       "error": "Something went wrong"
     },
     "pricing": {
-      "perMonth": "per month",
-      "unlimited": "Unlimited",
+    "perMonth": "per month",
+    "unlimited": "Unlimited",
       "popular": "Popular"
     },
     "common": {
-      "yes": "Yes",
-      "no": "No",
-      "switchLanguage": "Switch language",
-      "toggleTheme": "Toggle theme"
+    "yes": "Yes",
+    "no": "No",
+    "switchLanguage": "Switch language",
+    "toggleTheme": "Toggle theme"
     }
   },
   "shared": {
@@ -839,7 +839,8 @@
     },
     "article": {
       "thanksMessage": "Thanks for reading! Share this article if you found it helpful.",
-      "readMoreArticles": "Read More Articles"
+      "readMoreArticles": "Read More Articles",
+      "readTime": "{minutes} min read"
     }
   },
   "metadata": {

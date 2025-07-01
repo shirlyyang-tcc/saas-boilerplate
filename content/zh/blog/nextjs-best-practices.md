@@ -4,7 +4,6 @@ date: '2023-11-28'
 excerpt: '学习 Next.js 开发的最佳实践，包括性能优化、SEO 策略和现代开发模式，助您构建企业级应用。'
 author: 'Next.js 专家团队'
 tags: ['Next.js', 'React', '性能优化', 'Web开发']
-readTime: '6 分钟阅读'
 image: '/images/blogs/blog2.png'
 ---
 
