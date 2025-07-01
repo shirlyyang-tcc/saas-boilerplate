@@ -98,7 +98,7 @@ export const deletePrice = async (price) => {
 export const upsertCustomer = async (uuid, customerId) => {
   const { error: upsertError } = await supabaseAdmin
     .from('customers')
-    .upsert([{ id: uuid, stripe_customer_id: customerId }]);
+    .upsert([{ id: uuid, payment_customer_id: customerId, payment_platform: 'stripe' }]);
 
   if (upsertError)
     throw new Error(`Supabase customer record creation failed: ${upsertError.message}`);
@@ -126,9 +126,9 @@ export const createOrRetrieveCustomer = async ({
   console.log('prepare stripe id');
   // Retrieve the Stripe customer ID using the Supabase customer ID, with email fallback
   let stripeCustomerId;
-  if (existingSupabaseCustomer?.stripe_customer_id) {
+  if (existingSupabaseCustomer?.payment_customer_id) {
     const existingStripeCustomer = await stripe.customers.retrieve(
-      existingSupabaseCustomer.stripe_customer_id
+      existingSupabaseCustomer.payment_customer_id
     );
     stripeCustomerId = existingStripeCustomer.id;
   } else {
@@ -146,10 +146,10 @@ export const createOrRetrieveCustomer = async ({
 
   if (existingSupabaseCustomer && stripeCustomerId) {
     // If Supabase has a record but doesn't match Stripe, update Supabase record
-    if (existingSupabaseCustomer.stripe_customer_id !== stripeCustomerId) {
+    if (existingSupabaseCustomer.payment_customer_id !== stripeCustomerId) {
       const { error: updateError } = await supabaseAdmin
         .from('customers')
-        .update({ stripe_customer_id: stripeCustomerId })
+        .update({ payment_customer_id: stripeCustomerId })
         .eq('id', uuid);
 
       if (updateError)
@@ -212,7 +212,7 @@ export const manageSubscriptionStatusChange = async (
   const { data: customerData, error: noCustomerError } = await supabaseAdmin
     .from('customers')
     .select('id')
-    .eq('stripe_customer_id', customerId)
+    .eq('payment_customer_id', customerId)
     .single();
 
   if (noCustomerError)

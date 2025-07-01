@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import './globals.css'
+import { AuthDialogProvider } from '@/components/ui/auth-dialog-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,9 +48,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning lang="zh">
       <body className={inter.className}>
-        {children}
+        <AuthDialogProvider>
+          {children}
+        </AuthDialogProvider>
       </body>
     </html>
   )

@@ -171,6 +171,17 @@ export interface Dictionary {
     };
   };
 
+  auth: {
+    loginTitle: string;
+    loginButton: string;
+    noAccount: string;
+    registerLink: string;
+    registerTitle: string;
+    registerButton: string;
+    haveAccount: string;
+    loginLink: string;
+  };
+
   form: {
     labels: {
       fullName: string;
@@ -178,6 +189,8 @@ export interface Dictionary {
       company: string;
       subject: string;
       message: string;
+      password: string;
+      confirmPassword: string;
     };
     placeholders: {
       fullName: string;
@@ -185,6 +198,8 @@ export interface Dictionary {
       company: string;
       selectSubject: string;
       message: string;
+      password: string;
+      confirmPassword: string;
     };
     optional: string;
     required: string;

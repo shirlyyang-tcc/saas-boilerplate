@@ -230,20 +230,34 @@
       "errorMessage": "抱歉，发送消息时出现错误。请重试。"
     }
   },
+  "auth": {
+    "loginTitle": "登录账号",
+    "loginButton": "登录",
+    "noAccount": "还没有账号？",
+    "registerLink": "注册新账号",
+    "registerTitle": "注册账号",
+    "registerButton": "注册",
+    "haveAccount": "已有账号？",
+    "loginLink": "去登录"
+  },
   "form": {
     "labels": {
       "fullName": "姓名",
       "emailAddress": "电子邮箱",
       "company": "公司",
       "subject": "主题",
-      "message": "消息"
+      "message": "消息",
+      "password": "密码",
+      "confirmPassword": "确认密码"
     },
     "placeholders": {
       "fullName": "请输入您的姓名",
       "email": "您的邮箱@example.com",
       "company": "您的公司名称",
       "selectSubject": "请选择主题",
-      "message": "请告诉我们如何为您提供帮助..."
+      "message": "请告诉我们如何为您提供帮助...",
+      "password": "请输入密码",
+      "confirmPassword": "请再次输入密码"
     },
     "optional": "（可选）",
     "required": "*"

@@ -26,4 +26,18 @@ export function slugify(text: string): string {
 export function truncateText(text: string, length: number): string {
   if (text.length <= length) return text
   return text.slice(0, length) + '...'
+}
+
+export function getApiBase(): string {
+  if (typeof window !== 'undefined') {
+    // 浏览器端
+    return process.env.NEXT_PUBLIC_DEV === 'true'
+      ? process.env.NEXT_PUBLIC_API_URL_DEV || ''
+      : '';
+  } else {
+    // SSR/Node 端
+    return process.env.NEXT_PUBLIC_DEV === 'true'
+      ? process.env.NEXT_PUBLIC_API_URL_DEV || ''
+      : '';
+  }
 } 

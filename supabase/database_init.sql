@@ -6,7 +6,8 @@ create table customers (
   -- UUID from auth.users
   id uuid references auth.users not null primary key,
   -- The user's customer ID in Stripe. User must not be able to update this.
-  stripe_customer_id text
+  payment_customer_id text,
+  payment_platform text
 );
 alter table customers enable row level security;
 -- No policies as this is a private table that the user must not have access to.
@@ -121,5 +122,5 @@ CREATE TABLE contact_messages (
   message TEXT NOT NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
-alter table customers enable row level security;
-create policy "Allow public read-only access." on prices for select using (true);
+alter table contact_messages enable row level security;
+create policy "Allow public read-only access." on contact_messages for select using (true);

@@ -5,6 +5,9 @@ import { Check, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useAuthDialog } from '@/components/ui/auth-dialog-provider';
+import { useToast } from '@/components/ui/toast';
+import { getApiBase } from '@/lib/utils';
 
 interface PricingProps {
   dict?: {
@@ -25,6 +28,58 @@ interface PricingProps {
 
 export function Pricing({ dict }: PricingProps) {
   const pricingPlans = dict?.pricing.plans || []
+  const { showLogin } = useAuthDialog();
+  const { showToast } = useToast();
+  const [loadingIndex, setLoadingIndex] = React.useState<number | null>(null);
+
+  // 检查登录态
+  function isLoggedIn() {
+    if (typeof window === 'undefined') return false;
+    return !!localStorage.getItem('sb-access-token');
+  }
+
+  // 结账跳转
+  async function handleCheckout(planName: string, index: number) {
+    if (!isLoggedIn()) {
+      // 记录待跳转计划
+      localStorage.setItem('pendingCheckoutPlan', planName);
+      showLogin();
+      return;
+    }
+    setLoadingIndex(index);
+    try {
+      const apiBase = getApiBase();
+      const accessToken = localStorage.getItem('sb-access-token') || '';
+      const refreshToken = localStorage.getItem('sb-refresh-token') || '';
+      const res = await fetch(`${apiBase}/stripe/checkout?plan=${encodeURIComponent(planName)}`, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'x-refresh-token': refreshToken
+        }
+      });
+      if (res.redirected) {
+        window.location.href = res.url;
+        return;
+      }
+      if (res.status === 200) {
+        // 兼容直接返回 url
+        const data = await res.json().catch(() => null);
+        if (data && data.url) {
+          window.location.href = data.url;
+          return;
+        }
+      }
+      const text = await res.text();
+      showToast(text || 'Checkout failed', 'error');
+    } catch (e: any) {
+      showToast(e.message || 'Network error', 'error');
+    } finally {
+      setLoadingIndex(null);
+    }
+  }
+
   return (
     <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +126,8 @@ export function Pricing({ dict }: PricingProps) {
                   <Button 
                     className={`w-full ${plan.popular ? 'btn-gradient text-white' : ''}`}
                     variant={plan.popular ? 'default' : 'outline'}
+                    onClick={() => handleCheckout(plan.name, index)}
+                    loading={loadingIndex === index}
                   >
                     {plan.buttonText}
                   </Button>

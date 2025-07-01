@@ -5,12 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:edgeone": "edgeone pages dev --fePort=3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-select": "^2.2.5",
     "@supabase/supabase-js": "2.49.3",
     "@types/react-syntax-highlighter": "^15.5.13",
